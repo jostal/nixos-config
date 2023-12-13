@@ -2,7 +2,7 @@ import App from 'resource:///com/github/Aylur/ags/app.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 
 export function scssWatcher() {
-  console.info(App.configDir)
+  console.log('watching scss')
   // reload css
   Utils.monitorFile(
     globalThis.configDir + '/scss',
@@ -10,6 +10,7 @@ export function scssWatcher() {
     function() {
       const scss = globalThis.configDir + '/scss/style.scss'
       const css = globalThis.configDir + '/scss/style.css'
+      console.log('reloading scss')
 
       Utils.exec(`sassc ${scss} ${css}`)
       App.resetCss()

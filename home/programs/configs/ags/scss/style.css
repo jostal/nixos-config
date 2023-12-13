@@ -3,5 +3,8 @@
   padding: 0;
   margin: 0; }
 
-bar {
+.bar {
+  background: black; }
+
+.barWindow {
   background: black; }
