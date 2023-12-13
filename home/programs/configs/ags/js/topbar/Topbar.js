@@ -1,7 +1,31 @@
 import { App, Widget } from '../imports.js';
 
-const testLabel = () => Widget.Label({
-  label: 'example content'
+const Left = () => Widget.Box({
+  className: 'leftBar',
+  orientation: 'horizontal',
+  hpack: 'start',
+  hexpand: true,
+  children: [
+
+  ]
+})
+
+const Center = () => Widget.Box({
+  className: 'centerBar',
+  orientation: 'horizontal',
+  hpack: 'end',
+  children: [
+
+  ]
+})
+
+const Right = () => Widget.Box({
+  className: 'rightBar',
+  orientation: 'horizontal',
+  hpack: 'end',
+  children: [
+
+  ],
 })
 
 export default monitor => Widget.Window({
@@ -9,10 +33,11 @@ export default monitor => Widget.Window({
   anchor: ['top', 'left', 'right'],
   exclusivity: 'exclusive',
   monitor,
-  child: Widget.Box({
+  hexpand: true,
+  child: Widget.CenterBox({
     className: 'bar',
-    children: [
-      testLabel,
-    ]
+    startWidget: Left(),
+    centerWidget: Center(),
+    endWidget: Right(),
   })
 })
