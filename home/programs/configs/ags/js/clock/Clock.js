@@ -1,4 +1,4 @@
-import { Widget, App, Variable } from "../imports";
+import { Widget, App, Variable } from "../imports.js";
 
 const timeVar = Variable('', {
   poll: [1000, [`date`, "%H:%M:%S"]]
