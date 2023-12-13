@@ -4,12 +4,14 @@ import { forMonitors } from './utils.js';
 import { init } from './settings/setup.js';
 import { exec } from 'resource:///com/github/Aylur/ags/utils.js';
 
-console.log("HERE");
 init();
+console.log("After init")
 
 const windows = () => [
   forMonitors(Topbar),
 ]
+
+console.log("AFTER topbar");
 
 const scss = globalThis.configDir + '/scss/style.scss';
 const css = globalThis.configDir + '/scss/style.css';
