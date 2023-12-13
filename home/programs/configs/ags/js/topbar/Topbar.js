@@ -19,12 +19,16 @@ const Center = () => Widget.Box({
   ]
 })
 
+const testLabel = () => Widget.Label({
+  label: 'testing'
+})
+
 const Right = () => Widget.Box({
   className: 'rightBar',
   orientation: 'horizontal',
   hpack: 'end',
   children: [
-
+    testLabel
   ],
 })
 
