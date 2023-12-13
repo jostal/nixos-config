@@ -1,7 +1,7 @@
 import { Widget, App, Variable } from "../imports.js";
 
 const timeVar = Variable('', {
-  poll: [1000, [`date`, "%H:%M:%S"]]
+  poll: [1000, [`date`, "+%H:%M:%S"]]
 })
 const dateVar = Variable('', {
   poll: [5000, [`date`, "+%a %Y-%m-%d"]]

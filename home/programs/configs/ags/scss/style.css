@@ -15,3 +15,12 @@
   padding-right: 8px; }
   .systray-container .systray-item {
     font-size: 1.3rem; }
+
+.clockContainer {
+  background-color: rgba(29, 32, 33, 0.5);
+  padding-right: 8px; }
+  .clockContainer .clockDate {
+    font-size: 0.6rem;
+    color: #ddc7a1; }
+  .clockContainer .clockTime {
+    font-size: 0.7rem; }
