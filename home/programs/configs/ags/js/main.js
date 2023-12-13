@@ -11,7 +11,7 @@ const windows = () => [
 ]
 
 // const scss = `${App.configDir}/scss/style.scss`;
-const css = `${App.configDir}/scss/style.css`;
+const css = `${globalThis.configDir}/scss/style.css`;
 //
 // exec(`sassc ${scss} ${css}`)
 
