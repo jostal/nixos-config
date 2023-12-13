@@ -32,6 +32,9 @@
 
 		# Sound
 		pavucontrol
+
+		# Development
+		libgcc
 	];
 
 	environment.variables.EDITOR = "nvim";

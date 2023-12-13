@@ -17,6 +17,8 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		ags.url = "github:Aylur/ags";
+
 		sddm-sugar-candy-nix = {
 			url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -53,7 +55,7 @@
 					home-manager.nixosModules.home-manager {
 						home-manager.useGlobalPkgs = true;
 						home-manager.useUserPackages = true;
-						home-manager.extraSpecialArgs = inputs;
+						home-manager.extraSpecialArgs = { inherit inputs; };
 						home-manager.users.jostal = import ./home;
 					}
 				];
