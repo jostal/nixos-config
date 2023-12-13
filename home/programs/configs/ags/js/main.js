@@ -17,6 +17,8 @@ const scss = globalThis.configDir + '/scss/style.scss';
 const css = globalThis.configDir + '/scss/style.css';
 exec(`sassc ${scss} ${css}`)
 
+console.log("After css exec")
+
 export default {
   windows: windows().flat(),
   maxStreamVolume: 1,
