@@ -3,15 +3,15 @@
   padding: 0;
   margin: 0; }
 
-.bar {
-  background: black; }
+.corner {
+  background-color: rgba(29, 32, 33, 0.5);
+  border-radius: 1rem; }
 
-.barWindow {
-  background: black; }
+.angle {
+  background-color: rgba(29, 32, 33, 0.5); }
 
-.rightBar {
-  border: 1px solid red;
-  background: black; }
-
-barWindow {
-  border: 1px solid red; }
+.systray-container {
+  background-color: rgba(29, 32, 33, 0.5);
+  padding-right: 8px; }
+  .systray-container .systray-item {
+    font-size: 1.3rem; }
