@@ -1,4 +1,6 @@
 import { App, Widget } from '../imports.js';
+import { RoundedAngleEnd, RoundedCorner } from "../misc/Rounded.js";
+import Tray from "../systemTray/Tray.js";
 
 const Left = () => Widget.Box({
   className: 'leftBar',
@@ -19,16 +21,19 @@ const Center = () => Widget.Box({
   ]
 })
 
-const testLabel = () => Widget.Button({
-  cursor: 'pointer',
-  child: Widget.Label('here')
-})
-
 const Right = () => Widget.Box({
   className: 'rightBar',
   orientation: 'horizontal',
   hpack: 'end',
-  child: testLabel(),
+  child: Widget.EventBox({
+    hpack: 'end',
+    child: Widget.Box({
+      children: [
+        RoundedAngleEnd("topleft", { className: "angle", hexpand: true }),
+        Tray(),
+      ]
+    })
+  }),
 })
 
 export default monitor => Widget.Window({

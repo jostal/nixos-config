@@ -1,0 +1,12 @@
+// INSPO: https://github.com/PoSayDone/.dotfiles_wayland/blob/main/files/ags/scss/windows/bar.scss
+
+// https://www.reddit.com/r/unixporn/comments/187lz9l/hyprland_my_second_rice_using_ags/
+
+.systray-container {
+  background-color: $bgTrans;
+  padding-right: 8px;
+
+  .systray-item {
+    font-size: 1.3rem;
+  }
+}

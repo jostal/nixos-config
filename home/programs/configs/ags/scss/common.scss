@@ -4,19 +4,11 @@
   margin: 0;
 }
 
-.bar {
-  background: black;
+.corner {
+  background-color: $bgTrans;
+  border-radius: 1rem;
 }
 
-.barWindow {
-  background: black;
-}
-
-.rightBar {
-  border: 1px solid red;
-  background: black;
-}
-
-barWindow {
-  border: 1px solid red;
+.angle {
+  background-color: $bgTrans;
 }
