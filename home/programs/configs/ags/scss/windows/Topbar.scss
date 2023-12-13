@@ -10,3 +10,17 @@
     font-size: 1.3rem;
   }
 }
+
+.clockContainer {
+  background-color: $bgTrans;
+  padding-right: 8px;
+
+  .clockDate {
+    font-size: 0.6rem;
+    color: $text;
+  }
+
+  .clockTime {
+    font-size: 0.7rem;
+  }
+}

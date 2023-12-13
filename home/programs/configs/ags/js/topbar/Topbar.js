@@ -1,6 +1,7 @@
 import { App, Widget } from '../imports.js';
 import { RoundedAngleEnd, RoundedCorner } from "../misc/Rounded.js";
 import Tray from "../systemTray/Tray.js";
+import Clock from "../clock/Clock.js";
 
 const Left = () => Widget.Box({
   className: 'leftBar',
@@ -31,6 +32,13 @@ const Right = () => Widget.Box({
       children: [
         RoundedAngleEnd("topleft", { className: "angle", hexpand: true }),
         Tray(),
+        Widget.EventBox({
+          child: Widget.Box({
+            children: [
+              Clock(),
+            ]
+          })
+        })
       ]
     })
   }),
