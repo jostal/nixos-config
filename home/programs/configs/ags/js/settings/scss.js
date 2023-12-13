@@ -10,7 +10,6 @@ export function scssWatcher() {
     function() {
       const scss = globalThis.configDir + '/scss/style.scss'
       const css = globalThis.configDir + '/scss/style.css'
-      console.log('reloading scss')
 
       Utils.exec(`sassc ${scss} ${css}`)
       App.resetCss()
