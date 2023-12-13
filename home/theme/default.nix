@@ -53,7 +53,7 @@ in {
 
 		theme = {
 			name = "Gruvbox-Dark-BL";
-			package = pkgs.gruvbox-gtk-theme;
+			# package = pkgs.gruvbox-gtk-theme;
 		};
 
 		iconTheme = {

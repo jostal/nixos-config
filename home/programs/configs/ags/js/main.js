@@ -10,10 +10,9 @@ const windows = () => [
   forMonitors(Topbar),
 ]
 
-// const scss = `${App.configDir}/scss/style.scss`;
-const css = `${globalThis.configDir}/scss/style.css`;
-//
-// exec(`sassc ${scss} ${css}`)
+const scss = globalThis.configDir + '/scss/style.scss';
+const css = globalThis.configDir + '/scss/style.css';
+exec(`sassc ${scss} ${css}`)
 
 export default {
   windows: windows().flat(),
