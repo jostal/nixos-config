@@ -9,11 +9,10 @@ export default monitor => Widget.Window({
   anchor: ['top', 'left', 'right'],
   exclusivity: 'exclusive',
   monitor,
-  child: testLabel
-  // child: Widget.Box({
-  //   className: 'bar',
-  //   children: [
-  //     testLabel,
-  //   ]
-  // })
+  child: Widget.Box({
+    className: 'bar',
+    children: [
+      testLabel,
+    ]
+  })
 })
