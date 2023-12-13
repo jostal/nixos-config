@@ -8,7 +8,7 @@ const SysTrayItem = item => Widget.Button({
   child: Widget.Icon({
     hpack: 'center',
     binds: [['icon', item, 'icon']],
-    size: 15
+    size: 30
   }),
   binds: [['tooltip-markup', item, 'tooltip-markup']],
   on_clicked: btn => item.menu.popup_at_widget(btn, Gravity.SOUTH, Gravity.NORTH, null),
