@@ -1,6 +1,6 @@
 import { App, Widget } from '../imports.js';
 
-const testLabel = Widget.Label({
+const testLabel = () => Widget.Label({
   label: 'example content'
 })
 
@@ -9,10 +9,11 @@ export default monitor => Widget.Window({
   anchor: ['top', 'left', 'right'],
   exclusivity: 'exclusive',
   monitor,
-  child: Widget.Box({
-    className: 'bar',
-    children: [
-      testLabel,
-    ]
-  })
+  child: testLabel
+  // child: Widget.Box({
+  //   className: 'bar',
+  //   children: [
+  //     testLabel,
+  //   ]
+  // })
 })
