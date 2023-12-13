@@ -1,4 +1,4 @@
-import { Widget } from "../imports";
+import { Widget } from "../imports.js";
 import Gtk from 'gi://Gtk';
 
 export const RoundedCorner = (place, props) => Widget.DrawingArea({
