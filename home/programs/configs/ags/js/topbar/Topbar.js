@@ -19,8 +19,9 @@ const Center = () => Widget.Box({
   ]
 })
 
-const testLabel = () => Widget.Label({
-  label: 'testing'
+const testLabel = () => Widget.Button({
+  cursor: 'pointer',
+  child: Widget.Label('here')
 })
 
 const Right = () => Widget.Box({
