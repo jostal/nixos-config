@@ -1,7 +1,8 @@
 * {
   all: unset;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  font-size: 16px; }
 
 .corner {
   background-color: rgba(29, 32, 33, 0.5);
@@ -21,6 +22,6 @@
   padding-right: 8px; }
   .clockContainer .clockDate {
     font-size: 0.6rem;
-    color: #ddc7a1; }
+    color: #e78a4e; }
   .clockContainer .clockTime {
     font-size: 0.7rem; }
