@@ -28,9 +28,7 @@ const Right = () => Widget.Box({
   className: 'rightBar',
   orientation: 'horizontal',
   hpack: 'end',
-  children: [
-    testLabel
-  ],
+  child: testLabel(),
 })
 
 export default monitor => Widget.Window({
