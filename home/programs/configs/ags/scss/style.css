@@ -47,9 +47,9 @@
       border-radius: 1rem; }
     .wsContainer .wsButton .wsButtonLabel {
       padding: 0.5rem; }
-    .wsContainer .wsButton .wsLeft .wsMonitor {
+    .wsContainer .wsButton.wsLeft .wsMonitor {
       color: #a9b665; }
-    .wsContainer .wsButton .wsCenter .wsMonitor {
+    .wsContainer .wsButton.wsCenter .wsMonitor {
       color: #ea6962; }
-    .wsContainer .wsButton .wsRight .wsMonitor {
+    .wsContainer .wsButton.wsRight .wsMonitor {
       color: #7daea3; }

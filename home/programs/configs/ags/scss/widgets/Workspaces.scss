@@ -37,6 +37,10 @@
       padding: 0.5rem;
     }
 
+    .wsMonitor {
+      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+    }
+
     &.wsLeft {
       .wsMonitor {
         color: $green;
