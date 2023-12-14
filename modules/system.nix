@@ -49,12 +49,12 @@
 		defaultUserShell = pkgs.fish;
 	};
 
-	# Shell
-	programs.fish.enable = true;
+	programs = {
+    fish.enable = true;
+    dconf.enable = true;
+  }
 
-	programs.dconf.enable = true;
-
-	programs.partition-manager.enable = true;
+	# programs.partition-manager.enable = true;
 
 	fonts = {
 		packages = with pkgs; [

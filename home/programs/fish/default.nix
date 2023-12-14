@@ -7,6 +7,15 @@
 			'';
 		shellAliases = {
 			ls = "ls -a --color=auto";
+      agsreload = "
+        begin
+        ags -q;
+        git add .;
+        git commit -m 'ags change';
+        sudo nixos-rebuild switch
+        ags;
+        end
+      "
 		};
 		plugins = [
 			{ 
