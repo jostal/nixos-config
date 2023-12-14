@@ -35,19 +35,23 @@
 
     .wsButtonLabel {
       padding: 0.5rem;
+    }
 
+    .wsLeft {
       .wsMonitor {
-        &.wsLeft {
-          color: $green;
-        }
+        color: $green;
+      }
+    }
 
-        &.wsCenter {
-          color: $red;
-        }
+    .wsCenter {
+      .wsMonitor {
+        color: $red;
+      }
+    }
 
-        &.wsRight {
-          color: $blue;
-        }
+    .wsRight {
+      .wsMonitor {
+        color: $blue;
       }
     }
   }

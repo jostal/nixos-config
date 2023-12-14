@@ -46,4 +46,10 @@
       color: #1d2021;
       border-radius: 1rem; }
     .wsContainer .wsButton .wsButtonLabel {
-      min-width: 2rem; }
+      padding: 0.5rem; }
+      .wsContainer .wsButton .wsButtonLabel .wsMonitor.wsLeft {
+        color: #a9b665; }
+      .wsContainer .wsButton .wsButtonLabel .wsMonitor.wsCenter {
+        color: #ea6962; }
+      .wsContainer .wsButton .wsButtonLabel .wsMonitor.wsRight {
+        color: #7daea3; }
