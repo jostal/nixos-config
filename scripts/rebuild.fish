@@ -22,9 +22,9 @@ function rebuild -d "Rebuild nixos"
   and git commit -m $commitMessage
 
   if test $testRebuild -eq 1
-    nixos-rebuild test
+    command sudo nixos-rebuild test
   else
-    nixos-rebuild switch
+    command sudo nixos-rebuild switch
   end
 
   # if test $rebuildAgs -eq 1
