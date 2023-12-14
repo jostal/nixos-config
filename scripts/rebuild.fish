@@ -1,7 +1,7 @@
 #!/etc/profiles/per-user/jostal/bin/fish
 
 function rebuild -d "Rebuild nixos"
-  set -f rebuildAgs 0
+  set -f rebuildAgs 0 # rebuild ags flag
   set -f commitMessage "Nixos rebuild"
   # set flags
   switch $argv[(count $argv)]
@@ -12,18 +12,19 @@ function rebuild -d "Rebuild nixos"
   end
 
   if test $rebuildAgs -eq 1
-    ags -q
+    if ags -q
+      echo "Quit AGS"
+    end
   end
   
   git add .
-  if git commit -m $commitMessage
-    echo "Commited succeeded"
-  else
-    echo "Failed to commit"
-  end
-  nixos-rebuild switch
+  and git commit -m $commitMessage
+  and nixos-rebuild switch
 
   if test $rebuildAgs -eq 1
-    ags
+    if ags
+      echo "Starting AGS"
+    end
   end
 end
+
