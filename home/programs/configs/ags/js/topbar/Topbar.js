@@ -9,7 +9,7 @@ const Left = () => Widget.EventBox({
   child: Widget.Box({
     children: [
       Workspaces(),
-      RoundedAngleEnd("topright", { className: "angle" })
+      RoundedAngleEnd("topright", { className: "angle", hexpand: true })
     ]
   })
 })
