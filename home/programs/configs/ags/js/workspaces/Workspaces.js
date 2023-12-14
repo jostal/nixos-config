@@ -53,8 +53,8 @@ const Workspaces = () => Widget.EventBox({
           const wsBefore = Hyprland.getWorkspace(i)
           const wsAfter = Hyprland.getWorkspace(i + 2)
           button.toggleClassName("occupied", ws?.windows > 0)
-          button.toggleClassName("occupied-left", !wsBefore || wsBefore?.windows <= 0 || Hyprland.workspaces.some(ws => ws.id === wsBefore - 1))
-          button.toggleClassName("occupied-right", !wsAfter || wsAfter?.windows <= 0 || Hyprland.workspaces.some(ws => ws.id === wsAfter - 1))
+          button.toggleClassName("occupied-left", !wsBefore || wsBefore?.windows <= 0 || Hyprland.workspaces.some(ws => ws.id !== wsBefore - 1))
+          button.toggleClassName("occupied-right", !wsAfter || wsAfter?.windows <= 0 || Hyprland.workspaces.some(ws => ws.id !== wsAfter - 1))
         })
       }, 'notify::workspaces']
     ]
