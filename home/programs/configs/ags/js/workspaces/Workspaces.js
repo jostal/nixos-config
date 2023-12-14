@@ -6,7 +6,7 @@ const getWorkspaceMonitor = (id) => {
   let ws = Hyprland.getWorkspace(id)
   console.log(ws)
 
-  switch (ws.monitor) {
+  switch (ws?.monitor) {
     case "DVI-D-1":
       return "L"
     case "HDMI-A-1":
