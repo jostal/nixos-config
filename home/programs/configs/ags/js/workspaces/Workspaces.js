@@ -54,15 +54,9 @@ const Workspaces = () => Widget.EventBox({
           const nextWorkspace = Hyprland.getWorkspace(i + 2)
 
           button.toggleClassName("occupied", ws?.windows > 0)
-          button.toggleClassName("occupied-left", prevWorkspace?.windows > 0)
-          button.toggleClassName("occupied-right", nextWorkspace?.windows > 0)
+          button.toggleClassName("occupied-left", !prevWorkspace || prevWorkspace?.windows <= 0)
+          button.toggleClassName("occupied-right", !nextWorkspace || nextWorkspace?.windows <= 0)
         })
-        // box.children.forEach((button, i) => {
-        //   const ws = Hyprland.getWorkspace(i+1)
-        //   button.toggleClassName("occupied", ws?.windows > 0)
-        //   button.toggleClassName("occupied-left", Hyprland.workspaces.some(ws => ws.id === Hy))
-        //   button.toggleClassName("occupied-right", !wsAfter || wsAfter?.windows <= 0 || Hyprland.workspaces.some(ws => ws.id !== wsAfter - 1))
-        // })
       }, 'notify::workspaces']
     ]
   })
