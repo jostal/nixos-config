@@ -4,7 +4,9 @@
 		enable = true;
 		interactiveShellInit = ''
 			set fish_greeting
-      fish_add_path $HOME/nixos-config/scripts
+      if test -e $HOME/.config/fish/functions/rebuild.fish
+        ln -s $HOME/nixos-config/scripts/rebuild.fish $HOME/.config/fish/functions/rebuild.fish
+      end
 			'';
 		shellAliases = {
 			ls = "ls -a --color=auto";
