@@ -23,3 +23,27 @@
     color: #e78a4e; }
   .clockContainer .clockTime {
     font-size: 1rem; }
+
+.wsContainer {
+  background-color: rgba(29, 32, 33, 0.7);
+  padding: 3px; }
+  .wsContainer .wsButton {
+    transition: all 200ms; }
+    .wsContainer .wsButton.occupied {
+      background-color: #1d2021;
+      border-top: 1px solid #ddc7a1;
+      border-bottom: 1px solid #ddc7a1; }
+      .wsContainer .wsButton.occupied.occupied-left {
+        border-radius: 1rem 0 0 1rem;
+        border-left: 1px solid #ddc7a1; }
+      .wsContainer .wsButton.occupied.occupied-right {
+        border-radius: 0 1rem 1rem 0;
+        border-right: 1px solid #ddc7a1; }
+    .wsContainer .wsButton:not(.occupied) {
+      border-radius: 1rem; }
+    .wsContainer .wsButton.active .wsButtonLabel {
+      background-color: #ddc7a1;
+      color: #1d2021;
+      border-radius: 1rem; }
+    .wsContainer .wsButton .wsButtonLabel {
+      min-width: 2rem; }
