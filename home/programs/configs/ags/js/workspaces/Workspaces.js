@@ -1,4 +1,5 @@
-import { Hyprland, Widget } from "../imports.js";
+import Hyprland from 'resource:///com/github/Aylur/ags/service/hyprland.js'
+import { Widget } from "../imports.js";
 
 const WorkspaceButton = (i) => Widget.EventBox({
   className: 'wsButton',

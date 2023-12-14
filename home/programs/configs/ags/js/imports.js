@@ -7,7 +7,6 @@ export const Widget = await require('widget')
 export const Service = await require('service')
 export const Variable = await require('variable')
 export const Utils = await import(resource('utils'))
-export const Hyprland = await import(resource('hyprland'))
 
 // export const Applications = await service('applications');
 export const Audio = await service('audio');
