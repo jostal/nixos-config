@@ -30,19 +30,15 @@
         background-color: $text;
         color: $bg;
         border-radius: 1rem;
-
-        .wsMonitor {
-          font-size: 0.5rem;
-
-          &.wsLeft {
-
-          }
-        }
       }
     }
 
     .wsButtonLabel {
       min-width: 2rem;
+
+      .wsMonitor {
+        font-size: 0.5rem;
+      }
     }
   }
 }
