@@ -49,13 +49,20 @@ const Workspaces = () => Widget.EventBox({
     connections: [
       [Hyprland, (box) => {
         box.children.forEach((button, i) => {
+          const prevWorkspace = Hyprland.getWorkspace(i)
           const ws = Hyprland.getWorkspace(i + 1)
-          const wsBefore = Hyprland.getWorkspace(i)
-          const wsAfter = Hyprland.getWorkspace(i + 2)
+          const nextWorkspace = Hyprland.getWorkspace(i + 2)
+
           button.toggleClassName("occupied", ws?.windows > 0)
-          button.toggleClassName("occupied-left", wsBefore?.windows <= 0 || Hyprland.workspaces.some(ws => ws.id === wsBefore - 1))
-          button.toggleClassName("occupied-right", !wsAfter || wsAfter?.windows <= 0 || Hyprland.workspaces.some(ws => ws.id !== wsAfter - 1))
+          button.toggleClassName("occupied-left", prevWorkspace)
+          button.toggleClassName("occupied-right", nextWorkspace)
         })
+        // box.children.forEach((button, i) => {
+        //   const ws = Hyprland.getWorkspace(i+1)
+        //   button.toggleClassName("occupied", ws?.windows > 0)
+        //   button.toggleClassName("occupied-left", Hyprland.workspaces.some(ws => ws.id === Hy))
+        //   button.toggleClassName("occupied-right", !wsAfter || wsAfter?.windows <= 0 || Hyprland.workspaces.some(ws => ws.id !== wsAfter - 1))
+        // })
       }, 'notify::workspaces']
     ]
   })
