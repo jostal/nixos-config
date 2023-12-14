@@ -34,9 +34,20 @@
     }
 
     .wsButtonLabel {
-      min-width: 2rem;
+      padding: 0.5rem;
 
       .wsMonitor {
+        &.wsLeft {
+          color: $green;
+        }
+
+        &.wsCenter {
+          color: $red;
+        }
+
+        &.wsRight {
+          color: $blue;
+        }
       }
     }
   }
