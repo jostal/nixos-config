@@ -21,10 +21,10 @@ function rebuild -d "Rebuild nixos"
   and git commit -m $commitMessage
   and nixos-rebuild switch
 
-  if test $rebuildAgs -eq 1
-    if ags
-      echo "Starting AGS"
-    end
-  end
+  # if test $rebuildAgs -eq 1
+  #   if ags
+  #     echo "Starting AGS"
+  #   end
+  # end
 end
 
