@@ -3,23 +3,29 @@
 function rebuild -d "Rebuild nixos"
   set -f rebuildAgs 0 # rebuild ags flag
   set -f commitMessage "Nixos rebuild"
+  set -f testRebuild 0
   # set flags
   switch $argv[(count $argv)]
     case '-ags' # rebuild ags
       set -f rebuildAgs 1
+    case '-test'
+      set -f testRebuild 1
     case '-m' # commit message
       set -f commitMessage $argv[(count $argv)+1]
   end
 
   if test $rebuildAgs -eq 1
-    if ags -q
-      echo "Quit AGS"
-    end
+    ags -q
   end
   
   git add .
   and git commit -m $commitMessage
-  and nixos-rebuild switch
+
+  if test $testRebuild -eq 1
+    nixos-rebuild test
+  else
+    nixos-rebuild switch
+  end
 
   # if test $rebuildAgs -eq 1
   #   if ags
