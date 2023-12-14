@@ -4,7 +4,7 @@
 		enable = true;
 		interactiveShellInit = ''
 			set fish_greeting
-      if test -e $HOME/.config/fish/functions/rebuild.fish
+      if test ! -e $HOME/.config/fish/functions/rebuild.fish
         ln -s $HOME/nixos-config/scripts/rebuild.fish $HOME/.config/fish/functions/rebuild.fish
       end
 			'';
