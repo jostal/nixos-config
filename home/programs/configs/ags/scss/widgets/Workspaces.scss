@@ -38,24 +38,44 @@
     }
 
     .wsMonitor {
-      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+      text-shadow: 0 0 2px;
     }
 
-    &.wsLeft {
+    &.wsLeft:not(.active) {
       .wsMonitor {
         color: $green;
       }
     }
 
-    &.wsCenter {
+    &.wsLeft.active {
       .wsMonitor {
-        color: $red;
+        color: $darkGreen;
+      }
+    }
+
+    &.wsCenter {
+      &:not(.active) {
+        .wsMonitor {
+          color: $red;
+        }
+      }
+
+      &.active {
+        .wsMonitor {
+          color: $darkRed;
+        }
       }
     }
 
     &.wsRight {
-      .wsMonitor {
-        color: $blue;
+      &:not(.active) {
+        .wsMonitor {
+          color: $blue;
+        }
+      }
+
+      &.active {
+        color: $darkBlue;
       }
     }
   }

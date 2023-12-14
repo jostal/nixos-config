@@ -47,6 +47,8 @@
       border-radius: 1rem; }
     .wsContainer .wsButton .wsButtonLabel {
       padding: 0.5rem; }
+    .wsContainer .wsButton .wsMonitor {
+      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; }
     .wsContainer .wsButton.wsLeft .wsMonitor {
       color: #a9b665; }
     .wsContainer .wsButton.wsCenter .wsMonitor {
