@@ -2,17 +2,15 @@ import Hyprland from 'resource:///com/github/Aylur/ags/service/hyprland.js'
 import { Widget } from "../imports.js";
 
 const getWorkspaceMonitor = (id) => {
-  console.log(id)
   let ws = Hyprland.getWorkspace(id)
-  console.log(ws)
 
   switch (ws?.monitor) {
     case "DVI-D-1":
-      return "L"
+      return "ᴸ"
     case "HDMI-A-1":
-      return "C"
+      return "ꟲ"
     case "HDMI-A-2":
-      return "R"
+      return "ᴿ"
     default:
       return ""
   }
@@ -37,9 +35,9 @@ const WorkspaceButton = (i) => Widget.EventBox({
   connections: [
     [Hyprland.active.workspace, (button) => {
       button.toggleClassName('active', Hyprland.active.workspace.id === i)
-      button.toggleClassName('wsLeft', getWorkspaceMonitor(i) === 'L')
-      button.toggleClassName('wsCenter', getWorkspaceMonitor(i) === 'C')
-      button.toggleClassName('wsRight', getWorkspaceMonitor(i) === 'R')
+      button.toggleClassName('wsLeft', getWorkspaceMonitor(i) === 'ᴸ')
+      button.toggleClassName('wsCenter', getWorkspaceMonitor(i) === 'ꟲ')
+      button.toggleClassName('wsRight', getWorkspaceMonitor(i) === 'ᴿ')
     }]
   ]
 })
