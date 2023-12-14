@@ -63,7 +63,7 @@ export const RoundedAngleEnd = (place, props) => Widget.DrawingArea({
           cr.moveTo(0, 0)
           cr.curveTo(ratio * r / 2, 0, ratio * r / 2, r, ratio * r, r);
           cr.lineTo(ratio * r, 0);
-          cr.closePath();
+          // cr.closePath();
           cr.moveTo(0, 0)
           cr.curveTo(ratio * r / 2, 0, ratio * r / 2, r, ratio * r, r);
           cr.lineTo(ratio * r, 0);
