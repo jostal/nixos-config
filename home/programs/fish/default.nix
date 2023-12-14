@@ -15,7 +15,7 @@
         sudo nixos-rebuild switch
         ags;
         end
-      "
+      ";
 		};
 		plugins = [
 			{ 

@@ -52,7 +52,7 @@
 	programs = {
     fish.enable = true;
     dconf.enable = true;
-  }
+  };
 
 	# programs.partition-manager.enable = true;
 
