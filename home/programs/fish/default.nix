@@ -8,12 +8,11 @@
 		shellAliases = {
 			ls = "ls -a --color=auto";
       agsreload = "
-        begin
         ags -q;
-        git add .;
-        git commit -m 'ags change';
-        sudo nixos-rebuild switch
-        ags;
+        and git add .;
+        and git commit -m 'ags change';
+        and sudo nixos-rebuild switch
+        and ags;
         end
       ";
 		};
