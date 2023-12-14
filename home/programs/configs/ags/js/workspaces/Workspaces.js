@@ -54,8 +54,8 @@ const Workspaces = () => Widget.EventBox({
           const nextWorkspace = Hyprland.getWorkspace(i + 2)
 
           button.toggleClassName("occupied", ws?.windows > 0)
-          button.toggleClassName("occupied-left", !prevWorkspace)
-          button.toggleClassName("occupied-right", !nextWorkspace)
+          button.toggleClassName("occupied-left", prevWorkspace?.windows > 0)
+          button.toggleClassName("occupied-right", nextWorkspace?.windows > 0)
         })
         // box.children.forEach((button, i) => {
         //   const ws = Hyprland.getWorkspace(i+1)
