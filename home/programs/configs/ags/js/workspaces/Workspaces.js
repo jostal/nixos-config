@@ -2,7 +2,9 @@ import Hyprland from 'resource:///com/github/Aylur/ags/service/hyprland.js'
 import { Widget } from "../imports.js";
 
 const getWorkspaceMonitor = (id) => {
+  console.log(id)
   let ws = Hyprland.getWorkspace(id)
+  console.log(ws)
 
   switch (ws.monitor) {
     case "DVI-D-1":

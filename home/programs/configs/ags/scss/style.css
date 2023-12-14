@@ -45,5 +45,7 @@
       background-color: #ddc7a1;
       color: #1d2021;
       border-radius: 1rem; }
+      .wsContainer .wsButton.active .wsButtonLabel .wsMonitor {
+        font-size: 0.5rem; }
     .wsContainer .wsButton .wsButtonLabel {
       min-width: 2rem; }
