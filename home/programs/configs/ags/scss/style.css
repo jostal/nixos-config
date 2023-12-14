@@ -48,10 +48,16 @@
     .wsContainer .wsButton .wsButtonLabel {
       padding: 0.5rem; }
     .wsContainer .wsButton .wsMonitor {
-      text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; }
-    .wsContainer .wsButton.wsLeft .wsMonitor {
+      text-shadow: 0 0 2px; }
+    .wsContainer .wsButton.wsLeft:not(.active) .wsMonitor {
       color: #a9b665; }
-    .wsContainer .wsButton.wsCenter .wsMonitor {
+    .wsContainer .wsButton.wsLeft.active .wsMonitor {
+      color: #32361a; }
+    .wsContainer .wsButton.wsCenter:not(.active) .wsMonitor {
       color: #ea6962; }
-    .wsContainer .wsButton.wsRight .wsMonitor {
+    .wsContainer .wsButton.wsCenter.active .wsMonitor {
+      color: #3c1f1e; }
+    .wsContainer .wsButton.wsRight:not(.active) .wsMonitor {
       color: #7daea3; }
+    .wsContainer .wsButton.wsRight.active {
+      color: #0d3138; }

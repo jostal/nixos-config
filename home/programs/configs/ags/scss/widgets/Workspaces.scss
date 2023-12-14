@@ -31,6 +31,10 @@
         color: $bg;
         border-radius: 1rem;
       }
+
+      .wsMonitor {
+        color: $bg;
+      }
     }
 
     .wsButtonLabel {
@@ -47,22 +51,10 @@
       }
     }
 
-    &.wsLeft.active {
-      .wsMonitor {
-        color: $darkGreen;
-      }
-    }
-
     &.wsCenter {
       &:not(.active) {
         .wsMonitor {
           color: $red;
-        }
-      }
-
-      &.active {
-        .wsMonitor {
-          color: $darkRed;
         }
       }
     }
@@ -72,10 +64,6 @@
         .wsMonitor {
           color: $blue;
         }
-      }
-
-      &.active {
-        color: $darkBlue;
       }
     }
   }
