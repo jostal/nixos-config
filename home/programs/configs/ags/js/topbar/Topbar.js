@@ -8,8 +8,8 @@ const Left = () => Widget.EventBox({
   className: 'leftBar',
   child: Widget.Box({
     children: [
-      RoundedAngleEnd("topright", { className: "angle" }),
       Workspaces(),
+      RoundedAngleEnd("topright", { className: "angle" }),
     ]
   })
 })
