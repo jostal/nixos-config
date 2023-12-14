@@ -1,0 +1,40 @@
+.wsContainer {
+  background-color: $bgTrans;
+  padding: 3px;
+
+  .wsButton {
+    transition: all 200ms;
+
+    &.occupied {
+      background-color: $bg;
+      border-top: 1px solid $text;
+      border-bottom: 1px solid $text;
+
+      &.occupied-left {
+        border-radius: 1rem 0 0 1rem;
+        border-left: 1px solid $text;
+      }
+
+      &.occupied-right {
+        border-radius: 0 1rem 1rem 0;
+        border-right: 1px solid $text;
+      }
+    }
+
+    &:not(.occupied) {
+      border-radius: 1rem;
+    }
+
+    &.active {
+      .wsButtonLabel {
+        background-color: $text;
+        color: $bg;
+        border-radius: 1rem;
+      }
+    }
+
+    .wsButtonLabel {
+      min-width: 2rem;
+    }
+  }
+}
