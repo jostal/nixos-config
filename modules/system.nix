@@ -89,7 +89,7 @@
 				"Noto Sans"
 				"Noto Color Emoji"
 			];
-			monospace = [ "JetBrainsMono Nerd Font" ];
+			# monospace = [ "JetBrainsMono Nerd Font" ];
 			emoji = [
 				"Noto Color Emoji"
 			];
