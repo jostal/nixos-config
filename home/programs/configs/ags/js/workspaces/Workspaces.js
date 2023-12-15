@@ -30,9 +30,9 @@ const WorkspaceButton = (i) => Widget.EventBox({
         // label: `${getWorkspaceMonitor(i)}`,
         className: 'wsMonitor',
         connections: [
-          [Hyprland.workspaces, self => {
+          [Hyprland, self => {
             self.label = `${getWorkspaceMonitor(i)}`
-          }]
+          }, 'notify::workspaces']
         ]
       })
     ]
