@@ -80,8 +80,6 @@
 			})
 		];
 
-    security.sudo.extraConfig = "Defaults timestamp_timeout=30";
-
 		enableDefaultPackages = true;
 
 		fontconfig.defaultFonts = {
@@ -99,7 +97,7 @@
 			];
 		};
 	};
-
+  security.sudo.extraConfig = "Defaults timestamp_timeout=30";
 	console = {
 		earlySetup = true;
 		font = "koi8u_8x16";
