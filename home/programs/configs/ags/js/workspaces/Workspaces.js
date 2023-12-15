@@ -27,7 +27,6 @@ const WorkspaceButton = (i) => Widget.EventBox({
         className: 'wsLabel'
       }),
       Widget.Label({
-        // label: `${getWorkspaceMonitor(i)}`,
         className: 'wsMonitor',
         connections: [
           [Hyprland, self => {
@@ -58,9 +57,15 @@ const Workspaces = () => Widget.EventBox({
           const ws = Hyprland.getWorkspace(i + 1)
           const nextWorkspace = Hyprland.getWorkspace(i + 2)
 
-          button.toggleClassName("occupied", ws?.windows > 0)
-          button.toggleClassName("occupied-left", !prevWorkspace || prevWorkspace?.windows <= 0)
-          button.toggleClassName("occupied-right", !nextWorkspace || nextWorkspace?.windows <= 0)
+          const occupied = ws?.windows > 0
+          const occupiedLeft = !prevWorkspace || prevWorkspace?.windows <= 0
+          const occupiedRight = !nextWorkspace || nextWorkspace?.windows <= 0
+          const occupiedBoth = (occupiedLeft && occupiedRight)
+
+          button.toggleClassName("occupied", occupied)
+          button.toggleClassName("occupied-left", occupiedLeft && !occupiedBoth)
+          button.toggleClassName("occupied-right", occupiedRight && !occupiedBoth)
+          button.toggleClassName("occupied-alone", occupiedBoth)
         })
       }, 'notify::workspaces']
     ]
