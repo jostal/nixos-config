@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-	font = "JetBrainsMono Nerd Font Mono";
+	# font = "JetBrainsMono Nerd Font Mono";
 in
 {
 	programs.alacritty = {
@@ -25,15 +25,15 @@ in
 			font = {
 				size = 12.0;
 				bold = {
-					family = "JetBrainsMono Nerd Font";
+					family = "JetBrainsMono Nerd Font Mono";
 					style = "Bold";
 				};
 				italic = {
-					family = "JetBrainMono Nerd Font";
+					family = "JetBrainMono Nerd Font Mono";
 					style = "Italic";
 				};
 				normal = {
-					family = "JetBrainsMono Nerd Font";
+					family = "JetBrainsMono Nerd Font Mono";
 					style = "Regular";
 				};
 			};
