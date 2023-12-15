@@ -1,5 +1,5 @@
 import Hyprland from 'resource:///com/github/Aylur/ags/service/hyprland.js'
-import { Widget } from "../imports.js";
+import { Widget, Variable } from "../imports.js";
 
 const getWorkspaceMonitor = (id) => {
   let ws = Hyprland.getWorkspace(id)
@@ -27,8 +27,13 @@ const WorkspaceButton = (i) => Widget.EventBox({
         className: 'wsLabel'
       }),
       Widget.Label({
-        label: `${getWorkspaceMonitor(i)}`,
-        className: 'wsMonitor'
+        // label: `${getWorkspaceMonitor(i)}`,
+        className: 'wsMonitor',
+        connections: [
+          [Hyprland.workspaces, self => {
+            self.label = `${getWorkspaceMonitor(i)}`
+          }]
+        ]
       })
     ]
   }),
