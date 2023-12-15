@@ -29,8 +29,7 @@ in {
 				source = "${nerdfonts}/share/fonts/truetype/NerdFonts";
 			};
 			".fonts" = {
-				recursiv e= true;
-
+				recursive= true;
 				source = "${nerdfonts}/share/fonts/truetype/NerdFonts";
 			};
 			# ICONS HERE
