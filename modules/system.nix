@@ -65,7 +65,7 @@
 			# normal fonts
 			noto-fonts
 			noto-fonts-cjk
-			noto-fonts-emoji
+			# noto-fonts-emoji
 
 			fira
 			fira-code
@@ -85,15 +85,15 @@
 		fontconfig.defaultFonts = {
 			serif = [
 				"Fira"
-				"Noto Color Emoji"
+				# "Noto Color Emoji"
 			];
 			sansSerif = [
 				"Noto Sans"
-				"Noto Color Emoji"
+				# "Noto Color Emoji"
 			];
-			monospace = [ "JetBrainsMono Nerd Font" "Noto Color Emoji"];
+			monospace = [ "JetBrainsMono Nerd Font" ];
 			emoji = [
-				"Noto Color Emoji"
+				# "Noto Color Emoji"
 			];
 		};
 	};
