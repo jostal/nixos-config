@@ -39,6 +39,9 @@
       .wsContainer .wsButton.occupied.occupied-right {
         border-radius: 0 1rem 1rem 0;
         border-right: 1px solid #ddc7a1; }
+      .wsContainer .wsButton.occupied.occupied-alone {
+        border-radius: 1rem;
+        border: 1px solid #ddc7a1; }
     .wsContainer .wsButton:not(.occupied) {
       border-radius: 1rem; }
     .wsContainer .wsButton.active .wsButtonLabel {

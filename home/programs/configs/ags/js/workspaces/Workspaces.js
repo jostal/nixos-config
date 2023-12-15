@@ -3,6 +3,7 @@ import { Widget, Variable } from "../imports.js";
 
 const getWorkspaceMonitor = (id) => {
   let ws = Hyprland.getWorkspace(id)
+  console.log(Hyprland.getMonitor(0))
 
   switch (ws?.monitor) {
     case "DVI-D-1":
