@@ -23,8 +23,6 @@ in {
 			x11.enable = true;
 		};
 
-    fonts.fontconfig.enable = true;
-
 		file = {
 			".local/share/fonts" = {
 				recursive = true;

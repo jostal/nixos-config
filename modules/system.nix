@@ -74,6 +74,7 @@
 			(nerdfonts.override {
 				fonts = [
 					"JetBrainsMono"
+          "FiraCode"
 				];
 			})
 		];
@@ -89,7 +90,7 @@
 				"Noto Sans"
 				"Noto Color Emoji"
 			];
-			monospace = [ "JetBrainsMono Nerd Font" ];
+			monospace = [ "JetBrainsMono Nerd Font" "Noto Color Emoji"];
 			emoji = [
 				"Noto Color Emoji"
 			];
