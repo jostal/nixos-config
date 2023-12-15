@@ -11,7 +11,7 @@ in {
 		packages = with pkgs; [
 			volantes-cursors
 			fira
-			# nerdfonts
+			nerdfonts
 			# catppuccin-gtk
 		];
 		sessionVariables.XCURSOR_THEME = cursor-theme;
@@ -29,7 +29,8 @@ in {
 				source = "${nerdfonts}/share/fonts/truetype/NerdFonts";
 			};
 			".fonts" = {
-				recursive = true;
+				recursiv e= true;
+
 				source = "${nerdfonts}/share/fonts/truetype/NerdFonts";
 			};
 			# ICONS HERE
