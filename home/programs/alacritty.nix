@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-	font = "JetBrainsMono Nerd Font";
+	font = "JetBrainsMono Nerd Font Mono";
 in
 {
 	programs.alacritty = {
