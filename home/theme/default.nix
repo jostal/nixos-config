@@ -23,17 +23,17 @@ in {
 			x11.enable = true;
 		};
 
-		file = {
-			".local/share/fonts" = {
-				recursive = true;
-				source = "${nerdfonts}/share/fonts/truetype/NerdFonts";
-			};
-			".fonts" = {
-				recursive= true;
-				source = "${nerdfonts}/share/fonts/truetype/NerdFonts";
-			};
-			# ICONS HERE
-		};
+		# file = {
+		# 	".local/share/fonts" = {
+		# 		recursive = true;
+		# 		source = "${nerdfonts}/share/fonts/truetype/NerdFonts";
+		# 	};
+		# 	".fonts" = {
+		# 		recursive= true;
+		# 		source = "${nerdfonts}/share/fonts/truetype/NerdFonts";
+		# 	};
+		# 	# ICONS HERE
+		# };
 	};
 
 	dconf.settings = {
