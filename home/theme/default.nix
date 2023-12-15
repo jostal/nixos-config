@@ -2,6 +2,7 @@
 let
 	nerdfonts = (pkgs.nerdfonts.override { fonts = [
 		"Cousine"
+    "JetBrainsMono"
 	]; });
 	
 	cursor-theme = "Numix-Cursor";
