@@ -73,18 +73,15 @@
     }
 
     &.openLeft {
-      border-top: 1px solid $green;
-      border-bottom: 1px solid $green;
+      border: 1px solid $green;
     }
 
     &.openCenter {
-      border-top: 1px solid $red;
-      border-bottom: 1px solid $red;
+      border: 1px solid $red;
     }
 
     &.openRight {
-      border-top: 1px solid $blue;
-      border-bottom: 1px solid $blue;
+      border: 1px solid $blue;
     }
   }
 }
