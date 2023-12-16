@@ -1,18 +1,37 @@
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 
-Utils.monitorFile(
-  globalThis.configDir + '/scss',
+export function scssWatcher() {
+  // reload css
+  Utils.monitorFile(
+    globalThis.configDir + '/scss',
 
-  function() {
-    const scss = globalThis.configDir + '/scss/style.scss'
-    const css = globalThis.configDir + '/scss/style.css'
+    function() {
+      const scss = globalThis.configDir + '/scss/style.scss'
+      const css = globalThis.configDir + '/style.css'
 
-    console.log("scss reload")
+      console.log("reloading scss")
 
-    Utils.exec(`sassc ${scss} ${css}`)
-    App.resetCss()
-    App.applyCss(css)
-  },
-  'directory'
-)
+      Utils.exec(`sassc ${scss} ${css}`)
+      App.resetCss()
+      App.applyCss(css)
+    },
+    'directory'
+  )
+
+  Utils.monitorFile(
+    globalThis.configDir + '/scss/widgets',
+
+    function() {
+      const scss = globalThis.configDir + '/scss/style.scss'
+      const css = globalThis.configDir + '/style.css'
+
+      console.log("reloading scss")
+
+      Utils.exec(`sassc ${scss} ${css}`)
+      App.resetCss()
+      App.applyCss(css)
+    },
+    'directory'
+  )
+}

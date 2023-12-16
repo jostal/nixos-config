@@ -5,18 +5,18 @@
   font-size: 16px; }
 
 .corner {
-  background-color: rgba(29, 32, 33, 0.7);
+  background-color: rgba(29, 32, 33, 0.9);
   border-radius: 1rem; }
 
 .angle {
-  background-color: rgba(29, 32, 33, 0.7); }
+  background-color: rgba(29, 32, 33, 0.9); }
 
 .systray-container {
-  background-color: rgba(29, 32, 33, 0.7);
+  background-color: rgba(29, 32, 33, 0.9);
   padding-right: 8px; }
 
 .clockContainer {
-  background-color: rgba(29, 32, 33, 0.7);
+  background-color: rgba(29, 32, 33, 0.9);
   padding-right: 8px; }
   .clockContainer .clockDate {
     font-size: 1rem;
@@ -25,7 +25,7 @@
     font-size: 1rem; }
 
 .wsContainer {
-  background-color: rgba(29, 32, 33, 0.7);
+  background-color: rgba(29, 32, 33, 0.9);
   padding: 3px; }
   .wsContainer .wsButton {
     transition: all 200ms; }
@@ -100,10 +100,10 @@
 
 .titleContainer .titleBox {
   min-width: 10rem;
-  background-color: rgba(29, 32, 33, 0.7);
+  background-color: rgba(29, 32, 33, 0.9);
   padding-left: 8px; }
   .titleContainer .titleBox .titleClass {
     font-size: 0.9rem;
-    color: #ddc7a1; }
+    color: #e78a4e; }
   .titleContainer .titleBox .title {
-    font-size: 2rem; }
+    font-size: 1rem; }
