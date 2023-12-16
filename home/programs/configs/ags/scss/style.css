@@ -38,7 +38,7 @@
         border-left: 1px solid #ddc7a1; }
         .wsContainer .wsButton.occupied.occupied-left .wsButtonLabel {
           margin-left: 4px;
-          border-radius: 1rem 0 0 1rem; }
+          border-radius: calc(1rem - 4px) 0 0 calc(1rem - 4px); }
         .wsContainer .wsButton.occupied.occupied-left.openLeft {
           border-left: 3px solid #a9b665; }
         .wsContainer .wsButton.occupied.occupied-left.openRight {
@@ -50,7 +50,7 @@
         border-right: 1px solid #ddc7a1; }
         .wsContainer .wsButton.occupied.occupied-right .wsButtonLabel {
           margin-right: 4px;
-          border-radius: 0 1rem 1rem 0; }
+          border-radius: 0 calc(1rem - 4px) calc(1rem - 4px) 0; }
         .wsContainer .wsButton.occupied.occupied-right.openLeft {
           border-right: 3px solid #a9b665; }
         .wsContainer .wsButton.occupied.occupied-right.openRight {
@@ -60,8 +60,8 @@
       .wsContainer .wsButton.occupied.occupied-alone {
         border-radius: 1rem;
         border: 1px solid #ddc7a1; }
-        .wsContainer .wsButton.occupied.occupied-alone.active .wsButtonLabel {
-          border-radius: 1rem; }
+        .wsContainer .wsButton.occupied.occupied-alone .wsButtonLabel {
+          border-radius: calc(1rem - 4px); }
         .wsContainer .wsButton.occupied.occupied-alone.openLeft {
           border: 3px solid #a9b665; }
         .wsContainer .wsButton.occupied.occupied-alone.openRight {
@@ -74,9 +74,15 @@
       background-color: #3c3836;
       margin-top: 4px;
       margin-bottom: 4px; }
-    .wsContainer .wsButton.active.openLeft, .wsContainer .wsButton.active .openRight, .wsContainer .wsButton.active .openCenter {
-      border-top-width: 4px;
-      border-bottom-width: 4px; }
+    .wsContainer .wsButton.active.openLeft {
+      border-top: 4px solid #a9b665;
+      border-bottom: 4px solid #a9b665; }
+    .wsContainer .wsButton.active.openCenter {
+      border-top: 4px solid #ea6962;
+      border-bottom: 4px solid #ea6962; }
+    .wsContainer .wsButton.active.openRight {
+      border-top: 4px solid #7daea3;
+      border-bottom: 4px solid #7daea3; }
     .wsContainer .wsButton .wsButtonLabel {
       padding: 3px; }
     .wsContainer .wsButton .wsMonitor {
