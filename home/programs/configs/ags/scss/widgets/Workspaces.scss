@@ -85,14 +85,14 @@
 
     &.active {
       .wsButtonLabel {
-        background-color: $bgGray;
+        background-color: $bgYellow;
         color: $text;
         margin-top: 4px;
         margin-bottom: 4px;
       }
 
       .wsMonitor {
-        color: $bg;
+        // color: $bg;
       }
     }
 
