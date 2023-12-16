@@ -5,5 +5,5 @@ let
 in {
   xdg.configFile = {
     "ags".source = symlink "${configDir}/ags";
-  }
+  };
 }
