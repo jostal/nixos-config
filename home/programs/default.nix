@@ -4,6 +4,5 @@
 		./alacritty.nix
 		./neovim
 		./fish
-    ./configs
 	];
 }
