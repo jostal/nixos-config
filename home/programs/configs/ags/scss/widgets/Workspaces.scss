@@ -91,6 +91,16 @@
       .wsButtonLabel {
         background-color: $text;
         color: $bg;
+        margin-top: 4px;
+        margin-bottom: 4px;
+      }
+    
+      &.occupied-left {
+        margin-left: 4px;
+      }
+
+      &.occupied-right {
+        margin-right: 4px;
       }
 
       .wsMonitor {
@@ -99,8 +109,7 @@
     }
 
     .wsButtonLabel {
-      // padding: 0.5rem;
-      margin: 4px;
+      padding: 0.5rem;
     }
 
     .wsMonitor {
