@@ -35,6 +35,9 @@
 
 		# Development
 		libgcc
+
+    # Games
+    gamescope
 	];
 
 	environment.variables.EDITOR = "nvim";
@@ -102,6 +105,23 @@
 		earlySetup = true;
 		font = "koi8u_8x16";
 	};
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    steam = pkgs.steam.override {
+      extraPkgs = pkgs: with pkgs; [
+        xorg.libXcursor
+        xorg.libXi
+        xorg.libXinerama
+        xorg.libXScrnSaver
+        libpng
+        libpulseaudio
+        libvorbis
+        stdenv.cc.cc.lib
+        libkrb5
+        keyutils
+      ];
+    };
+  };
 
 	programs = {
 		steam = {
