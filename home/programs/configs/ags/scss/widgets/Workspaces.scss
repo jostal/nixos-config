@@ -84,13 +84,12 @@
     &.active {
       .wsButtonLabel {
         background-color: $bgGray;
-        margin-top: 4px;
-        margin-bottom: 4px;
       }
     }
 
     .wsButtonLabel {
-      padding: 3px;
+      padding: 0.5rem;
+      margin: 3px;
     }
 
     .wsMonitor {
