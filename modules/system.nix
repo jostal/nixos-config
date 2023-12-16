@@ -21,6 +21,7 @@
 		glib
 		catppuccin-sddm-corners
     gnumake
+    cmake
 
 		# Notifications
 		swaynotificationcenter
