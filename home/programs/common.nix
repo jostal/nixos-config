@@ -27,7 +27,7 @@
 
 		ags = {
 			enable = true;
-			configDir = ./configs/ags;
+			# configDir = ./configs/ags;
 		};
 	};
 }
