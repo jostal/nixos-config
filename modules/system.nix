@@ -37,6 +37,7 @@
 		libgcc
 
     # Games
+    linuxKernel.packages.linux_zen.xpadneo
     gamescope
 	];
 
