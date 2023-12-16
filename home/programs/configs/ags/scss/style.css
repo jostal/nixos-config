@@ -61,11 +61,8 @@
     .wsContainer .wsButton.wsRight:not(.active) .wsMonitor {
       color: #7daea3; }
     .wsContainer .wsButton.openLeft {
-      border-top: 1px solid #a9b665;
-      border-bottom: 1px solid #a9b665; }
+      border: 1px solid #a9b665; }
     .wsContainer .wsButton.openCenter {
-      border-top: 1px solid #ea6962;
-      border-bottom: 1px solid #ea6962; }
+      border: 1px solid #ea6962; }
     .wsContainer .wsButton.openRight {
-      border-top: 1px solid #7daea3;
-      border-bottom: 1px solid #7daea3; }
+      border: 1px solid #7daea3; }
