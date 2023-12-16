@@ -14,9 +14,11 @@
         border-radius: 1rem 0 0 1rem;
         border-left: 1px solid $text;
 
-        &.active.wsButtonLabel {
-          padding: 4px;
-          border-radius: 1rem 0 0 1rem;
+        &.active {
+          .wsButtonLabel {
+            padding: 4px;
+            border-radius: 1rem 0 0 1rem;
+          }
         }
 
         &.openLeft {
