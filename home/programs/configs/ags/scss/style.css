@@ -97,3 +97,13 @@
     .wsContainer .wsButton.openRight {
       border-top: 3px solid #7daea3;
       border-bottom: 3px solid #7daea3; }
+
+.titleContainer .titleBox {
+  min-width: 10rem;
+  background-color: rgba(29, 32, 33, 0.7);
+  padding-left: 8px; }
+  .titleContainer .titleBox .titleClass {
+    font-size: 0.9rem;
+    color: #ddc7a1; }
+  .titleContainer .titleBox .title {
+    font-size: 2rem; }
