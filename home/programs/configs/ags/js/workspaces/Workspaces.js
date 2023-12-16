@@ -69,9 +69,9 @@ const WorkspaceButton = (i) => Widget.EventBox({
       button.toggleClassName('wsRight', getWorkspaceMonitor(i) === 'ᴿ')
     }],
     [Hyprland, (button) => {
-      button.toggleClassName('openLeft', isOpenWorkspace(i + 1) === 'left')
-      button.toggleClassName('openCenter', isOpenWorkspace(i + 1) === 'center')
-      button.toggleClassName('openRight', isOpenWorkspace(i + 1) === 'right')
+      button.toggleClassName('openLeft', isOpenWorkspace(i) === 'left')
+      button.toggleClassName('openCenter', isOpenWorkspace(i) === 'center')
+      button.toggleClassName('openRight', isOpenWorkspace(i) === 'right')
     }, 'notify::monitors']
   ]
 })
