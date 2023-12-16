@@ -6,5 +6,5 @@
 
   programs.neovim = {
     enable = true;
-  }
+  };
 }
