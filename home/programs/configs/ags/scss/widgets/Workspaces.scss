@@ -84,10 +84,6 @@
     &.active {
       .wsButtonLabel {
         background-color: $bgGray;
-
-        &:not(.occupied) {
-          border-radius: calc(0.5rem - 3px);
-        }
       }
     }
 
