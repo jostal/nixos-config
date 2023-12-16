@@ -72,8 +72,8 @@
       border-radius: 1rem; }
     .wsContainer .wsButton.active .wsButtonLabel {
       background-color: #3c3836;
-      margin-top: 3px;
-      margin-bottom: 3px; }
+      margin-top: 4px;
+      margin-bottom: 4px; }
     .wsContainer .wsButton.active.openLeft, .wsContainer .wsButton.active .openRight, .wsContainer .wsButton.active .openCenter {
       border-top-width: 4px;
       border-bottom-width: 4px; }

@@ -16,7 +16,7 @@
 
         .wsButtonLabel {
           margin-left: 4px;
-          border-radius: 1rem 0 0 1rem;
+          border-radius: calc(1rem - 4px) 0 0 calc(1rem - 4px);
         }
 
         &.openLeft {
@@ -38,7 +38,7 @@
 
         .wsButtonLabel {
           margin-right: 4px;
-          border-radius: 0 1rem 1rem 0;
+          border-radius: 0 calc(1rem - 4px) calc(1rem - 4px) 0;
         }
 
         &.openLeft {
@@ -58,10 +58,8 @@
         border-radius: 1rem;
         border: 1px solid $text;
 
-        &.active {
-          .wsButtonLabel {
-            border-radius: 1rem;
-          }
+        .wsButtonLabel {
+          border-radius: calc(1rem - 4px);
         }
 
         &.openLeft {
@@ -90,9 +88,19 @@
         margin-bottom: 4px;
       }
 
-      &.openLeft, .openRight, .openCenter {
-        border-top-width: 4px;
-        border-bottom-width: 4px
+      &.openLeft {
+        border-top: 4px solid $green;
+        border-bottom: 4px solid $green;
+      }
+
+      &.openCenter {
+        border-top: 4px solid $red;
+        border-bottom: 4px solid $red;
+      }
+
+      &.openRight {
+        border-top: 4px solid $blue;
+        border-bottom: 4px solid $blue;
       }
       .wsMonitor {
         // color: $bg;
