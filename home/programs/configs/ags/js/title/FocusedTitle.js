@@ -1,4 +1,4 @@
-import { Widget, Hyprland } from "../imports";
+import { Widget, Hyprland } from "../imports.js";
 
 const FocusedTitle = () => Widget.EventBox({
   className: 'titleContainer',
