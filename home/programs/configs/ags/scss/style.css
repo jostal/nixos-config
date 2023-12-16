@@ -36,7 +36,7 @@
       .wsContainer .wsButton.occupied.occupied-left {
         border-radius: 1rem 0 0 1rem;
         border-left: 1px solid #ddc7a1; }
-        .wsContainer .wsButton.occupied.occupied-left.active.wsButtonLabel {
+        .wsContainer .wsButton.occupied.occupied-left.active .wsButtonLabel {
           padding: 4px;
           border-radius: 1rem 0 0 1rem; }
         .wsContainer .wsButton.occupied.occupied-left.openLeft {
