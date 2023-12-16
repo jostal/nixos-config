@@ -76,7 +76,9 @@
     .wsContainer .wsButton.active .wsButtonLabel {
       background-color: #3c3836; }
     .wsContainer .wsButton .wsButtonLabel {
-      padding: calc(0.5rem - 3px); }
+      padding: calc(0.5rem - 3px);
+      margin-top: 3px;
+      margin-bottom: 3px; }
     .wsContainer .wsButton .wsMonitor {
       text-shadow: 0 0 2px; }
     .wsContainer .wsButton.wsLeft .wsMonitor {
