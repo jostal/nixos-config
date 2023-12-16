@@ -3,7 +3,6 @@ import { Widget, Variable } from "../imports.js";
 
 const getWorkspaceMonitor = (id) => {
   let ws = Hyprland.getWorkspace(id)
-  console.log(Hyprland.getMonitor(0))
 
   switch (ws?.monitor) {
     case "DVI-D-1":
@@ -14,6 +13,30 @@ const getWorkspaceMonitor = (id) => {
       return "ᴿ"
     default:
       return ""
+  }
+}
+
+const isOpenWorkspace = (wsId) => {
+  const monitor = Hyprland.getMonitor(monId)
+  const ws = Hyprland.getWorkspace(wsId)
+  let whichMonitor
+
+  switch (monId) {
+    case 0:
+      whichMonitor = 'center'
+      break;
+    case 1:
+      whichMonitor = 'right'
+      break;
+    case 2:
+      whichMonitor = 'left'
+      break;
+  }
+
+  if (monitor.activeWorkspace.id === wsId) {
+    return whichMonitor
+  } else {
+    return null
   }
 }
 
@@ -43,14 +66,19 @@ const WorkspaceButton = (i) => Widget.EventBox({
       button.toggleClassName('wsLeft', getWorkspaceMonitor(i) === 'ᴸ')
       button.toggleClassName('wsCenter', getWorkspaceMonitor(i) === 'ꟲ')
       button.toggleClassName('wsRight', getWorkspaceMonitor(i) === 'ᴿ')
+    }],
+    [Hyprland.active.monitors, (button) => {
+      button.toggleClassName('openLeft', isOpenWorkspace(i + 1) === 'left')
+      button.toggleClassName('openCenter', isOpenWorkspace(i + 1) === 'center')
+      button.toggleClassName('openRight', isOpenWorkspace(i + 1) === 'right')
     }]
   ]
 })
 
-const Workspaces = () => Widget.EventBox({
+const Workspaces = (monitor) => Widget.EventBox({
   child: Widget.Box({
     className: 'wsContainer',
-    children: Array.from({ length: 10 }, (_, i) => i + 1).map(i => WorkspaceButton(i)),
+    children: Array.from({ length: 10 }, (_, i) => i + 1).map(i => WorkspaceButton(i, monitor)),
     connections: [
       [Hyprland, (box) => {
         box.children.forEach((button, i) => {
