@@ -34,7 +34,7 @@ const isOpenWorkspace = (wsId) => {
       break;
   }
 
-  if (monitor.activeWorkspace.id === wsId) {
+  if (monitor?.activeWorkspace.id === wsId) {
     return whichMonitor
   } else {
     return null
