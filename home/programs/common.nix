@@ -31,4 +31,8 @@
 			# configDir = ./configs/ags;
 		};
 	};
+
+  xdg.configFile = {
+    "nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/jostal/nixos-config/home/programs/neovim/nvimConf/init.lua";
+  };
 }

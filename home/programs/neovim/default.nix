@@ -1,6 +1,10 @@
 { pkgs, ... }: {
-	home.file.".config/nvim" = {
-		source = ./nvimConf;
-		recursive = true;
-	};
+	# home.file.".config/nvim" = {
+	# 	source = ./nvimConf;
+	# 	recursive = true;
+	# };
+
+  programs.neovim = {
+    enable = true;
+  }
 }
