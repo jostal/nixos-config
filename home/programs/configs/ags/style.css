@@ -19,11 +19,10 @@
   background-color: rgba(29, 32, 33, 0.7);
   padding-right: 8px; }
   .clockContainer .clockDate {
-    font-size: 1em;
-    color: #e78a4e;
-    margin-left: 0.6rem; }
+    font-size: 0.9em;
+    color: #e78a4e; }
   .clockContainer .clockTime {
-    font-size: 1em; }
+    font-size: 0.9em; }
 
 .wsContainer {
   background-color: rgba(29, 32, 33, 0.7);

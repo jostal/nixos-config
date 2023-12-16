@@ -1,4 +1,5 @@
 import { Widget, App, Variable } from "../imports.js";
+import Seperator from "../seperator/Seperator.js";
 
 const timeVar = Variable('', {
   poll: [1000, [`date`, "+%H:%M"]]
@@ -18,6 +19,12 @@ const Clock = () => Widget.EventBox({
           ["label", timeVar]
         ]
       }),
+      Seperator("•", "0.4em", "0"),
+      // Widget.Label({
+      //   className: "sep",
+      //   label: "•",
+      //   hpack: "end",
+      // }),
       Widget.Label({
         className: 'clockDate',
         hpack: 'end',

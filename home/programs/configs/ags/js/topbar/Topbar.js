@@ -4,6 +4,7 @@ import Tray from "../systemTray/Tray.js";
 import Clock from "../clock/Clock.js";
 import Workspaces from "../workspaces/Workspaces.js";
 import FocusedTitle from "../title/FocusedTitle.js";
+import Indicators from "../indicators/Indicators.js"
 
 const Left = () => Widget.EventBox({
   className: 'leftBar',
@@ -34,10 +35,11 @@ const Right = () => Widget.Box({
     child: Widget.Box({
       children: [
         RoundedAngleEnd("topleft", { className: "angle", hexpand: true }),
-        Tray(),
+        // Tray(),
         Widget.EventBox({
           child: Widget.Box({
             children: [
+              Indicators(),
               Clock(),
             ]
           })
