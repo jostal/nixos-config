@@ -87,7 +87,7 @@ const Workspaces = (monitor) => Widget.EventBox({
           const ws = Hyprland.getWorkspace(i + 1)
           const nextWorkspace = Hyprland.getWorkspace(i + 2)
 
-          const occupied = ws?.windows > 0
+          const occupied = ws.id >= 0
           const occupiedLeft = !prevWorkspace || prevWorkspace?.windows <= 0
           const occupiedRight = !nextWorkspace || nextWorkspace?.windows <= 0
           const occupiedBoth = (occupiedLeft && occupiedRight)
