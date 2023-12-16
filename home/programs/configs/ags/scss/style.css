@@ -71,12 +71,10 @@
     .wsContainer .wsButton:not(.occupied) {
       border-radius: 1rem; }
     .wsContainer .wsButton.active .wsButtonLabel {
-      background-color: #928374;
+      background-color: #473c29;
       color: #ddc7a1;
       margin-top: 4px;
       margin-bottom: 4px; }
-    .wsContainer .wsButton.active .wsMonitor {
-      color: #1d2021; }
     .wsContainer .wsButton .wsButtonLabel {
       padding: 4px; }
     .wsContainer .wsButton .wsMonitor {

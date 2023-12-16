@@ -86,7 +86,7 @@
     &.active {
       .wsButtonLabel {
         background-color: $bgYellow;
-        color: $text;
+        // color: $text;
         margin-top: 4px;
         margin-bottom: 4px;
       }
@@ -104,25 +104,21 @@
       text-shadow: 0 0 2px;
     }
 
-    &.wsLeft:not(.active) {
+    &.wsLeft {
       .wsMonitor {
         color: $green;
       }
     }
 
     &.wsCenter {
-      &:not(.active) {
-        .wsMonitor {
-          color: $red;
-        }
+      .wsMonitor {
+        color: $red;
       }
     }
 
     &.wsRight {
-      &:not(.active) {
-        .wsMonitor {
-          color: $blue;
-        }
+      .wsMonitor {
+        color: $blue;
       }
     }
 
