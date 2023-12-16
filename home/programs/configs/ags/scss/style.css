@@ -74,7 +74,7 @@
       background-color: #3c3836;
       margin-top: 3px;
       margin-bottom: 3px; }
-    .wsContainer .wsButton.active:is(.openLeft, .openCenter, .openRight) {
+    .wsContainer .wsButton.active.openLeft, .wsContainer .wsButton.active .openRight, .wsContainer .wsButton.active .openCenter {
       border-top-width: 4px;
       border-bottom-width: 4px; }
     .wsContainer .wsButton .wsButtonLabel {
