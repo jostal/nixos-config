@@ -16,11 +16,12 @@
   padding-right: 8px;
 
   .clockDate {
-    font-size: 1rem;
+    font-size: 1em;
     color: $primary;
+    margin-left: 0.6rem;
   }
 
   .clockTime {
-    font-size: 1rem;
+    font-size: 1em;
   }
 }

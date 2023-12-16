@@ -32,7 +32,11 @@
 				passes = 3;
 			};
 
-      blurls = "bar0";
+      blurls = [
+        "bar0"
+        "bar1"
+        "bar2"
+      ];
 
 			drop_shadow = "yes";
 			shadow_range = 4;
