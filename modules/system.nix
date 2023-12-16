@@ -140,6 +140,8 @@
 		# Network
 		vnstat.enable = true;
 
+    blueman.enable = true;
+
 		# keymap in X11
 		xserver = {
 			enable = true;

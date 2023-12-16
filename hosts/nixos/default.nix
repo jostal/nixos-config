@@ -6,6 +6,14 @@
 		../../hardware-configuration.nix
 	];
 
+  # Hardware
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    }
+  }
+
 	# Bootloader
 	boot = {
 		loader = {
