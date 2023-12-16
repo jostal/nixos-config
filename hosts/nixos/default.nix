@@ -11,8 +11,8 @@
     bluetooth = {
       enable = true;
       powerOnBoot = true;
-    }
-  }
+    };
+  };
 
 	# Bootloader
 	boot = {
