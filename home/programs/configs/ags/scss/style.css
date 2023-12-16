@@ -74,7 +74,8 @@
       background-color: #3c3836; }
     .wsContainer .wsButton .wsButtonLabel {
       padding: calc(0.5rem - 3px);
-      margin: 3px; }
+      margin: 3px;
+      border-radius: calc(1rem - 3px); }
     .wsContainer .wsButton .wsMonitor {
       text-shadow: 0 0 2px; }
     .wsContainer .wsButton.wsLeft .wsMonitor {
