@@ -1,0 +1,16 @@
+.titleContainer {
+  .titleBox {
+    min-width: 10rem;
+    background-color: $bgTrans;
+    padding-left: 8px;
+
+    .titleClass {
+      font-size: 0.6rem;
+      color: $text;
+    }
+
+    .title {
+      font-size: 0.7rem;
+    }
+  }
+}
