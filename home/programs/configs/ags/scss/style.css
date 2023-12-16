@@ -36,7 +36,8 @@
       .wsContainer .wsButton.occupied.occupied-left {
         border-radius: 1rem 0 0 1rem;
         border-left: 1px solid #ddc7a1; }
-        .wsContainer .wsButton.occupied.occupied-left.active .wsButtonLabel {
+        .wsContainer .wsButton.occupied.occupied-left .wsButtonLabel {
+          margin-left: 4px;
           border-radius: 1rem 0 0 1rem; }
         .wsContainer .wsButton.occupied.occupied-left.openLeft {
           border-left: 4px solid #a9b665; }
@@ -47,7 +48,8 @@
       .wsContainer .wsButton.occupied.occupied-right {
         border-radius: 0 1rem 1rem 0;
         border-right: 1px solid #ddc7a1; }
-        .wsContainer .wsButton.occupied.occupied-right.active .wsButtonLabel {
+        .wsContainer .wsButton.occupied.occupied-right .wsButtonLabel {
+          margin-right: 4px;
           border-radius: 0 1rem 1rem 0; }
         .wsContainer .wsButton.occupied.occupied-right.openLeft {
           border-right: 4px solid #a9b665; }
@@ -73,10 +75,6 @@
       color: #1d2021;
       margin-top: 4px;
       margin-bottom: 4px; }
-    .wsContainer .wsButton.active.occupied-left .wsButtonLabel {
-      margin-left: 4px; }
-    .wsContainer .wsButton.active.occupied-right .wsButtonLabel {
-      margin-right: 4px; }
     .wsContainer .wsButton.active .wsMonitor {
       color: #1d2021; }
     .wsContainer .wsButton .wsButtonLabel {
