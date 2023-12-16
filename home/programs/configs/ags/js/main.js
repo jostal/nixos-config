@@ -16,7 +16,6 @@ const scss = globalThis.configDir + '/scss/style.scss';
 const css = globalThis.configDir + '/scss/style.css';
 exec(`sassc ${scss} ${css}`)
 
-
 Utils.monitorFile(
   globalThis.configDir + '/scss',
 
