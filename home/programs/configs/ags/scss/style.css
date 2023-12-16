@@ -72,8 +72,6 @@
       border-radius: 1rem; }
     .wsContainer .wsButton.active .wsButtonLabel {
       background-color: #3c3836; }
-      .wsContainer .wsButton.active .wsButtonLabel:not(.occupied) {
-        border-radius: calc(0.5rem - 3px); }
     .wsContainer .wsButton .wsButtonLabel {
       padding: calc(0.5rem - 3px);
       margin: 3px; }
