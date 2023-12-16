@@ -17,8 +17,9 @@ const getWorkspaceMonitor = (id) => {
 }
 
 const isOpenWorkspace = (wsId) => {
-  const monitor = Hyprland.getMonitor(monId)
   const ws = Hyprland.getWorkspace(wsId)
+  const monId = ws?.monitorID
+  const monitor = Hyprland.getMonitor(monId)
   let whichMonitor
 
   switch (monId) {
