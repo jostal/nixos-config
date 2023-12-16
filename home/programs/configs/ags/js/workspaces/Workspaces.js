@@ -1,5 +1,5 @@
 import Hyprland from 'resource:///com/github/Aylur/ags/service/hyprland.js'
-import { Widget, Variable } from "../imports.js";
+import { Widget } from "../imports.js";
 
 const getWorkspaceMonitor = (id) => {
   let ws = Hyprland.getWorkspace(id)
@@ -57,11 +57,6 @@ const WorkspaceButton = (i) => Widget.EventBox({
           .hook(Hyprland, self => {
             self.label = `${getWorkspaceMonitor(i)}`
           }, 'notify::workspaces')
-        // connections: [
-        //   [Hyprland, self => {
-        //     self.label = `${getWorkspaceMonitor(i)}`
-        //   }, 'notify::workspaces']
-        // ]
       })
     ]
   }),
@@ -77,19 +72,6 @@ const WorkspaceButton = (i) => Widget.EventBox({
       button.toggleClassName('openCenter', isOpenWorkspace(i) === 'center')
       button.toggleClassName('openRight', isOpenWorkspace(i) === 'right')
     }, 'notify::monitors')
-  // connections: [
-  //   [Hyprland.active.workspace, (button) => {
-  //     button.toggleClassName('active', Hyprland.active.workspace.id === i)
-  //     button.toggleClassName('wsLeft', getWorkspaceMonitor(i) === 'ᴸ')
-  //     button.toggleClassName('wsCenter', getWorkspaceMonitor(i) === 'ꟲ')
-  //     button.toggleClassName('wsRight', getWorkspaceMonitor(i) === 'ᴿ')
-  //   }],
-  //   [Hyprland, (button) => {
-  //     button.toggleClassName('openLeft', isOpenWorkspace(i) === 'left')
-  //     button.toggleClassName('openCenter', isOpenWorkspace(i) === 'center')
-  //     button.toggleClassName('openRight', isOpenWorkspace(i) === 'right')
-  //   }, 'notify::monitors']
-  // ]
 })
 
 const Workspaces = (monitor) => Widget.EventBox({
@@ -114,25 +96,6 @@ const Workspaces = (monitor) => Widget.EventBox({
           button.toggleClassName("occupied-alone", occupiedBoth)
         })
       }, 'notify::workspaces')
-    // connections: [
-    //   [Hyprland, (box) => {
-    //     box.children.forEach((button, i) => {
-    //       const prevWorkspace = Hyprland.getWorkspace(i)
-    //       const ws = Hyprland.getWorkspace(i + 1)
-    //       const nextWorkspace = Hyprland.getWorkspace(i + 2)
-    //
-    //       const occupied = ws?.windows > 0
-    //       const occupiedLeft = !prevWorkspace || prevWorkspace?.windows <= 0
-    //       const occupiedRight = !nextWorkspace || nextWorkspace?.windows <= 0
-    //       const occupiedBoth = (occupiedLeft && occupiedRight)
-    //
-    //       button.toggleClassName("occupied", occupied)
-    //       button.toggleClassName("occupied-left", occupiedLeft && !occupiedBoth)
-    //       button.toggleClassName("occupied-right", occupiedRight && !occupiedBoth)
-    //       button.toggleClassName("occupied-alone", occupiedBoth)
-    //     })
-    //   }, 'notify::workspaces']
-    // ]
   })
 })
 

@@ -3,12 +3,14 @@ import { RoundedAngleEnd, RoundedCorner } from "../misc/Rounded.js";
 import Tray from "../systemTray/Tray.js";
 import Clock from "../clock/Clock.js";
 import Workspaces from "../workspaces/Workspaces.js";
+import FocusedTitle from "../title/FocusedTitle.js";
 
 const Left = () => Widget.EventBox({
   className: 'leftBar',
   child: Widget.Box({
     children: [
       Workspaces(),
+      FocusedTitle(),
       RoundedAngleEnd("topright", { className: "angle" }),
     ]
   })
