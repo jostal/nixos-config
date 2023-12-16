@@ -27,7 +27,7 @@
 
 		ags = {
 			enable = true;
-      configDir = config.lib.file.mkOutOfStoreSymlink `${./configs/ags}`;
+      configDir = config.lib.file.mkOutOfStoreSymlink "${./configs/ags}";
 			# configDir = ./configs/ags;
 		};
 	};
