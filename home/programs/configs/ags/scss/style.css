@@ -75,14 +75,12 @@
       color: #1d2021;
       margin-top: 4px;
       margin-bottom: 4px; }
-    .wsContainer .wsButton.active.occupied-left {
+    .wsContainer .wsButton.active.occupied-left .wsButtonLabel {
       margin-left: 4px; }
-    .wsContainer .wsButton.active.occupied-right {
+    .wsContainer .wsButton.active.occupied-right .wsButtonLabel {
       margin-right: 4px; }
     .wsContainer .wsButton.active .wsMonitor {
       color: #1d2021; }
-    .wsContainer .wsButton .wsButtonLabel {
-      padding: 0.5rem; }
     .wsContainer .wsButton .wsMonitor {
       text-shadow: 0 0 2px; }
     .wsContainer .wsButton.wsLeft:not(.active) .wsMonitor {
