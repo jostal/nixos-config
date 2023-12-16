@@ -72,18 +72,17 @@
       border-radius: 1rem; }
     .wsContainer .wsButton.active .wsButtonLabel {
       background-color: #473c29;
-      color: #ddc7a1;
       margin-top: 4px;
       margin-bottom: 4px; }
     .wsContainer .wsButton .wsButtonLabel {
       padding: 4px; }
     .wsContainer .wsButton .wsMonitor {
       text-shadow: 0 0 2px; }
-    .wsContainer .wsButton.wsLeft:not(.active) .wsMonitor {
+    .wsContainer .wsButton.wsLeft .wsMonitor {
       color: #a9b665; }
-    .wsContainer .wsButton.wsCenter:not(.active) .wsMonitor {
+    .wsContainer .wsButton.wsCenter .wsMonitor {
       color: #ea6962; }
-    .wsContainer .wsButton.wsRight:not(.active) .wsMonitor {
+    .wsContainer .wsButton.wsRight .wsMonitor {
       color: #7daea3; }
     .wsContainer .wsButton.openLeft {
       border-top: 4px solid #a9b665;
