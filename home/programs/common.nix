@@ -27,7 +27,7 @@
 
 		ags = {
 			enable = true;
-      configDir = config.lib.file.mkOutOfStoreSymlink "${./configs/ags}";
+      configDir = config.lib.file.mkOutOfStoreSymlink "/home/jostal/nixos-config/home/programs/configs/ags";
 			# configDir = ./configs/ags;
 		};
 	};
