@@ -12,6 +12,8 @@
       enable = true;
       powerOnBoot = true;
     };
+
+    xpadneo.enable = true;
   };
 
 	# Bootloader
