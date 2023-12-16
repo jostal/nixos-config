@@ -53,35 +53,51 @@ const WorkspaceButton = (i) => Widget.EventBox({
       }),
       Widget.Label({
         className: 'wsMonitor',
-        connections: [
-          [Hyprland, self => {
+        setup: self => self
+          .hook(Hyprland, self => {
             self.label = `${getWorkspaceMonitor(i)}`
-          }, 'notify::workspaces']
-        ]
+          }, 'notify::workspaces')
+        // connections: [
+        //   [Hyprland, self => {
+        //     self.label = `${getWorkspaceMonitor(i)}`
+        //   }, 'notify::workspaces']
+        // ]
       })
     ]
   }),
-  connections: [
-    [Hyprland.active.workspace, (button) => {
+  setup: self => self
+    .hook(Hyprland.active.workspace, (button) => {
       button.toggleClassName('active', Hyprland.active.workspace.id === i)
       button.toggleClassName('wsLeft', getWorkspaceMonitor(i) === 'ᴸ')
       button.toggleClassName('wsCenter', getWorkspaceMonitor(i) === 'ꟲ')
       button.toggleClassName('wsRight', getWorkspaceMonitor(i) === 'ᴿ')
-    }],
-    [Hyprland, (button) => {
+    })
+    .hook(Hyprland, (button) => {
       button.toggleClassName('openLeft', isOpenWorkspace(i) === 'left')
       button.toggleClassName('openCenter', isOpenWorkspace(i) === 'center')
       button.toggleClassName('openRight', isOpenWorkspace(i) === 'right')
-    }, 'notify::monitors']
-  ]
+    }, 'notify::monitors')
+  // connections: [
+  //   [Hyprland.active.workspace, (button) => {
+  //     button.toggleClassName('active', Hyprland.active.workspace.id === i)
+  //     button.toggleClassName('wsLeft', getWorkspaceMonitor(i) === 'ᴸ')
+  //     button.toggleClassName('wsCenter', getWorkspaceMonitor(i) === 'ꟲ')
+  //     button.toggleClassName('wsRight', getWorkspaceMonitor(i) === 'ᴿ')
+  //   }],
+  //   [Hyprland, (button) => {
+  //     button.toggleClassName('openLeft', isOpenWorkspace(i) === 'left')
+  //     button.toggleClassName('openCenter', isOpenWorkspace(i) === 'center')
+  //     button.toggleClassName('openRight', isOpenWorkspace(i) === 'right')
+  //   }, 'notify::monitors']
+  // ]
 })
 
 const Workspaces = (monitor) => Widget.EventBox({
   child: Widget.Box({
     className: 'wsContainer',
     children: Array.from({ length: 10 }, (_, i) => i + 1).map(i => WorkspaceButton(i, monitor)),
-    connections: [
-      [Hyprland, (box) => {
+    setup: self => self
+      .hook(Hyprland, (box) => {
         box.children.forEach((button, i) => {
           const prevWorkspace = Hyprland.getWorkspace(i)
           const ws = Hyprland.getWorkspace(i + 1)
@@ -97,8 +113,26 @@ const Workspaces = (monitor) => Widget.EventBox({
           button.toggleClassName("occupied-right", occupiedRight && !occupiedBoth)
           button.toggleClassName("occupied-alone", occupiedBoth)
         })
-      }, 'notify::workspaces']
-    ]
+      }, 'notify::workspaces')
+    // connections: [
+    //   [Hyprland, (box) => {
+    //     box.children.forEach((button, i) => {
+    //       const prevWorkspace = Hyprland.getWorkspace(i)
+    //       const ws = Hyprland.getWorkspace(i + 1)
+    //       const nextWorkspace = Hyprland.getWorkspace(i + 2)
+    //
+    //       const occupied = ws?.windows > 0
+    //       const occupiedLeft = !prevWorkspace || prevWorkspace?.windows <= 0
+    //       const occupiedRight = !nextWorkspace || nextWorkspace?.windows <= 0
+    //       const occupiedBoth = (occupiedLeft && occupiedRight)
+    //
+    //       button.toggleClassName("occupied", occupied)
+    //       button.toggleClassName("occupied-left", occupiedLeft && !occupiedBoth)
+    //       button.toggleClassName("occupied-right", occupiedRight && !occupiedBoth)
+    //       button.toggleClassName("occupied-alone", occupiedBoth)
+    //     })
+    //   }, 'notify::workspaces']
+    // ]
   })
 })
 
