@@ -13,7 +13,7 @@ let
   current_window = rec {
     accent = color "main_accent";
     index = "#[reverse,fg=${accent},bg=${fg}] #I ";
-    name = "#[fg=${bg2},bg=${fg2}] #W ";
+    name = "#[fg=${bg},bg=${fg}] #W ";
     flags = "#{?window_flags,#{window_flags}, }";
     module =  "${index}${name}";
   };
