@@ -47,7 +47,7 @@ let
       fi
     '' + "/bin/icon";
 
-    module = "#[fg=${fg}] ${format} #(${icon}) ";
+    module = "#[fg=${fg}] ${format} #[fg=${accent},bg=${fg}] #(${icon}) ";
   };
 
   pwd = rec {
@@ -101,6 +101,7 @@ in {
       set-option -g status-right "${pwd.module} | ${time.module}"
       set-option -g window-status-current-format "${current_window.module}"
       set-option -g window-status-format "${window_status.module}"
+      set-option -g pane-active-border-style "#458588"
     '';
   };
 }
