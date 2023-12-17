@@ -28,7 +28,7 @@
       nvim-web-devicons
       null-ls-nvim
       nvim-navic
-      oil-nvim
+      mini-nvim
       lsp-format-nvim
       lualine-nvim
       luasnip
