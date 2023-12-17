@@ -4,5 +4,6 @@
 		./alacritty.nix
 		./fish
     ./neovim.nix
+    ./tmux.nix
 	];
 }
