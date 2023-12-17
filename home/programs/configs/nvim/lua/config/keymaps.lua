@@ -9,7 +9,7 @@ vim.api.nvim_set_keymap('n', '<A-t>', "<cmd>TermSelect<cr>", { desc = "Focus sel
 -- vim.api.nvim_set_keymap('n', '<A-n>', "<cmd>lua require('nvim-tree.api').tree.toggle()<cr>", { desc = "Close nvim tree" })
 -- vim.api.nvim_set_keymap('n', '<C-\\>', "<cmd>lua require('nvim-tree.api').node.open.vertical()<cr>",
   -- { desc = "Vertical Split nvim tree file" })
-vim.api.nvim_set_keymap('n', 'n', "<cmd>Oil<CR>", { desc = "Open parent directory" }
+vim.api.nvim_set_keymap('n', 'n', "<cmd>Oil<CR>", { desc = "Open parent directory" })
 
 -- Telescope
 vim.api.nvim_set_keymap('n', 'ff', "<cmd>lua require('telescope.builtin').find_files()<cr>",
