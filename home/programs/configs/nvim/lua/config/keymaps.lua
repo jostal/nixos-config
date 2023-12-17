@@ -15,7 +15,7 @@ vim.api.nvim_set_keymap('n', 'fg', "<cmd>lua require('telescope.builtin').live_g
 vim.api.nvim_set_keymap('n', 'fb', "<cmd>lua require('telescope.builtin').buffers()<cr>", { desc = "Search for buffers" })
 
 -- nvim tmux nav
-km('n', '<C-Left>', "<cmd>NvimTmuxNavigateLeft<cr>", { desc = "Navigate left" })
-km('n', '<C-Right>', "<cmd>NvimTmuxNavigateRight<cr>", { desc = "Navigate right" })
-km('n', '<C-Up>', "<cmd>NvimTmuxNavigateUp<cr>", { desc = "Navigate up" })
-km('n', '<C-Down>', "<cmd>NvimTmuxNavigateDown<cr>", { desc = "Navigate down" })
+km('n', '<C-Left>', "<cmd>TmuxNavigateLeft<cr>", { desc = "Navigate left" })
+km('n', '<C-Right>', "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate right" })
+km('n', '<C-Up>', "<cmd>TmuxNavigateUp<cr>", { desc = "Navigate up" })
+km('n', '<C-Down>', "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate down" })
