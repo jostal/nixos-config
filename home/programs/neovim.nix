@@ -37,6 +37,7 @@
       telescope-nvim
       telescope-ui-select-nvim
       toggleterm-nvim
+      vim-tmux-navigator
       which-key-nvim
     ];
 
