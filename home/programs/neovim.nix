@@ -41,7 +41,6 @@
     ];
 
     extraPackages = with pkgs; [
-      gcc
       lua-language-server
       nil
       nodePackages.typescript-language-server
