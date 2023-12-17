@@ -25,18 +25,10 @@
 			enable = true;
 		};
 
-    neovim.extraPackages = [
-      "gcc"
-    ];
-
 		ags = {
 			enable = true;
       configDir = config.lib.file.mkOutOfStoreSymlink "/home/jostal/nixos-config/home/programs/configs/ags";
 			# configDir = ./configs/ags;
 		};
 	};
-
-  xdg.configFile = {
-    "nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/jostal/nixos-config/home/programs/configs/nvim";
-  };
 }
