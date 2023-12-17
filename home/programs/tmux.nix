@@ -101,7 +101,7 @@ in {
       set-option -g status-right "${pwd.module} | ${time.module}"
       set-option -g window-status-current-format "${current_window.module}"
       set-option -g window-status-format "${window_status.module}"
-      set-option -g pane-active-border-style "#458588"
+      set-option -g pane-active-border-style "fg=#458588"
     '';
   };
 }
