@@ -47,7 +47,7 @@ let
       fi
     '' + "/bin/icon";
 
-    module = "#[reverse,fg=${accent}] ${format} #(${icon}) ";
+    module = "#[reverse,bg=${accent}] ${format} #(${icon}) ";
   };
 
   pwd = rec {
@@ -95,7 +95,7 @@ in {
       # Theme
       set-option -g @indicator_color "SteelBlue1"
       set-option -g @main_accent "DarkOrange3"
-      set-option -g @window_color ""
+      set-option -g @window_color "Magenta"
       set-option -g status-style "bg=${bg} fg=${fg}"
       set-option -g status-left "${indicator.module}"
       set-option -g status-right "${pwd.module} | ${time.module}"
