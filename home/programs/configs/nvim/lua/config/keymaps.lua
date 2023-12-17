@@ -4,12 +4,8 @@ local utils = require("utils")
 vim.api.nvim_set_keymap('t', '<esc>', '<C-\\><C-n>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-t>', "<cmd>TermSelect<cr>", { desc = "Focus selected terminal" })
 
--- nvim tree
--- vim.api.nvim_set_keymap('n', 'n', "<cmd>lua require('nvim-tree.api').tree.focus()<cr>", { desc = "Focus nvim tree" })
--- vim.api.nvim_set_keymap('n', '<A-n>', "<cmd>lua require('nvim-tree.api').tree.toggle()<cr>", { desc = "Close nvim tree" })
--- vim.api.nvim_set_keymap('n', '<C-\\>', "<cmd>lua require('nvim-tree.api').node.open.vertical()<cr>",
-  -- { desc = "Vertical Split nvim tree file" })
-vim.api.nvim_set_keymap('n', 'n', "<cmd>Oil<CR>", { desc = "Open parent directory" })
+-- mini.files
+vim.api.nvim_set_keymap('n', 'n', '<cmd>lua MiniFiles.open()<cr>', { desc = "Open mini.files" })
 
 -- Telescope
 vim.api.nvim_set_keymap('n', 'ff', "<cmd>lua require('telescope.builtin').find_files()<cr>",
