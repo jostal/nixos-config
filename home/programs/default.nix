@@ -3,5 +3,6 @@
 		./common.nix	
 		./alacritty.nix
 		./fish
+    ./neovim.nix
 	];
 }

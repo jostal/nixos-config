@@ -1,5 +1,4 @@
 local M = {
-  "SmiteshP/nvim-navic",
   init = function()
     vim.g.navic_silence = true
     require("utils").on_attach(function(client, buffer)

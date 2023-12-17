@@ -1,15 +1,10 @@
 local M = {
-    "akinsho/toggleterm.nvim",
-    event = "VeryLazy",
-    opts = {
-      open_mapping = [[z]],
-      insert_mappings = false,
-      start_in_insert = true,
-      auto_scroll = true
-    },
-    config = function (_, opts)
-      require("toggleterm").setup(opts)
-    end,
+  require("oil").setup({
+    skip_confirm_for_simple_edits = true,
+    view_options = {
+      show_hidden = true
+    }
+  })
 }
 
 return M

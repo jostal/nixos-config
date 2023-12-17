@@ -1,6 +1,5 @@
 -- statusline plugins
 local M = {
-  "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
   opts = function()
     local navic = require("nvim-navic")

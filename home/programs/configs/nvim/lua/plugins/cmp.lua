@@ -1,19 +1,4 @@
 local M = {
-  "hrsh7th/nvim-cmp",
-  event = "BufReadPre",
-  dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-cmdline",
-    "hrsh7th/cmp-path",
-    "saadparwaiz1/cmp_luasnip",
-    {
-      "zbirenbaum/copilot-cmp",
-      config = function()
-        require("copilot_cmp").setup()
-      end,
-    },
-  },
   opts = function()
     local cmp = require("cmp")
     local cmp_kinds = require("utils").cmp_kinds
@@ -84,7 +69,6 @@ local M = {
         { name = "nvim_lsp" },
         { name = "nvim_lsp_signature_help" },
         -- { name = "luasnip" },
-        { name = "copilot" },
         { name = "path" },
         { name = "buffer" },
       },

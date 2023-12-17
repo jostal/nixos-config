@@ -19,6 +19,10 @@
 
 		ags.url = "github:Aylur/ags";
 
+    nvim-tree-lua = {
+      url = "github:nvim-tree/nvim-tree.lua";
+    };
+
 		sddm-sugar-candy-nix = {
 			url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
 			inputs.nixpkgs.follows = "nixpkgs";

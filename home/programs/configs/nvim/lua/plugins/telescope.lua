@@ -1,10 +1,5 @@
 local M = {
-	"nvim-telescope/telescope.nvim",
 	event = "BufReadPre",
-	dependencies = {	
-		{ "nvim-telescope/telescope-ui-select.nvim" },
-		{ "nvim-telescope/telescope-file-browser.nvim" },
-	},
 	opts = function()
 		local actions = require("telescope.actions")
 		local theme = require("telescope.themes")
