@@ -47,7 +47,7 @@ let
       fi
     '' + "/bin/icon";
 
-    module = "#[reverse,bg=${accent}] ${format} #(${icon}) ";
+    module = "#[fg=${fg}] ${format} #[fg=${accent}]#(${icon}) ";
   };
 
   pwd = rec {
