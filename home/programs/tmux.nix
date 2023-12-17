@@ -97,11 +97,10 @@ in {
       set-option -g @main_accent "DarkOrange3"
       set-option -g @window_color "Magenta"
       set-option -g status-style "bg=${bg} fg=${fg}"
-      set-option -g status-left "${indicator.module}"
+      set-option -g status-left "${indicator.module} | [#S]"
       set-option -g status-right "${pwd.module} | ${time.module}"
       set-option -g window-status-current-format "${current_window.module}"
       set-option -g window-status-format "${window_status.module}"
-      set-option -g pane-active-border-style "fg=#458588"
     '';
   };
 }
