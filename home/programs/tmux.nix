@@ -4,12 +4,6 @@ let
   fg = "default";
   color = c: "#{@${c}}";
 
-  indicator = rec {
-    accent = color "indicator_color";
-    content = "  ";
-    module = "#[reverse,fg=${accent}]#{?client_prefix,${content},}";
-  };
-
   current_window = rec {
     accent = color "main_accent";
     index = "#[reverse,fg=${accent},bg=${fg}] #I ";
@@ -93,11 +87,10 @@ in {
       bind -n 'C-Down' if-shell "$is_vim" 'send-keys C-Down' 'select-pane -D'
 
       # Theme
-      set-option -g @indicator_color "SteelBlue1"
       set-option -g @main_accent "DarkOrange3"
       set-option -g @window_color "Magenta"
       set-option -g status-style "bg=${bg} fg=${fg}"
-      set-option -g status-left "${indicator.module} | [#S]"
+      set-option -g status-left "[#S]"
       set-option -g status-right "${pwd.module} | ${time.module}"
       set-option -g window-status-current-format "${current_window.module}"
       set-option -g window-status-format "${window_status.module}"
