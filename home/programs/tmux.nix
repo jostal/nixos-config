@@ -25,11 +25,14 @@
       bind C-v split-window -h -c '#{pane_current_path}'
       bind C-h split-window -v -c '#{pane_current_path}'
 
-      # Switch panes
-      bind -n C-Left select-pane -L
-      bind -n C-Right select-pane -R
-      bind -n C-Up select-pane -U
-      bind -n C-Down select-pane -D
+      # Switch panes with vim awareness
+      is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
+        | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?|fzf)(diff)?$'"
+
+      bind -n 'C-Left' if-shell "$is_vim" 'send-keys C-Left' 'select-pane -L'
+      bind -n 'C-Right' if-shell "$is_vim" 'send-keys C-Right' 'select-pane -R'
+      bind -n 'C-Up' if-shell "$is_vim" 'send-keys C-Up' 'select-pane -U'
+      bind -n 'C-Down' if-shell "$is_vim" 'send-keys C-Down' 'select-pane -D'
     '';
   };
 }
