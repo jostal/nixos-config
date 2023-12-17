@@ -15,11 +15,11 @@
       bind-key b set-option status
 
       # Quick reload
-      bind r source-file ${pkgs.tmux}/.tmux.conf; display "reloaded"
+      bind r source-file /home/jostal/.config/tmux/tmux.conf; display "reloaded"
 
       # Split panes
-      bind C-v split-window -v -c '#{pane_current_path}'
-      bind C-h split-window -h -c '#{pane_current_path}'
+      bind C-v split-window -h -c '#{pane_current_path}'
+      bind C-h split-window -v -c '#{pane_current_path}'
 
       # Switch panes
       bind -n C-Left select-pane -L
