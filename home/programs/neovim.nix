@@ -49,7 +49,6 @@
       rust-analyzer
       stylua
       nixd
-
     ];
   };
 }
