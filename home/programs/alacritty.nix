@@ -10,6 +10,12 @@ in
 				COLORTERM = "truecolor";
 			};
 
+      shell = {
+        args = [
+          "tmux"
+        ];
+      };
+
 			window = {
 				opacity = 0.75;
 				blur = true;
@@ -27,18 +33,6 @@ in
         normal.family = fontFam;
         bold.family = fontFam;
         italic.family = fontFam;
-				# bold = {
-				# 	family = "JetBrainsMono Nerd Font Mono";
-				# 	style = "Bold";
-				# };
-				# italic = {
-				# 	family = "JetBrainMono Nerd Font Mono";
-				# 	style = "Italic";
-				# };
-				# normal = {
-				# 	family = "JetBrainsMono Nerd Font Mono";
-				# 	style = "Regular";
-				# };
 			};
 
 			colors = {
