@@ -6,7 +6,7 @@ let
 	resizeActive = binding "${mainMod} CTRL" "resizeactive";
 in [
 	# Programs
-	"${mainMod}, T, exec, alacritty"
+	"${mainMod}, T, exec, alacritty tmux"
 	"${mainMod}, E, exec, nautilus"
 	"${mainMod}, SPACE, exec, tofi-drun --drun-launch=true"
 	

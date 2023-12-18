@@ -10,13 +10,6 @@ in
 				COLORTERM = "truecolor";
 			};
 
-      shell = {
-        program = "fish";
-        args = [
-          "tmux"
-        ];
-      };
-
 			window = {
 				opacity = 0.75;
 				blur = true;
