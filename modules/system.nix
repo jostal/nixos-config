@@ -22,6 +22,7 @@
 		catppuccin-sddm-corners
     gnumake
     cmake
+    keychain
 
 		# Notifications
 		swaynotificationcenter
