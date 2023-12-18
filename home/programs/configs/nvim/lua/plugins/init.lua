@@ -1,3 +1,4 @@
+require("plugins.lsp")
 require("plugins.autopairs")
 require("plugins.cmp")
 require("plugins.colorizer")
