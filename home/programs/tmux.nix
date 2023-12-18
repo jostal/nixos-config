@@ -11,8 +11,8 @@ let
 
   current_window = rec {
     accent = color "main_accent";
-    index = "#[bg=${accent},fg=${fg}] #{window_index} ";
-    name = "#[reverse,fg=${bg},bg=${fg}] #W ";
+    index = "#[reverse,fg=${accent},bg=${fg}] #{window_index} ";
+    name = "#[fg=${bg},bg=${fg}] #W ";
     flags = "#{?window_flags,#{window_flags}, }";
     module =  "${index}${name}";
   };
@@ -93,8 +93,8 @@ in {
       bind -n 'C-Down' if-shell "$is_vim" 'send-keys C-Down' 'select-pane -D'
 
       # Theme
-      set-option -g @main_accent "#d65d0e"
-      set-option -g @window_color "Magenta"
+      set-option -g @main_accent "#fabd2f"
+      set-option -g @window_color "#a89984"
       set-option -g status-style "bg=${bg} fg=${fg}"
       set-option -g status-left "[#S]"
       set-option -g status-right "${pwd.module} | ${time.module}"
