@@ -1,11 +1,9 @@
 config = function()
   local utils = require("utils")
   local lspconfig = require("lspconfig")
-  local lsp_utils = require("plugins.lsp.lsp-utils")
-  lsp_utils.setup()
 
   -- Setup language servers
-  --lspconfig.tsserver.setup()
+  lspconfig.tsserver.setup()
   lspconfig.nil_ls.setup()
   lspconfig.lua_ls.setup ({
     on_init = function(client)
@@ -46,5 +44,8 @@ config = function()
       }
     }
   })
+
+  local lsp_utils = require("plugins.lsp.lsp-utils")
+  lsp_utils.setup()
 end
 config()
