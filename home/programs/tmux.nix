@@ -100,6 +100,7 @@ in {
       set-option -g status-right "${pwd.module} | ${time.module}"
       set-option -g window-status-current-format "${current_window.module}"
       set-option -g window-status-format "${window_status.module}"
+      set-option -g status-justify centre
     '';
   };
 }
