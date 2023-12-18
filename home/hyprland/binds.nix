@@ -6,7 +6,7 @@ let
 	resizeActive = binding "${mainMod} CTRL" "resizeactive";
 in [
 	# Programs
-	"${mainMod}, T, exec, alacritty -e tmux attach -t default"
+	"${mainMod}, T, exec, alacritty -e tmux new-session -A -d -s default"
 	"${mainMod}, E, exec, nautilus"
 	"${mainMod}, SPACE, exec, tofi-drun --drun-launch=true"
 	
