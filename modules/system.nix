@@ -150,7 +150,7 @@
         PasswordAuthentication = false;
       };
       openFirewall = true;
-    }
+    };
 
 		# keymap in X11
 		xserver = {
