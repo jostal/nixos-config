@@ -5,13 +5,13 @@ let
   color = c: "#{@${c}}";
 
   session = rec {
-    sessionName = "#[fg=${fg}] #{session_name}";
-    module = "Session: ${sessionName}";
+    sessionName = "Session: #[fg=${fg}]#{session_name}";
+    module = "${sessionName}";
   };
 
   current_window = rec {
     accent = color "main_accent";
-    index = "#[fg=${bg},bg=${accent}] #{window_index} ";
+    index = "#[fg=${bg},bg=${active_window}] #{window_index} ";
     name = "#[reverse,fg=${bg},bg=${fg}] #W ";
     flags = "#{?window_flags,#{window_flags}, }";
     module =  "${index}${name}";
@@ -46,7 +46,7 @@ let
       fi
     '' + "/bin/icon";
 
-    module = "#[fg=${fg}]${format}#[fg=${accent},bg=${fg}]#(${icon}) ";
+    module = "#[fg=${fg}]${format} #[fg=${accent},bg=${fg}]#(${icon}) ";
   };
 
   pwd = rec {
