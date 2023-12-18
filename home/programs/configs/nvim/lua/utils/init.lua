@@ -31,17 +31,6 @@ M.cmp_kinds = {
   Copilot = "  ",
 }
 
-M.mason_packages = {
-  "css-lsp",
-  "eslint_d",
-  "html-lsp",
-  "json-lsp",
-  "lua-language-server",
-  "prettierd",
-  "rust-analyzer",
-  "svelte-language-server",
-}
-
 M.lsp_servers = {
   "clangd",
   "tsserver",

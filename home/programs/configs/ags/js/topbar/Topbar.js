@@ -22,7 +22,10 @@ const Center = () => Widget.Box({
   orientation: 'horizontal',
   hpack: 'end',
   children: [
-
+    RoundedAngleEnd("topleft", { className: "angle", hexpand: true}),
+    Clock(),
+    // notifs
+    RoundedAngleEnd("topright", { className: "angle", hexpand: true}),
   ]
 })
 

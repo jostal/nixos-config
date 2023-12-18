@@ -5,7 +5,7 @@ const timeVar = Variable('', {
   poll: [1000, [`date`, "+%H:%M"]]
 })
 const dateVar = Variable('', {
-  poll: [5000, [`date`, "+%a, %d-%m"]]
+  poll: [5000, [`date`, "+%a %d %b"]]
 })
 
 const Clock = () => Widget.EventBox({
@@ -13,23 +13,18 @@ const Clock = () => Widget.EventBox({
     className: 'clockContainer',
     children: [
       Widget.Label({
-        className: 'clockTime',
-        hpack: "end",
-        binds: [
-          ["label", timeVar]
-        ]
-      }),
-      Seperator("•", "0.4em", "0"),
-      // Widget.Label({
-      //   className: "sep",
-      //   label: "•",
-      //   hpack: "end",
-      // }),
-      Widget.Label({
         className: 'clockDate',
         hpack: 'end',
         binds: [
           ["label", dateVar]
+        ]
+      }),
+      Seperator("•", "0.4em", "0"),
+      Widget.Label({
+        className: 'clockTime',
+        hpack: "end",
+        binds: [
+          ["label", timeVar]
         ]
       }),
     ]
