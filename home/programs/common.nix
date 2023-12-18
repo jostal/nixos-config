@@ -29,7 +29,7 @@
       enable = true;
       enableFishIntegration = true;
       keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILsIP8OdPlIN6jIgO6QUlDNnl4kocc1SfwOOQLUE6nQK josephtalon01@gmail.com"
+        "id_ed25519"
       ];
     };
 
