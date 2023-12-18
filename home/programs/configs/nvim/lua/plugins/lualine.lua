@@ -14,6 +14,9 @@ end
 local location = { "location", padding = 0 }
 local lualine = require('lualine')
 
+local customTheme = require('customTheme')
+
+
 lualine.setup {
   options = {
     icons_enabled = true,
