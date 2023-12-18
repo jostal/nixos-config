@@ -97,7 +97,7 @@ in {
       set-option -g @active_window "#458588"
       set-option -g @window_color "#a89984"
       set-option -g status-style "bg=${bg} fg=${fg}"
-      set-option -g status-left "[#S]"
+      set-option -g status-left "${session.module}"
       set-option -g status-right "${pwd.module} | ${time.module}"
       set-option -g window-status-current-format "${current_window.module}"
       set-option -g window-status-format "${window_status.module}"
