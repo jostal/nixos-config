@@ -3,7 +3,7 @@ config = function()
   local lspconfig = require("lspconfig")
 
   -- Setup language servers
-  lspconfig.tsserver.setup()
+  lspconfig.tsserver.setup {}
   lspconfig.nil_ls.setup()
   lspconfig.lua_ls.setup ({
     on_init = function(client)
