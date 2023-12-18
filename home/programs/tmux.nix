@@ -4,9 +4,14 @@ let
   fg = "default";
   color = c: "#{@${c}}";
 
+  session = rec {
+    sessionName = "#[fg=${fg}] #{session_name}"
+    module = "${sessionName}"
+  }
+
   current_window = rec {
     accent = color "main_accent";
-    index = "#[reverse,fg=${accent},bg=${fg}] #I ";
+    index = "#[reverse,fg=${accent},bg=${bg}] #{window_index}/(#{window_index} windows) ";
     name = "#[fg=${bg},bg=${fg}] #W ";
     flags = "#{?window_flags,#{window_flags}, }";
     module =  "${index}${name}";
@@ -14,7 +19,7 @@ let
 
   window_status = rec {
     accent = color "window_color";
-    index = "#[reverse,fg=${accent},bg=${fg}] #I ";
+    index = "#[reverse,fg=${accent},bg=${fg}] #{window_index} ";
     name = "#[fg=${bg},bg=${fg}] #W ";
     flags = "#{?window_flags,#{window_flags}, }";
     module =  "${index}${name}";
