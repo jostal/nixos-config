@@ -6,7 +6,7 @@ let
 
   session = rec {
     sessionName = "#[fg=${fg}] #{session_name}";
-    module = "${sessionName}";
+    module = "Session: ${sessionName}";
   };
 
   current_window = rec {
@@ -46,7 +46,7 @@ let
       fi
     '' + "/bin/icon";
 
-    module = "#[fg=${fg}] ${format} #[fg=${accent},bg=${fg}] #(${icon}) ";
+    module = "#[fg=${fg}]${format}#[fg=${accent},bg=${fg}]#(${icon}) ";
   };
 
   pwd = rec {
@@ -93,7 +93,8 @@ in {
       bind -n 'C-Down' if-shell "$is_vim" 'send-keys C-Down' 'select-pane -D'
 
       # Theme
-      set-option -g @main_accent "#458588"
+      set-option -g @main_accent "#d65d0e"
+      set-option -g @active_window "#458588"
       set-option -g @window_color "#a89984"
       set-option -g status-style "bg=${bg} fg=${fg}"
       set-option -g status-left "[#S]"
