@@ -5,9 +5,9 @@ let
   color = c: "#{@${c}}";
 
   session = rec {
-    sessionName = "#[fg=${fg}] #{session_name}"
-    module = "${sessionName}"
-  }
+    sessionName = "#[fg=${fg}] #{session_name}";
+    module = "${sessionName}";
+  };
 
   current_window = rec {
     accent = color "main_accent";
