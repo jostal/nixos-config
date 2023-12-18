@@ -4,8 +4,8 @@ config = function()
 
   -- Setup language servers
   lspconfig.tsserver.setup {}
-  lspconfig.nil_ls.setup()
-  lspconfig.lua_ls.setup ({
+  lspconfig.nil_ls.setup{}
+  lspconfig.lua_ls.setup {
     on_init = function(client)
       local path = client.workspace_folders[1].name
       if not vim.loop.fs_stat(path..'/.luarc.json') and not vim.loop.fs_stat(path..'/.luarc.jsonc') then
@@ -34,8 +34,8 @@ config = function()
       end
       return true
     end
-  })
-  lspconfig.rust_analyzer.setup({
+  }
+  lspconfig.rust_analyzer.setup{
     settings = {
       ['rust-analyzer'] = {
         diagnostics = {
@@ -43,7 +43,7 @@ config = function()
         }
       }
     }
-  })
+  }
 
   local lsp_utils = require("plugins.lsp.lsp-utils")
   lsp_utils.setup()
