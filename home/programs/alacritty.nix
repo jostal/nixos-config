@@ -11,7 +11,9 @@ in
 			};
 
       shell = {
-        args = "tmux";
+        args = [
+          "tmux"
+        ];
       };
 
 			window = {
