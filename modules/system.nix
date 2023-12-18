@@ -144,6 +144,14 @@
 
     blueman.enable = true;
 
+    openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = false
+      };
+      openFirewall = true;
+    }
+
 		# keymap in X11
 		xserver = {
 			enable = true;
