@@ -50,9 +50,6 @@
 			isNormalUser = true;
 			description = "Joseph Talon";
 			extraGroups = [ "networkmanager" "wheel" ];
-      openssh.authorizedKeys.keyFiles = [
-        /home/jostal/.ssh/id_ed25519.pub
-      ];
 		};
 		defaultUserShell = pkgs.fish;
 	};
