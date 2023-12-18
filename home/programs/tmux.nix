@@ -11,7 +11,7 @@ let
 
   current_window = rec {
     accent = color "main_accent";
-    index = "#[reverse,fg=${accent},bg=${bg}] #{window_index}/(#{window_index} windows) ";
+    index = "#[reverse,fg=${accent},bg=${bg}] #{window_index} ";
     name = "#[fg=${bg},bg=${fg}] #W ";
     flags = "#{?window_flags,#{window_flags}, }";
     module =  "${index}${name}";
@@ -59,6 +59,7 @@ in {
   programs.tmux = {
     enable = true;
     shell = "${pkgs.fish}/bin/fish";
+    baseIndex = 1;
     terminal = "tmux-256color";
     historyLimit = 10000;
     prefix = "C-Space";
@@ -92,7 +93,7 @@ in {
       bind -n 'C-Down' if-shell "$is_vim" 'send-keys C-Down' 'select-pane -D'
 
       # Theme
-      set-option -g @main_accent "DarkOrange3"
+      set-option -g @main_accent "#fe8019"
       set-option -g @window_color "Magenta"
       set-option -g status-style "bg=${bg} fg=${fg}"
       set-option -g status-left "[#S]"
