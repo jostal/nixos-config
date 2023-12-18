@@ -1,4 +1,4 @@
-config = function(_, opts)
+config = function()
   local utils = require("utils")
   local lspconfig = require("lspconfig")
   local lsp_utils = require("plugins.lsp.lsp-utils")
