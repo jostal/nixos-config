@@ -41,29 +41,45 @@ lualine.setup {
   winbar = {
     lualine_a = {
       {
-        "buffers",
-        symbols = {
-          alternate_file = ""
+        "filetype",
+        icon_only = true,
+        color = {
+          bg = "#000"
         }
+      },
+      {
+        "filename",
       }
     },
     lualine_b = {},
-    lualine_c = { { navic.get_location, cond = navic.is_available } },
+    lualine_c = {
+      {
+        function()
+          return navic.get_location()
+        end,
+        cond = function()
+          return navic.is_available()
+        end,
+      }
+    },
     lualine_x = {},
     lualine_y = {},
-    lualine_z = { },
+    lualine_z = {
+      {
+        "fileformat",
+      },
+    }
   },
   inactive_winbar = {
     lualine_a = {
       {
         "filename",
-        color = { fg='#ddc7a1', bg='#504945'}
       },
     },
     lualine_b = {},
-    lualine_c = { { navic.get_location, cond = navic.is_available } },
+    lualine_c = {},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = {},
+    lualine_z = { "fileformat" },
   }
 }
