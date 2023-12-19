@@ -1,10 +1,18 @@
 config = function()
   local utils = require("utils")
   local lspconfig = require("lspconfig")
+  local lsp_utils = require("plugins.lsp.lsp-utils")
+  lsp_utils.setup()
 
   -- Setup language servers
-  lspconfig.tsserver.setup {}
-  lspconfig.nil_ls.setup{}
+  lspconfig.tsserver.setup {
+    on_attach = lsp_utils.on_attach,
+    capabilities = lsp_utils.capabilities
+  }
+  lspconfig.nil_ls.setup{
+    on_attach = lsp_utils.on_attach,
+    capabilities = lsp_utils.capabilities
+  }
   lspconfig.lua_ls.setup {
     on_init = function(client)
       local path = client.workspace_folders[1].name
@@ -33,9 +41,13 @@ config = function()
         client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
       end
       return true
-    end
+    end,
+    on_attach = lsp_utils.on_attach,
+    capabilities = lsp_utils.capabilities
   }
   lspconfig.rust_analyzer.setup{
+    on_attach = lsp_utils.on_attach,
+    capabilities = lsp_utils.capabilities,
     settings = {
       ['rust-analyzer'] = {
         diagnostics = {
@@ -44,8 +56,5 @@ config = function()
       }
     }
   }
-
-  local lsp_utils = require("plugins.lsp.lsp-utils")
-  lsp_utils.setup()
 end
 config()

@@ -14,13 +14,13 @@ end
 local location = { "location", padding = 0 }
 local lualine = require('lualine')
 
-local customTheme = require('customTheme')
+local customTheme = require('plugins.customTheme')
 
 
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = "gruvbox-material",
+    theme = customTheme,
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     disabled_filetypes = { "alpha", "dashboard" },
@@ -36,32 +36,30 @@ lualine.setup {
     lualine_c = {
     },
     lualine_x = { "encoding", "filetype" },
-    lualine_y = { "progress" },
-    lualine_z = { location },
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = { location },
+    lualine_z = { location }
   },
   winbar = {
-    lualine_a = { {
-      "buffers",
-      symbols = {
-        alternate_file = "",
+    lualine_a = {
+      {
+        "buffers",
+        symbols = {
+          alternate_file = ""
+        }
       }
-    } },
+    },
     lualine_b = {},
     lualine_c = { { navic.get_location, cond = navic.is_available } },
     lualine_x = {},
     lualine_y = {},
-    lualine_z = {},
+    lualine_z = { },
   },
   inactive_winbar = {
-    lualine_a = { "filename" },
+    lualine_a = {
+      {
+        "filename",
+        color = { fg='#ddc7a1', bg='#504945'}
+      },
+    },
     lualine_b = {},
     lualine_c = { { navic.get_location, cond = navic.is_available } },
     lualine_x = {},
