@@ -14,6 +14,7 @@
     };
 
     xpadneo.enable = true;
+    xone.enable = true;
   };
 
 	# Bootloader
