@@ -6,11 +6,11 @@ const getWorkspaceMonitor = (id) => {
 
   switch (ws?.monitor) {
     case "DVI-D-1":
-      return "ᴸ"
+      return "L"
     case "HDMI-A-1":
-      return "ꟲ"
+      return "C"
     case "HDMI-A-2":
-      return "ᴿ"
+      return "R"
     default:
       return ""
   }
@@ -64,9 +64,9 @@ const WorkspaceButton = (i) => Widget.EventBox({
   setup: self => self
     .hook(Hyprland.active.workspace, (button) => {
       button.toggleClassName('active', Hyprland.active.workspace.id === i)
-      button.toggleClassName('wsLeft', getWorkspaceMonitor(i) === 'ᴸ')
-      button.toggleClassName('wsCenter', getWorkspaceMonitor(i) === 'ꟲ')
-      button.toggleClassName('wsRight', getWorkspaceMonitor(i) === 'ᴿ')
+      button.toggleClassName('wsLeft', getWorkspaceMonitor(i) === 'L')
+      button.toggleClassName('wsCenter', getWorkspaceMonitor(i) === 'C')
+      button.toggleClassName('wsRight', getWorkspaceMonitor(i) === 'R')
     })
     .hook(Hyprland, (button) => {
       button.toggleClassName('openLeft', isOpenWorkspace(i) === 'left')
@@ -78,13 +78,21 @@ const WorkspaceButton = (i) => Widget.EventBox({
 const Workspaces = (monitor) => Widget.Box({
   child: Widget.Box({
     className: 'wsContainer',
-    hpack: "fill",
+    hpack: "center",
     hexpand: true,
-    // spacing: 5,
     children: Array.from({ length: 10 }, (_, i) => i + 1).map(i =>
       Widget.Box({
         hexpand: true,
+        hpack: "center",
         className: 'wsButtonContainer',
+        setup: self => self
+          .hook(Hyprland.active.workspace, box => {
+            box.toggleClassName('active', Hyprland.active.workspace.id === i)
+          })
+          .hook(Hyprland, box => {
+            const ws = Hyprland.getWorkspace(i)
+            box.toggleClassName("occupied", ws?.windows > 0)
+          }, 'notify::workspaces'),
         children: [
           WorkspaceButton(i)
         ]

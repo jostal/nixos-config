@@ -36,20 +36,27 @@
   color: #ddc7a1;
   font-family: monospace; }
   .wsContainer .wsButtonContainer {
-    min-width: 2rem;
-    border-radius: 50%; }
+    padding: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 50%;
+    background-color: #1d2021; }
+    .wsContainer .wsButtonContainer.active {
+      padding: 0px; }
+    .wsContainer .wsButtonContainer.occupied {
+      background-color: #3c3836; }
   .wsContainer .wsButton {
-    transition: all 200ms;
     background-color: #3c3836;
     border-radius: 50%;
     color: #1d2021;
-    min-width: 3rem; }
+    transition: background-color 0.2s ease-in-out; }
     .wsContainer .wsButton .wsLabel {
-      font-size: 1rem;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem; }
+      font-size: 0.8rem;
+      min-width: 1.5rem;
+      min-height: 1.5rem; }
     .wsContainer .wsButton.active .wsLabel {
-      border-radius: 50%; }
+      min-width: calc(1.5rem + 4px);
+      min-height: calc(1.5rem + 4px); }
     .wsContainer .wsButton.wsLeft {
       background-color: #656d3d; }
     .wsContainer .wsButton.wsCenter {

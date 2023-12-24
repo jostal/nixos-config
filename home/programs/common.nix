@@ -19,7 +19,7 @@
 		# ags
 		sassc
 	];
-
+  
 	programs = {
 		firefox = {
 			enable = true;

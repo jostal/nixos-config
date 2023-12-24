@@ -3,28 +3,37 @@
   font-family: monospace;
 
   .wsButtonContainer {
-    min-width: 2rem;
-
+    padding: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
     border-radius: 50%;
+    background-color: $bg;
+
+    &.active {
+      padding: 0px;
+    }
+
+    &.occupied {
+      background-color: $bgGray;
+    }
   }
   
   .wsButton {
-    transition: all 200ms;
     background-color: $bgGray;
     border-radius: 50%;
     color: $bg;
-    min-width: 3rem;
+    transition: background-color 0.2s ease-in-out;
 
     .wsLabel {
-      font-size: 1rem;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
+      font-size: 0.8rem;
+      min-width: 1.5rem;
+      min-height: 1.5rem;
     }
 
     &.active {
       .wsLabel {
-        border-radius: 50%;
-        // box-shadow: 0 0 0 2px white;
+        min-width: calc(1.5rem + 4px);
+        min-height: calc(1.5rem + 4px);
       }
     }
 

@@ -1,5 +1,4 @@
 require("mini.files").setup({
-
 })
 
 require("mini.starter").setup({
