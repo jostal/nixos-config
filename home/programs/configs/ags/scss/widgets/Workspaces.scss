@@ -9,6 +9,14 @@
     border-radius: 50%;
     background-color: $bg;
 
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
     &.active {
       padding: 0px;
     }
