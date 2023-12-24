@@ -41,25 +41,26 @@ const isOpenWorkspace = (wsId) => {
   }
 }
 
+const label = (i) => Widget.Label({
+  label: `${i}`,
+  hpack: "center",
+  hexpand: true,
+  vexpand: false,
+  className: 'wsLabel',
+  setup: self => self
+    .hook(Hyprland, label => {
+      const ws = Hyprland.getWorkspace(i)
+      label.label = ws?.windows > 0 ? `${i}` : " "
+    }, 'notify::workspaces')
+})
+
 const WorkspaceButton = (i) => Widget.EventBox({
   className: 'wsButton',
+  hpack: "center",
+  hexpand: true,
+  vexpand: false,
   onPrimaryClickRelease: () => Hyprland.sendMessage(`dispatch workspace ${i}`),
-  child: Widget.Box({
-    className: 'wsButtonLabel',
-    children: [
-      Widget.Label({
-        label: `${i}`,
-        className: 'wsLabel'
-      }),
-      Widget.Label({
-        className: 'wsMonitor',
-        setup: self => self
-          .hook(Hyprland, self => {
-            self.label = `${getWorkspaceMonitor(i)}`
-          }, 'notify::workspaces')
-      })
-    ]
-  }),
+  child: label(i),
   setup: self => self
     .hook(Hyprland.active.workspace, (button) => {
       button.toggleClassName('active', Hyprland.active.workspace.id === i)
@@ -74,28 +75,21 @@ const WorkspaceButton = (i) => Widget.EventBox({
     }, 'notify::monitors')
 })
 
-const Workspaces = (monitor) => Widget.EventBox({
+const Workspaces = (monitor) => Widget.Box({
   child: Widget.Box({
     className: 'wsContainer',
-    children: Array.from({ length: 10 }, (_, i) => i + 1).map(i => WorkspaceButton(i, monitor)),
-    setup: self => self
-      .hook(Hyprland, (box) => {
-        box.children.forEach((button, i) => {
-          const prevWorkspace = Hyprland.getWorkspace(i)
-          const ws = Hyprland.getWorkspace(i + 1)
-          const nextWorkspace = Hyprland.getWorkspace(i + 2)
-
-          const occupied = ws?.windows > 0
-          const occupiedLeft = !prevWorkspace || prevWorkspace?.windows <= 0
-          const occupiedRight = !nextWorkspace || nextWorkspace?.windows <= 0
-          const occupiedBoth = (occupiedLeft && occupiedRight)
-
-          button.toggleClassName("occupied", occupied)
-          button.toggleClassName("occupied-left", occupiedLeft && !occupiedBoth)
-          button.toggleClassName("occupied-right", occupiedRight && !occupiedBoth)
-          button.toggleClassName("occupied-alone", occupiedBoth)
-        })
-      }, 'notify::workspaces')
+    hpack: "fill",
+    hexpand: true,
+    // spacing: 5,
+    children: Array.from({ length: 10 }, (_, i) => i + 1).map(i =>
+      Widget.Box({
+        hexpand: true,
+        className: 'wsButtonContainer',
+        children: [
+          WorkspaceButton(i)
+        ]
+      })
+    ),
   })
 })
 

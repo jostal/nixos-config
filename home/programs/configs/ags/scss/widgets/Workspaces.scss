@@ -1,139 +1,58 @@
 .wsContainer {
-  background-color: $bgTrans;
-  padding: 3px;
+  @include barBlock;
+  font-family: monospace;
 
+  .wsButtonContainer {
+    min-width: 2rem;
+
+    border-radius: 50%;
+  }
+  
   .wsButton {
     transition: all 200ms;
+    background-color: $bgGray;
+    border-radius: 50%;
+    color: $bg;
+    min-width: 3rem;
 
-    &.occupied {
-      background-color: $bg;
-      border-top: 1px solid $text;
-      border-bottom: 1px solid $text;
-
-      &.occupied-left {
-        border-radius: 1rem 0 0 1rem;
-        border-left: 1px solid $text;
-
-        .wsButtonLabel {
-          margin-left: 4px;
-          border-radius: calc(1rem - 3px) 0 0 calc(1rem - 3px);
-        }
-
-        &.openLeft {
-          border-left: 3px solid $green;
-        }
-
-        &.openRight {
-          border-left: 3px solid $blue;
-        }
-
-        &.openCenter {
-          border-left: 3px solid $red;
-        }
-      }
-
-      &.occupied-right {
-        border-radius: 0 1rem 1rem 0;
-        border-right: 1px solid $text;
-
-        .wsButtonLabel {
-          margin-right: 4px;
-          border-radius: 0 calc(1rem - 3px) calc(1rem - 3px) 0;
-        }
-
-        &.openLeft {
-          border-right: 3px solid $green;
-        }
-
-        &.openRight {
-          border-right: 3px solid $blue;
-        }
-
-        &.openCenter {
-          border-right: 3px solid $red;
-        }
-      }
-
-      &.occupied-alone {
-        border-radius: 1rem;
-        border: 1px solid $text;
-
-        .wsButtonLabel {
-          border-radius: calc(1rem - 3px);
-          margin: 3px;
-        }
-
-        &.openLeft {
-          border: 3px solid $green;
-        }
-
-        &.openRight {
-          border: 3px solid $blue;
-        }
-
-        &.openCenter {
-          border: 3px solid $red;
-        }
-      }
-
-    }
-
-    &:not(.occupied) {
-      border-radius: 1rem;
-
-      .wsButtonLabel {
-        border-radius: calc(1rem - 3px);
-        margin: 3px;
-      }
+    .wsLabel {
+      font-size: 1rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
     }
 
     &.active {
-      .wsButtonLabel {
-        background-color: $bgGray;
+      .wsLabel {
+        border-radius: 50%;
+        // box-shadow: 0 0 0 2px white;
       }
-    }
-
-    .wsButtonLabel {
-      padding: calc(0.5rem - 3px);
-      margin-top: 3px;
-      margin-bottom: 3px;
-    }
-
-    .wsMonitor {
-      text-shadow: 0 0 2px;
     }
 
     &.wsLeft {
-      .wsMonitor {
-        color: $green;
-      }
+      background-color: $greenFade;
     }
 
     &.wsCenter {
-      .wsMonitor {
-        color: $red;
-      }
+      background-color: $redFade;
     }
 
     &.wsRight {
-      .wsMonitor {
-        color: $blue;
-      }
+      background-color: $blueFade;
     }
 
     &.openLeft {
-      border-top: 3px solid $green;
-      border-bottom: 3px solid $green;
+      background-color: $green;
+      font-weight: bold;
     }
 
     &.openCenter {
-      border-top: 3px solid $red;
-      border-bottom: 3px solid $red;
+      background-color: $red;
+      font-weight: bold;
     }
 
     &.openRight {
-      border-top: 3px solid $blue;
-      border-bottom: 3px solid $blue;
+      background-color: $blue;
+      font-weight: bold;
     }
   }
 }

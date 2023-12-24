@@ -9,10 +9,13 @@ import Indicators from "../indicators/Indicators.js"
 const Left = () => Widget.EventBox({
   className: 'leftBar',
   child: Widget.Box({
+    className: 'barBlock',
+    hexpand: false,
+    hpack: "start",
     children: [
       Workspaces(),
       FocusedTitle(),
-      RoundedAngleEnd("topright", { className: "angle" }),
+      // RoundedAngleEnd("topright", { className: "angle" }),
     ]
   })
 })
@@ -22,10 +25,10 @@ const Center = () => Widget.Box({
   orientation: 'horizontal',
   hpack: 'end',
   children: [
-    RoundedAngleEnd("topleft", { className: "angle", hexpand: true}),
+    // RoundedAngleEnd("topleft", { className: "angle", hexpand: true }),
     Clock(),
     // notifs
-    RoundedAngleEnd("topright", { className: "angle", hexpand: true}),
+    // RoundedAngleEnd("topright", { className: "angle", hexpand: true }),
   ]
 })
 
@@ -35,15 +38,15 @@ const Right = () => Widget.Box({
   hpack: 'end',
   child: Widget.EventBox({
     hpack: 'end',
+    className: 'barBlock',
     child: Widget.Box({
       children: [
-        RoundedAngleEnd("topleft", { className: "angle", hexpand: true }),
+        // RoundedAngleEnd("topleft", { className: "angle", hexpand: true }),
         // Tray(),
         Widget.EventBox({
           child: Widget.Box({
             children: [
               Indicators(),
-              Clock(),
             ]
           })
         })

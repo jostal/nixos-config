@@ -2,19 +2,12 @@
 
 // https://github.com/kotontrion/dotfiles
 
-.systray-container {
+.barWindow {
   background-color: $bgTrans;
-  padding-right: 8px;
-
-  .systray-item {
-    // font-size: 2rem;
-  }
 }
 
 .clockContainer {
-  background-color: $bgTrans;
-  padding-right: 8px;
-
+  @include barBlock;
   .clockDate {
     font-size: 0.9em;
     color: $primary;

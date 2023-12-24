@@ -1,11 +1,9 @@
 .titleContainer {
   .titleBox {
-    min-width: 10rem;
-    background-color: $bgTrans;
-    padding-left: 8px;
-
+    @include barBlock;
     .titleClass {
       font-size: 0.9rem;
+      font-weight: bold;
       color: $primary;
     }
 

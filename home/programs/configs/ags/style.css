@@ -5,19 +5,22 @@
   font-size: 16px; }
 
 .corner {
-  background-color: rgba(29, 32, 33, 0.7);
+  background-color: rgba(29, 32, 33, 0.6);
   border-radius: 1rem; }
 
 .angle {
-  background-color: rgba(29, 32, 33, 0.7); }
+  background-color: rgba(29, 32, 33, 0.6); }
 
-.systray-container {
-  background-color: rgba(29, 32, 33, 0.7);
-  padding-right: 8px; }
+.barWindow {
+  background-color: rgba(29, 32, 33, 0.6); }
 
 .clockContainer {
-  background-color: rgba(29, 32, 33, 0.7);
-  padding-right: 8px; }
+  transition: background-color 0.2s ease-in-out;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 1em;
+  background-color: #1d2021;
+  color: #ddc7a1; }
   .clockContainer .clockDate {
     font-size: 0.9em;
     color: #e78a4e; }
@@ -25,85 +28,67 @@
     font-size: 0.9em; }
 
 .wsContainer {
-  background-color: rgba(29, 32, 33, 0.7);
-  padding: 3px; }
+  transition: background-color 0.2s ease-in-out;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 1em;
+  background-color: #1d2021;
+  color: #ddc7a1;
+  font-family: monospace; }
+  .wsContainer .wsButtonContainer {
+    min-width: 2rem;
+    border-radius: 50%; }
   .wsContainer .wsButton {
-    transition: all 200ms; }
-    .wsContainer .wsButton.occupied {
-      background-color: #1d2021;
-      border-top: 1px solid #ddc7a1;
-      border-bottom: 1px solid #ddc7a1; }
-      .wsContainer .wsButton.occupied.occupied-left {
-        border-radius: 1rem 0 0 1rem;
-        border-left: 1px solid #ddc7a1; }
-        .wsContainer .wsButton.occupied.occupied-left .wsButtonLabel {
-          margin-left: 4px;
-          border-radius: calc(1rem - 3px) 0 0 calc(1rem - 3px); }
-        .wsContainer .wsButton.occupied.occupied-left.openLeft {
-          border-left: 3px solid #a9b665; }
-        .wsContainer .wsButton.occupied.occupied-left.openRight {
-          border-left: 3px solid #7daea3; }
-        .wsContainer .wsButton.occupied.occupied-left.openCenter {
-          border-left: 3px solid #ea6962; }
-      .wsContainer .wsButton.occupied.occupied-right {
-        border-radius: 0 1rem 1rem 0;
-        border-right: 1px solid #ddc7a1; }
-        .wsContainer .wsButton.occupied.occupied-right .wsButtonLabel {
-          margin-right: 4px;
-          border-radius: 0 calc(1rem - 3px) calc(1rem - 3px) 0; }
-        .wsContainer .wsButton.occupied.occupied-right.openLeft {
-          border-right: 3px solid #a9b665; }
-        .wsContainer .wsButton.occupied.occupied-right.openRight {
-          border-right: 3px solid #7daea3; }
-        .wsContainer .wsButton.occupied.occupied-right.openCenter {
-          border-right: 3px solid #ea6962; }
-      .wsContainer .wsButton.occupied.occupied-alone {
-        border-radius: 1rem;
-        border: 1px solid #ddc7a1; }
-        .wsContainer .wsButton.occupied.occupied-alone .wsButtonLabel {
-          border-radius: calc(1rem - 3px);
-          margin: 3px; }
-        .wsContainer .wsButton.occupied.occupied-alone.openLeft {
-          border: 3px solid #a9b665; }
-        .wsContainer .wsButton.occupied.occupied-alone.openRight {
-          border: 3px solid #7daea3; }
-        .wsContainer .wsButton.occupied.occupied-alone.openCenter {
-          border: 3px solid #ea6962; }
-    .wsContainer .wsButton:not(.occupied) {
-      border-radius: 1rem; }
-      .wsContainer .wsButton:not(.occupied) .wsButtonLabel {
-        border-radius: calc(1rem - 3px);
-        margin: 3px; }
-    .wsContainer .wsButton.active .wsButtonLabel {
-      background-color: #3c3836; }
-    .wsContainer .wsButton .wsButtonLabel {
-      padding: calc(0.5rem - 3px);
-      margin-top: 3px;
-      margin-bottom: 3px; }
-    .wsContainer .wsButton .wsMonitor {
-      text-shadow: 0 0 2px; }
-    .wsContainer .wsButton.wsLeft .wsMonitor {
-      color: #a9b665; }
-    .wsContainer .wsButton.wsCenter .wsMonitor {
-      color: #ea6962; }
-    .wsContainer .wsButton.wsRight .wsMonitor {
-      color: #7daea3; }
+    transition: all 200ms;
+    background-color: #3c3836;
+    border-radius: 50%;
+    color: #1d2021;
+    min-width: 3rem; }
+    .wsContainer .wsButton .wsLabel {
+      font-size: 1rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem; }
+    .wsContainer .wsButton.active .wsLabel {
+      border-radius: 50%; }
+    .wsContainer .wsButton.wsLeft {
+      background-color: #656d3d; }
+    .wsContainer .wsButton.wsCenter {
+      background-color: #8c3f3b; }
+    .wsContainer .wsButton.wsRight {
+      background-color: #4b6862; }
     .wsContainer .wsButton.openLeft {
-      border-top: 3px solid #a9b665;
-      border-bottom: 3px solid #a9b665; }
+      background-color: #a9b665;
+      font-weight: bold; }
     .wsContainer .wsButton.openCenter {
-      border-top: 3px solid #ea6962;
-      border-bottom: 3px solid #ea6962; }
+      background-color: #ea6962;
+      font-weight: bold; }
     .wsContainer .wsButton.openRight {
-      border-top: 3px solid #7daea3;
-      border-bottom: 3px solid #7daea3; }
+      background-color: #7daea3;
+      font-weight: bold; }
 
 .titleContainer .titleBox {
-  min-width: 10rem;
-  background-color: rgba(29, 32, 33, 0.7);
-  padding-left: 8px; }
+  transition: background-color 0.2s ease-in-out;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 1em;
+  background-color: #1d2021;
+  color: #ddc7a1; }
   .titleContainer .titleBox .titleClass {
     font-size: 0.9rem;
+    font-weight: bold;
     color: #e78a4e; }
   .titleContainer .titleBox .title {
     font-size: 1rem; }
+
+.barIndicatorsContainer {
+  transition: background-color 0.2s ease-in-out;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 1em;
+  background-color: #1d2021;
+  color: #ddc7a1;
+  margin-left: 0.5em;
+  margin-right: 0.5em; }
+
+.bluetoothDevice image:last-child {
+  margin-right: 0; }

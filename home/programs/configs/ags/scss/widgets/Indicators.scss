@@ -1,0 +1,15 @@
+.barIndicatorsContainer {
+  @include barBlock;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.barControlCenter {
+  
+}
+
+.bluetoothDevice {
+  image:last-child {
+    margin-right: 0;
+  }
+}

@@ -1,5 +1,5 @@
 $bg: #1d2021;
-$bgTrans: transparentize(#1d2021, 0.3);
+$bgTrans: transparentize(#1d2021, 0.4);
 $bgLighter: #282828;
 $bgGray: #3c3836;
 $text: #ddc7a1;
@@ -8,8 +8,8 @@ $primary: #e78a4e;
 $primaryText: #1d2021;
 
 $green: #a9b665;
-$darkGreen: #32361a;
+$greenFade: mix($green, #000, 60);
 $red: #ea6962;
-$darkRed: #3c1f1e;
+$redFade: mix($red, #000, 60);
 $blue: #7daea3;
-$darkBlue: #0d3138;
+$blueFade: mix($blue, #000, 60);
