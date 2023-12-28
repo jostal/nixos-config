@@ -31,6 +31,8 @@ const NotificationIcon = notification => {
 const Notification = notification => Widget.Box({
   className: "notification",
   vertical: true,
+  hexpand: true,
+  hpack: "fill",
   children: [
     Widget.EventBox({
       onPrimaryClick: (box) => {
@@ -44,6 +46,8 @@ const Notification = notification => Widget.Box({
         }
       },
       child: Widget.Box({
+        hpack: "fill",
+        hexpand: true,
         children: [
           NotificationIcon(notification),
           Widget.Box({

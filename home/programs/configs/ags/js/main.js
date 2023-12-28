@@ -21,6 +21,7 @@ exec(`sassc ${scss} ${css}`)
 export default {
   windows: windows().flat(),
   maxStreamVolume: 1,
+  notificationPopupTimeout: 5000,
   cacheNotificationActions: true,
   style: css,
 }

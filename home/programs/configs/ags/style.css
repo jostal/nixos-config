@@ -198,4 +198,20 @@ switch {
 .notification {
   padding: 5px;
   border-radius: 1rem;
-  background-color: rgba(29, 32, 33, 0.6); }
+  background-color: rgba(29, 32, 33, 0.6);
+  min-width: 26.3rem; }
+  .notification .notificationIcon {
+    font-size: 3rem;
+    min-width: 5rem;
+    min-height: 5rem;
+    border-radius: 1rem;
+    background-size: cover;
+    background-position: center; }
+  .notification .notificationTitle {
+    font-weight: bold; }
+  .notification .notificationClose {
+    min-width: 1.5rem; }
+  .notification .notificationActionButton {
+    background-color: rgba(163, 149, 123, 0.8);
+    border-radius: 1rem;
+    margin: 5px 0; }

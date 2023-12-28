@@ -4,11 +4,34 @@
 
 .notificationsPopupList {
   min-width: 40rem;
-  // margin-right: 5px;
 }
 
 .notification {
   padding: 5px;
   border-radius: 1rem;
   background-color: $bgTrans;
+  min-width: 26.3rem;
+
+  .notificationIcon {
+    font-size: 3rem;
+    min-width: 5rem;
+    min-height: 5rem;
+    border-radius: 1rem;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .notificationTitle {
+    font-weight: bold;
+  }
+
+  .notificationClose {
+    min-width: 1.5rem;
+  }
+
+  .notificationActionButton {
+    background-color: mix($bgTrans, $text);
+    border-radius: 1rem;
+    margin: 5px 0;
+  }
 }
