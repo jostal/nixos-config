@@ -20,7 +20,10 @@
 				"SUPER, mouse:272, movewindow"
 			];
 
-      layerrule = "ignorealpha[0.97],controlCenter";
+      layerrule = [
+        "ignorealpha[0.97],controlCenter"
+        "ignorealpha[0.97]popupNotifications"
+      ];
 		};
 	};
 }
