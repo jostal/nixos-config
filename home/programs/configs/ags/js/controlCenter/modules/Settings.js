@@ -4,6 +4,7 @@ import StackState from "../../misc/StackState.js"
 import icons from "../../icons.js"
 import Menu from "./Menu.js"
 import { BluetoothList } from "./Bluetooth.js"
+import NotificationList from "./Notifications.js"
 
 export const SettingsState = new StackState("audio")
 
@@ -22,6 +23,11 @@ const SettingsHeader = () => Widget.Box({
   homogeneous: true,
   className: "settingsHeader",
   children: [
+    SettingsButton({
+      icon: icons.notifications.new,
+      title: "notifications",
+      cursor: "pointer",
+    }),
     SettingsButton({
       icon: icons.bluetooth.enabled,
       title: "bluetooth",
@@ -47,6 +53,15 @@ const SettingsPage = content => Widget.Scrollable({
 const SettingsContent = () => Widget.Stack({
   transition: "slide_left_right",
   items: [
+    ["notifications", SettingsPage(
+      Menu({
+        title: "Notifications",
+        icon: icons.notifications.notification,
+        content: NotificationList(),
+      })
+    )
+
+    ],
     ["bluetooth", SettingsPage(
       Menu({
         title: "Bluetooth",

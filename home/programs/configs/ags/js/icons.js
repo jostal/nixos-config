@@ -24,10 +24,11 @@ export default {
     disabled: "bluetooth-disabled-symbolic",
   },
   notifications: {
+    new: 'notification-new-symbolic',
     noisy: 'preferences-system-notifications-symbolic',
     silent: 'notifications-disabled-symbolic',
     critical: "messagebox_critical-symbolic",
-    chat: "notification-symbolic",
+    notification: "notification-symbolic",
     close: "window-close-symbolic"
   },
   header: {
@@ -47,9 +48,5 @@ export default {
       down: 'pan-down-symbolic',
       up: 'pan-up-symbolic'
     },
-    notifications: {
-      notification: 'notification-symbolic',
-      new: 'notification-new-symbolic',
-    }
   }
 }

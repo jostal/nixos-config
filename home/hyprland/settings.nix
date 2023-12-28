@@ -37,6 +37,7 @@
         "bar1"
         "bar2"
         "controlCenter"
+        "popupNotifications"
       ];
 
 			drop_shadow = "yes";

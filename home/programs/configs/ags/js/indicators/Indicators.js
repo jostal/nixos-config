@@ -16,10 +16,11 @@ const NetworkIndicator = () => Widget.Icon({
 
 const NotificationIndicator = () => Widget.Icon({
   className: 'notificationIndicator',
-  icon: icons.ui.notifications.new,
+  icon: icons.notifications.new,
   setup: self => self
     .hook(Notifications, self => {
       self.visible = Notifications.notifications.length > 0
+      self.tooltipText = `${Notifications.notifications.length}`
     })
 })
 
