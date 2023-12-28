@@ -1,0 +1,30 @@
+.volumeBox {
+  .audioVolumeLabel {
+    min-width: 3rem;
+    margin-left: 1rem;
+  }
+
+  .volumeSlider {
+    margin-left: 1rem;
+  }
+  trough {
+    background-color: $bgGray;
+    border-radius: 1rem;
+
+    highlight, progress {
+      border-radius: 1rem 0 0 1rem;
+      background-color: $primary;
+    }
+  }
+
+  slider {
+    border-radius: 1rem;
+    background-color: $text;
+    min-width: 4px;
+    min-height: 10px;
+  }
+}
+
+.appMixerContainer {
+  margin-top: 1rem;
+}

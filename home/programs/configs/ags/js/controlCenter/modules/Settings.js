@@ -43,7 +43,7 @@ const SettingsPage = content => Widget.Scrollable({
 })
 
 const SettingsContent = () => Widget.Stack({
-  transition: "slide_down",
+  transition: "slide_left_right",
   items: [
     ["bluetooth", SettingsPage(
       Menu({
@@ -59,7 +59,11 @@ const SettingsContent = () => Widget.Stack({
         content: AudioContent()
       })
     )]
-  ]
+  ],
+  setup: self => self
+    .hook(SettingsState, () => {
+      self.shown = SettingsState.value
+    })
 })
 
 const Settings = () => {

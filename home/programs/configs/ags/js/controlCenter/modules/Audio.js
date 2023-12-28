@@ -9,11 +9,14 @@ const sorms = type => type === "sink" ? "speakers" : "microphones"
 
 const VolumeIndicator = (type = 'sink') => HoverableButton({
   className: "sliderTooltip",
-  onClicked: () => Utils.execAsync(`pactl set-${type}-mute @DEFAULT_${type.toUpperCase()}@ toggle`),
+  cursor: "pointer",
+  onClicked: () => Audio[sorm(type)].isMuted = !Audio[sorm(type)].isMuted,
   child: Widget.Icon()
     .hook(Audio, icon => {
       if (Audio[sorm(type)])
         icon.icon = audioIconSub(Audio[sorm(type)].icon_name, type)
+      if (Audio[sorm(type)].isMuted)
+        icon.icon = icons.audio.volume.muted
     }, sorm(type) + "-changed")
 })
 
@@ -26,6 +29,7 @@ const PercentLabel = (type = "sink") => Widget.Label({
 
 const VolumeSlider = (type = "sink") => Widget.Slider({
   className: "volumeSlider",
+  cursor: "pointer",
   hexpand: true,
   drawValue: false,
   onChange: ({ value }) => Audio[sorm(type)].volume = value,
@@ -33,11 +37,10 @@ const VolumeSlider = (type = "sink") => Widget.Slider({
   if (!Audio[sorm(type)])
     return
 
-  slider.sensitive = !Audio[sorm(type)].isMuted
   slider.value = Audio[sorm(type)].volume
 }, sorm(type) + "-changed")
 
-export const Volume = (type = "speaker") => Widget.Box({
+export const Volume = (type = "sink") => Widget.Box({
   className: "volumeBox",
   children: [
     VolumeIndicator(type),
@@ -122,7 +125,9 @@ const SettingsButton = (tab = 0) => HoverableButton({
 
 export const AppMixer = () => Menu({
   title: "App Mixer",
+  vpack: "center",
   icon: icons.audio.mixer,
+  className: "appMixerContainer",
   content: Widget.Box({
     className: "appMixer",
     vertical: true,
@@ -159,10 +164,10 @@ const AudioContent = () => Widget.Box({
   vertical: true,
   className: "settingsPage",
   children: [
-    Volume("speaker"),
-    Volume("source"),
-    SinkSelector("speaker"),
-    SinkSelector("source"),
+    Volume("sink"),
+    // Volume("source"),
+    // SinkSelector("speaker"),
+    // SinkSelector("source"),
     AppMixer()
   ]
 })

@@ -17,7 +17,7 @@ export default {
       speakers: "audio-speakers-symbolic",
       card: "audio-card-symbolic"
     },
-    mixer: "qasmixer"
+    mixer: "multimedia-volume-control-symbolic"
   },
   bluetooth: {
     enabled: "bluetooth-active-symbolic",

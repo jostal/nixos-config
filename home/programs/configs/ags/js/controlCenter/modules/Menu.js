@@ -1,6 +1,7 @@
 import { Widget } from "../../imports.js";
 
-export default ({ title, icon, content, headerChild = Widget.Box() }) => Widget.Box({
+export default ({ title, icon, content, headerChild = Widget.Box(), ...props }) => Widget.Box({
+  ...props,
   children: [
     Widget.Box({
       className: "settingsMenu",
@@ -9,7 +10,7 @@ export default ({ title, icon, content, headerChild = Widget.Box() }) => Widget.
         Widget.Box({
           className: "settingsTitle",
           hpack: "center",
-          spacing: 3,
+          spacing: 5,
           children: [
             Widget.Icon(icon),
             Widget.Label(title),

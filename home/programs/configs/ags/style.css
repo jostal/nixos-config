@@ -158,3 +158,26 @@ switch {
         background-color: transparent; }
         .controlCenterContainer .controlCenter .settingsHeader .settingsButton.active {
           background-color: #7d7461; }
+
+.volumeBox .audioVolumeLabel {
+  min-width: 3rem;
+  margin-left: 1rem; }
+
+.volumeBox .volumeSlider {
+  margin-left: 1rem; }
+
+.volumeBox trough {
+  background-color: #3c3836;
+  border-radius: 1rem; }
+  .volumeBox trough highlight, .volumeBox trough progress {
+    border-radius: 1rem 0 0 1rem;
+    background-color: #e78a4e; }
+
+.volumeBox slider {
+  border-radius: 1rem;
+  background-color: #ddc7a1;
+  min-width: 4px;
+  min-height: 10px; }
+
+.appMixerContainer {
+  margin-top: 1rem; }
