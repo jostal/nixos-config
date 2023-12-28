@@ -26,7 +26,7 @@
 
 		# Notifications
     libnotify
-		swaynotificationcenter
+		# swaynotificationcenter
 		polkit-kde-agent
 
 		# Networking
