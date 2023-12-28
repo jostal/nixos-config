@@ -189,12 +189,13 @@ switch {
 .sinkSelectorContainer {
   margin-top: 1rem; }
 
+.popupNotificationsContainer {
+  border-radius: 1rem; }
+
 .notificationsPopupList {
-  min-width: 40rem;
-  margin-right: 5px; }
+  min-width: 40rem; }
 
 .notification {
   padding: 5px;
-  margin-top: 5px;
   border-radius: 1rem;
   background-color: rgba(29, 32, 33, 0.6); }

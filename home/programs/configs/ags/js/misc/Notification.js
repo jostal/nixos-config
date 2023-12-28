@@ -152,6 +152,7 @@ export const NotificationReveal = (notification, visible = false) => {
 
 const Popups = () => Widget.Box({
   vertical: true,
+  spacing: 5,
   hpack: "end",
   attribute: {
     "map": new Map(),
@@ -201,9 +202,12 @@ const PopupList = () => Widget.Box({
   ]
 })
 
-export const NotificationPopup = () => Widget.Window({
+export const NotificationPopup = (monitor) => Widget.Window({
   layer: "overlay",
-  name: "popupNotifications",
+  name: `popupNotifications${monitor}`,
+  monitor: monitor,
+  margins: [5, 5],
+  className: "popupNotificationsContainer",
   anchor: ["top", "right"],
   child: PopupList()
 })

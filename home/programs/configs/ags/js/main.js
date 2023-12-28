@@ -10,8 +10,8 @@ init();
 
 const windows = () => [
   forMonitors(Topbar),
+  forMonitors(NotificationPopup),
   ControlCenter(),
-  NotificationPopup(),
 ]
 
 const scss = globalThis.configDir + '/scss/style.scss';

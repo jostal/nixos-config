@@ -1,11 +1,14 @@
+.popupNotificationsContainer {
+  border-radius: 1rem;
+}
+
 .notificationsPopupList {
   min-width: 40rem;
-  margin-right: 5px;
+  // margin-right: 5px;
 }
 
 .notification {
   padding: 5px;
-  margin-top: 5px;
   border-radius: 1rem;
   background-color: $bgTrans;
 }
