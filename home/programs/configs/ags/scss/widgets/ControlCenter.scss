@@ -1,12 +1,10 @@
 .controlCenterContainer {
-  background-color: $bgTrans;
   border-radius: 1rem;
 
   .controlCenter {
     background-color: $bgTrans;
     border-radius: 1rem;
     padding: 1rem;
-    margin: 0.5rem;
     min-width: 27rem;
     min-height: 27rem;
 
@@ -19,10 +17,24 @@
     }
 
     .settingsMenu {
-      margin-bottom: 8px;
+      margin-bottom: 0.8rem;
 
       .settingsTitle {
         font-weight: bold;
+        padding-bottom: 0.8rem;
+      }
+
+      separator {
+        background-color: mix($bg, $text, 80);
+        min-height: 2px;
+      }
+
+      .settingsContent {
+        margin-top: 0.8rem;
+
+        label {
+          margin-left: 0.5rem;
+        }
       }
     }
 

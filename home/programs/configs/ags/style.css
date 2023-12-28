@@ -2,7 +2,22 @@
   all: unset;
   padding: 0;
   margin: 0;
-  font-size: 16px; }
+  font-size: 16px;
+  color: #ddc7a1; }
+
+switch {
+  border-radius: 1rem;
+  padding: 2px;
+  background-color: #777472; }
+  switch.active {
+    background-color: #e78a4e; }
+  switch slider {
+    background-color: #1d2021;
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 50%; }
+  switch image {
+    color: transparent; }
 
 .corner {
   background-color: rgba(29, 32, 33, 0.6);
@@ -108,13 +123,11 @@
   margin-right: 0; }
 
 .controlCenterContainer {
-  background-color: rgba(29, 32, 33, 0.6);
   border-radius: 1rem; }
   .controlCenterContainer .controlCenter {
     background-color: rgba(29, 32, 33, 0.6);
     border-radius: 1rem;
     padding: 1rem;
-    margin: 0.5rem;
     min-width: 27rem;
     min-height: 27rem; }
     .controlCenterContainer .controlCenter scrollbar, .controlCenterContainer .controlCenter scrollbar * {
@@ -122,9 +135,17 @@
     .controlCenterContainer .controlCenter .settingsPage {
       min-height: 10rem; }
     .controlCenterContainer .controlCenter .settingsMenu {
-      margin-bottom: 8px; }
+      margin-bottom: 0.8rem; }
       .controlCenterContainer .controlCenter .settingsMenu .settingsTitle {
-        font-weight: bold; }
+        font-weight: bold;
+        padding-bottom: 0.8rem; }
+      .controlCenterContainer .controlCenter .settingsMenu separator {
+        background-color: #43413b;
+        min-height: 2px; }
+      .controlCenterContainer .controlCenter .settingsMenu .settingsContent {
+        margin-top: 0.8rem; }
+        .controlCenterContainer .controlCenter .settingsMenu .settingsContent label {
+          margin-left: 0.5rem; }
     .controlCenterContainer .controlCenter .settingsHeader {
       margin: 8px 0;
       background-color: rgba(29, 32, 33, 0.6);

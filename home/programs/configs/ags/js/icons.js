@@ -17,7 +17,7 @@ export default {
       speakers: "audio-speakers-symbolic",
       card: "audio-card-symbolic"
     },
-    mixer: "tool-symbolic"
+    mixer: "qasmixer"
   },
   bluetooth: {
     enabled: "bluetooth-active-symbolic",
@@ -37,5 +37,18 @@ export default {
   },
   dialog: {
     Notifications: '󰂚',
+  },
+  ui: {
+    close: 'window-close-symbolic',
+    info: 'info-symbolic',
+    menu: 'open-menu-symbolic',
+    link: 'external-link-symbolic',
+    settings: 'emblem-system-symbolic',
+    arrow: {
+      right: 'pan-end-symbolic',
+      left: 'pan-start-symbolic',
+      down: 'pan-down-symbolic',
+      up: 'pan-up-symbolic'
+    }
   }
 }

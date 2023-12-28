@@ -8,6 +8,8 @@ export default ({ title, icon, content, headerChild = Widget.Box() }) => Widget.
       children: [
         Widget.Box({
           className: "settingsTitle",
+          hpack: "center",
+          spacing: 3,
           children: [
             Widget.Icon(icon),
             Widget.Label(title),
@@ -15,7 +17,7 @@ export default ({ title, icon, content, headerChild = Widget.Box() }) => Widget.
             headerChild
           ]
         }),
-        // seperator
+        Widget.Separator(),
         Widget.Box({
           className: "settingsContent",
           children: [content]

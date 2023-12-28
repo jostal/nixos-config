@@ -3,7 +3,7 @@ import AudioContent from "./Audio.js"
 import StackState from "../../misc/StackState.js"
 import icons from "../../icons.js"
 import Menu from "./Menu.js"
-import BluetoothList from "./Bluetooth.js"
+import { BluetoothList } from "./Bluetooth.js"
 
 export const SettingsState = new StackState("audio")
 
@@ -43,22 +43,13 @@ const SettingsPage = content => Widget.Scrollable({
 })
 
 const SettingsContent = () => Widget.Stack({
-  transition: "slide_left_right",
+  transition: "slide_down",
   items: [
     ["bluetooth", SettingsPage(
       Menu({
         title: "Bluetooth",
         icon: icons.bluetooth.enabled,
         content: BluetoothList(),
-        headerChild: Widget.Switch()
-          .hook(Bluetooth, sw => {
-            if (sw.active !== Bluetooth.enabled)
-              sw.active = Bluetooth.enabled
-          })
-          .on("notify::active", ({ active }) => {
-            if (active !== Bluetooth.enabled)
-              Bluetooth.enabled = active
-          })
       })
     )],
     ["audio", SettingsPage(
@@ -75,12 +66,14 @@ const Settings = () => {
   const stack = SettingsContent()
   const header = SettingsHeader()
   SettingsState.items = stack.items.map(i => i[0])
-  return Widget.Box({
-    vertical: true,
-    children: [
-      header,
-      stack
-    ]
+  return Widget.EventBox({
+    child: Widget.Box({
+      vertical: true,
+      children: [
+        header,
+        stack
+      ]
+    })
   })
 }
 

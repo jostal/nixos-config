@@ -3,6 +3,28 @@
   padding: 0;
   margin: 0;
   font-size: 16px;
+  color: $text;
+}
+
+switch {
+  border-radius: 1rem;
+  padding: 2px;
+  background-color: mix($bgGray, #fff, 70);
+
+  &.active {
+    background-color: $primary;
+  }
+
+  slider {
+    background-color: $bg;
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 50%;
+  }
+
+  image {
+    color: transparent;
+  }
 }
 
 .corner {
@@ -21,4 +43,65 @@
   border-radius: 1em;
   background-color: $bg;
   color: $text;
+}
+
+// buttons
+
+@mixin button-focus() {
+  box-shadow: inset 0 0 0 1px $primary;
+}
+
+@mixin button-hover() {
+  box-shadow: inset 0 0 0 1px mix($bg, #000 90);
+  background-color: mix($bg, #fff, 70);
+}
+
+@mixin button-active() {
+  box-shadow: inset 0 0 0 1px mix($bg, #000, 90);
+  background-color: $primary;
+}
+
+@mixin button-disabled() {
+  box-shadow: none;
+  background-color: transparent;
+  color: transparentize($text, 0.7);
+}
+
+@mixin button($flat: false, $reactive: true, $radii: $radii, $focusable: true) {
+  border-radius: $radii;
+  color: $text;
+
+  @if $flat {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+  } @else {
+    background-color: $bg;
+    box-shadow: inset 0 0 0 1px mix($bg, #000, 90);
+  }
+
+  @if $reactive {
+      @if $focusable {
+        &:focus{
+          @include button-focus;
+        }
+      }
+
+      &:hover{
+        @include button-hover;
+      }
+
+      &:active, &.on, &.active, &:checked {
+        @include button-active;
+
+        &:hover {
+          box-shadow: inset 0 0 0 $border-width $border-color,
+                      inset 0 0 0 99px $hover;
+        }
+      }
+    }
+
+  &:disabled {
+    @include button-disabled;
+  }
 }

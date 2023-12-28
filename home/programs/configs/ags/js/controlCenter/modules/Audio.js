@@ -1,6 +1,6 @@
 import icons from "../../icons.js"
 import { Widget, Utils, Audio, Hyprland } from "../../imports.js"
-import { getAudioTypeIcon } from "../../utils.js"
+import { audioIconSub, getAudioTypeIcon, streamIconSub } from "../../utils.js"
 import HoverableButton from "../../misc/HoverableButton.js"
 import Menu from "./Menu.js"
 
@@ -9,19 +9,22 @@ const sorms = type => type === "sink" ? "speakers" : "microphones"
 
 const VolumeIndicator = (type = 'sink') => HoverableButton({
   className: "sliderTooltip",
-  onClicked: () => Audio[sorm(type)].isMuted = !Audio[sorm(type)].isMuted,
+  onClicked: () => Utils.execAsync(`pactl set-${type}-mute @DEFAULT_${type.toUpperCase()}@ toggle`),
   child: Widget.Icon()
     .hook(Audio, icon => {
-      if (!Audio[sorm(type)])
-        return
-
-      icon.icon = getAudioTypeIcon(Audio[sorm(type)].iconName || '')
-
-      icon.tooltipText = `Volume ${Math.floor(Audio[sorm(type)].volume * 100)}%`
+      if (Audio[sorm(type)])
+        icon.icon = audioIconSub(Audio[sorm(type)].icon_name, type)
     }, sorm(type) + "-changed")
 })
 
-const VolumeSlider = (type = "speaker") => Widget.Slider({
+const PercentLabel = (type = "sink") => Widget.Label({
+  className: "audioVolumeLabel"
+}).hook(Audio, label => {
+  if (Audio[sorm(type)])
+    label.label = `${Math.floor(Audio[sorm(type)].volume * 100)}%`
+}, sorm(type) + "-changed")
+
+const VolumeSlider = (type = "sink") => Widget.Slider({
   className: "volumeSlider",
   hexpand: true,
   drawValue: false,
@@ -38,8 +41,58 @@ export const Volume = (type = "speaker") => Widget.Box({
   className: "volumeBox",
   children: [
     VolumeIndicator(type),
-    VolumeSlider(type)
+    VolumeSlider(type),
+    PercentLabel(type)
   ]
+})
+
+const MixerItem = stream => Widget.EventBox({
+  onPrimaryClick: () => stream.isMuted = !stream.isMuted,
+  child: Widget.Box({
+    hexpand: true,
+    className: "mixerItem",
+    children: [
+      Widget.Icon({
+        icon: stream.bind("icon_name").transform(() => streamIconSub(stream)),
+        tooltipText: stream.bind("name").transform(name => name || "")
+      }),
+      Widget.Box({
+        children: [
+          Widget.Box({
+            vertical: true,
+            vpack: "center",
+            children: [
+              Widget.Box({
+                children: [
+                  Widget.Label({
+                    xalign: 0,
+                    hexpand: true,
+                    className: "mixerItemTitle",
+                    truncate: "end",
+                    label: stream.bind("description").transform(desc => desc || "")
+                  }),
+                  Widget.Label({
+                    xalign: 0,
+                    className: "mixerItemVolume",
+                    label: stream.bind("volume").transform(volume => `${Math.floor(volume * 100)}%`)
+                  }),
+                ]
+              }),
+              Widget.Slider({
+                hexpand: true,
+                className: "mixerItemSlider",
+                drawValue: false,
+                value: stream.bind("volume"),
+                onChange: (value => {
+                  stream.volume = value
+                })
+              })
+            ]
+          })
+        ]
+      })
+    ]
+  })
 })
 
 const SinkItem = (type) => stream => HoverableButton({
@@ -47,8 +100,8 @@ const SinkItem = (type) => stream => HoverableButton({
   child: Widget.Box({
     children: [
       Widget.Icon({
-        icon: getAudioTypeIcon(stream.iconName || ""),
-        tooltipText: stream.iconName
+        icon: audioIconSub(stream.icon_name, type),
+        tooltipText: stream.icon_name
       }),
       Widget.Label(stream.description?.split(" ").slice(0, 4).join(" ")),
       Widget.Icon({
@@ -67,6 +120,22 @@ const SettingsButton = (tab = 0) => HoverableButton({
   child: Widget.Icon(icons.settings)
 })
 
+export const AppMixer = () => Menu({
+  title: "App Mixer",
+  icon: icons.audio.mixer,
+  content: Widget.Box({
+    className: "appMixer",
+    vertical: true,
+    children: [
+      Widget.Box({ vertical: true })
+        .hook(Audio, box => {
+          box.children = Audio.apps.map(MixerItem)
+        }, "notify::apps")
+    ]
+  }),
+  headerChild: SettingsButton(1)
+})
+
 export const SinkSelector = (type = "sink") => Menu({
   title: type + " Selector",
   icon: type === "sink" ? icons.audio.type.headset : icons.audio.mic.unmuted,
@@ -83,7 +152,7 @@ export const SinkSelector = (type = "sink") => Menu({
         }, "stream-removed")
     ]
   }),
-  headerChild: SettingsButton(type === "speaker" ? 3 : 4)
+  headerChild: SettingsButton(type === "sink" ? 3 : 4)
 })
 
 const AudioContent = () => Widget.Box({
@@ -91,9 +160,10 @@ const AudioContent = () => Widget.Box({
   className: "settingsPage",
   children: [
     Volume("speaker"),
-    // Volume("source"),
+    Volume("source"),
     SinkSelector("speaker"),
-    // SinkSelector("source")
+    SinkSelector("source"),
+    AppMixer()
   ]
 })
 

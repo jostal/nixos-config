@@ -35,6 +35,7 @@
 
 		# Sound
 		pavucontrol
+    pulseaudio
 
 		# Development
 		libgcc

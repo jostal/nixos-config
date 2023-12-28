@@ -1,6 +1,6 @@
 import { Widget, Bluetooth } from "../../imports.js"
 
-const BluetoothList = () => Widget.Box({
+export const BluetoothList = () => Widget.Box({
   hexpand: true,
   vertical: true
 })
@@ -8,11 +8,21 @@ const BluetoothList = () => Widget.Box({
     box.children = Bluetooth.devices.map(device => Widget.Box({
       hexpand: false,
       children: [
+        Widget.Icon(device.iconName + '-symbolic'),
         Widget.Label(device.name),
+        Widget.Label({
+          label: `${device.battery_percentage}%`,
+          binds: [['visible', device, 'battery-percentage', p => p > 0]],
+        }),
         Widget.Box({ hexpand: true }),
         device.connecting ? Widget.Spinner({
           active: true
-        }) : Widget.Switch({ active: device.connected })
+        }) : Widget.Switch({
+          active: device.connected,
+        })
+          .hook(device, sw => {
+            sw.toggleClassName("active", device.connected)
+          })
           .on("notify::active", sw => {
             const active = sw.active
             if (active !== device.connected)
@@ -21,5 +31,3 @@ const BluetoothList = () => Widget.Box({
       ]
     }))
   })
-
-export default BluetoothList
