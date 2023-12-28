@@ -19,6 +19,8 @@
 				"SUPER, mouse:273, resizewindow"
 				"SUPER, mouse:272, movewindow"
 			];
+
+      layerrule = "ignorealpha[0.97],controlCenter";
 		};
 	};
 }

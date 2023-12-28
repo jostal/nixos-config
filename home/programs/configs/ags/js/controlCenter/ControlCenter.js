@@ -4,7 +4,7 @@ import Header from "./modules/Header.js"
 import Settings from "./modules/Settings.js"
 
 const ControlCenter = () => Widget.Box({
-  vexpand: true,
+  // vexpand: true,
   hexpand: true,
   children: [
     Widget.EventBox({
@@ -25,7 +25,9 @@ const ControlCenter = () => Widget.Box({
 })
 
 export default () => PopupWindow({
-  anchor: ["right", "top", "bottom"],
+  margins: [5, 5],
+  className: "controlCenterContainer",
+  anchor: ["right", "top"],
   name: "controlCenter",
   child: ControlCenter()
 })
