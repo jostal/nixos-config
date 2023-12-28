@@ -35,9 +35,6 @@ export default {
     settings: "settings-symbolic",
     power: "system-shutdown-symbolic"
   },
-  dialog: {
-    Notifications: '󰂚',
-  },
   ui: {
     close: 'window-close-symbolic',
     info: 'info-symbolic',
@@ -49,6 +46,10 @@ export default {
       left: 'pan-start-symbolic',
       down: 'pan-down-symbolic',
       up: 'pan-up-symbolic'
+    },
+    notifications: {
+      notification: 'notification-symbolic',
+      new: 'notification-new-symbolic',
     }
   }
 }

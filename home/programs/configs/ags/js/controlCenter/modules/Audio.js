@@ -99,7 +99,7 @@ const MixerItem = stream => Widget.EventBox({
 })
 
 const SinkItem = (type) => stream => HoverableButton({
-  onClicked: Audio[sorm(type)] = stream,
+  onClicked: () => Audio[sorm(type)] = stream,
   child: Widget.Box({
     children: [
       Widget.Icon({
@@ -142,7 +142,8 @@ export const AppMixer = () => Menu({
 })
 
 export const SinkSelector = (type = "sink") => Menu({
-  title: type + " Selector",
+  title: "Sink Selector",
+  className: "sinkSelectorContainer",
   icon: type === "sink" ? icons.audio.type.headset : icons.audio.mic.unmuted,
   content: Widget.Box({
     className: "sinkSelector",
@@ -166,9 +167,9 @@ const AudioContent = () => Widget.Box({
   children: [
     Volume("sink"),
     // Volume("source"),
-    // SinkSelector("speaker"),
+    SinkSelector("sink"),
     // SinkSelector("source"),
-    AppMixer()
+    // AppMixer()
   ]
 })
 

@@ -25,12 +25,14 @@ const SettingsHeader = () => Widget.Box({
     SettingsButton({
       icon: icons.bluetooth.enabled,
       title: "bluetooth",
-      tooltipText: "Bluetooth"
+      cursor: "pointer",
+      // tooltipText: "Bluetooth"
     }),
     SettingsButton({
       icon: icons.audio.volume.high,
+      cursor: "pointer",
       title: "audio",
-      tooltipText: "Audio"
+      // tooltipText: "Audio"
     })
   ]
 })

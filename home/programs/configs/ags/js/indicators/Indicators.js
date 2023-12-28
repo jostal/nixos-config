@@ -1,4 +1,4 @@
-import { App, Widget, Bluetooth, Audio, Network } from "../imports.js"
+import { App, Widget, Bluetooth, Audio, Network, Notifications } from "../imports.js"
 import HoverableButton from "../misc/HoverableButton.js"
 import HoverRevealer from "../misc/HoverRevealer.js"
 import icons from '../icons.js'
@@ -11,6 +11,15 @@ const NetworkIndicator = () => Widget.Icon({
       const icon = Network[Network.primary || 'wifi']?.iconName
       self.icon = icon || ''
       self.visible = icon
+    })
+})
+
+const NotificationIndicator = () => Widget.Icon({
+  className: 'notificationIndicator',
+  icon: icons.ui.notifications.new,
+  setup: self => self
+    .hook(Notifications, self => {
+      self.visible = Notifications.notifications.length > 0
     })
 })
 
@@ -30,10 +39,14 @@ const BluetoothDevicesIndicator = () => Widget.Box({
 })
 
 const AudioIndicator = () => Widget.Icon({
+  className: "audioIndicator",
+  tooltipText: "Audio",
   setup: self => self
     .hook(Audio, icon => {
       if (!Audio.speaker)
         return
+
+      icon.tooltipText = `${Math.floor(Audio.speaker.volume * 100)}%`
 
       const { muted, low, medium, high } = icons.audio.volume
       if (Audio.speaker.isMuted)
@@ -52,6 +65,7 @@ const Indicators = () => HoverableButton({
   })
     .hook(Bluetooth, box => {
       box.children = [
+        NotificationIndicator(),
         BluetoothDevicesIndicator(),
         Bluetooth.connectedDevices.length > 0 && Seperator('•', '0.5em', '0'),
         AudioIndicator(),

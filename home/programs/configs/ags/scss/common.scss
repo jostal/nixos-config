@@ -6,6 +6,11 @@
   color: $text;
 }
 
+tooltip {
+  border-radius: 1rem;
+  background-color: $bgTrans;
+}
+
 switch {
   border-radius: 1rem;
   padding: 2px;

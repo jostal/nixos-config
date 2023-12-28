@@ -25,6 +25,7 @@
     keychain
 
 		# Notifications
+    libnotify
 		swaynotificationcenter
 		polkit-kde-agent
 
