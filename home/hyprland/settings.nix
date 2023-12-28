@@ -36,6 +36,7 @@
         "bar0"
         "bar1"
         "bar2"
+        "controlCenter"
       ];
 
 			drop_shadow = "yes";

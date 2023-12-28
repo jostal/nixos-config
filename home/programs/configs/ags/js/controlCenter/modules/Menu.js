@@ -4,17 +4,23 @@ export default ({ title, icon, content, headerChild = Widget.Box() }) => Widget.
   children: [
     Widget.Box({
       className: "settingsMenu",
+      vertical: true,
       children: [
-        Widget.Icon(icon),
-        Widget.Label(title),
-        Widget.Box({ hexpand: true }),
-        headerChild
+        Widget.Box({
+          className: "settingsTitle",
+          children: [
+            Widget.Icon(icon),
+            Widget.Label(title),
+            Widget.Box({ hexpand: true }),
+            headerChild
+          ]
+        }),
+        // seperator
+        Widget.Box({
+          className: "settingsContent",
+          children: [content]
+        })
       ]
     }),
-    // seperator
-    Widget.Box({
-      className: "settingsContent",
-      children: [content]
-    })
   ]
 })

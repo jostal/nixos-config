@@ -1,3 +1,4 @@
+import { Widget, App } from "../imports.js"
 import PopupWindow from "../misc/PopupWindow.js"
 import Header from "./modules/Header.js"
 import Settings from "./modules/Settings.js"

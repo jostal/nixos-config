@@ -1,11 +1,13 @@
 .barIndicatorsContainer {
   @include barBlock;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
 }
 
-.barControlCenter {
-  
+.barControlCenter * {
+  margin-left: 0.5em;
+
+  &:first-child {
+    margin: 0;
+  }
 }
 
 .bluetoothDevice {

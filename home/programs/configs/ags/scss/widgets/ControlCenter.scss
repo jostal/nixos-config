@@ -1,0 +1,42 @@
+.controlCenter {
+  background-color: $bgTrans;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  min-width: 27rem;
+  min-height: 27rem;
+
+  scrollbar, scrollbar * {
+    all: unset;
+  }
+
+  .settingsPage {
+    min-height: 10rem;
+  }
+
+  .settingsMenu {
+    margin-bottom: 8px;
+
+    .settingsTitle {
+      font-weight: bold;
+    }
+  }
+
+  .settingsHeader {
+    margin: 8px 0;
+    background-color: $bgTrans;
+    border-radius: 1rem;
+
+    .settingsButton {
+      padding: 5px;
+      font-size: 1.2rem;
+      border-radius: 1rem;
+      min-width: 2rem;
+      background-color: transparent;
+
+      &.active {
+        background-color: mix($text, $bg);
+      }
+    }
+  }
+}

@@ -1,8 +1,18 @@
-import { Widget, Bluetooth, Audio } from "../imports.js"
+import { App, Widget, Bluetooth, Audio, Network } from "../imports.js"
 import HoverableButton from "../misc/HoverableButton.js"
 import HoverRevealer from "../misc/HoverRevealer.js"
 import icons from '../icons.js'
 import Seperator from "../seperator/Seperator.js"
+
+const NetworkIndicator = () => Widget.Icon({
+  className: 'networkIndicator',
+  setup: self => self
+    .hook(Network, self => {
+      const icon = Network[Network.primary || 'wifi']?.iconName
+      self.icon = icon || ''
+      self.visible = icon
+    })
+})
 
 const BluetoothDevicesIndicator = () => Widget.Box({
   className: 'bluetoothDevices',
@@ -36,18 +46,20 @@ const AudioIndicator = () => Widget.Icon({
 
 const Indicators = () => HoverableButton({
   className: 'barIndicatorsContainer',
-  onClicked: () => { }, // open control center
+  onClicked: () => { App.toggleWindow('controlCenter') },
   child: Widget.Box({
     className: 'barControlCenter',
-    setup: self => self
-      .hook(Bluetooth, box => {
-        self.children = [
-          BluetoothDevicesIndicator(),
-          Bluetooth.connectedDevices.length > 0 && Seperator('•', '0.5em', '0'),
-          AudioIndicator(),
-        ]
-      }, 'notify::connected-devices')
   })
+    .hook(Bluetooth, box => {
+      box.children = [
+        BluetoothDevicesIndicator(),
+        Bluetooth.connectedDevices.length > 0 && Seperator('•', '0.5em', '0'),
+        AudioIndicator(),
+        NetworkIndicator()
+      ]
+    }, 'notify::connected-devices')
+}).hook(App, (btn, win, visible) => {
+  btn.toggleClassName('active', win === 'controlCenter' && visible)
 })
 
 export default Indicators

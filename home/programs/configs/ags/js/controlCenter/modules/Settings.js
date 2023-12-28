@@ -1,6 +1,9 @@
 import { Bluetooth, Widget } from "../../imports.js"
+import AudioContent from "./Audio.js"
+import StackState from "../../misc/StackState.js"
 import icons from "../../icons.js"
 import Menu from "./Menu.js"
+import BluetoothList from "./Bluetooth.js"
 
 export const SettingsState = new StackState("audio")
 
@@ -16,7 +19,7 @@ const SettingsButton = ({ icon, title, ...props }) => Widget.Button({
 })
 
 const SettingsHeader = () => Widget.Box({
-  homogenous: true,
+  homogeneous: true,
   className: "settingsHeader",
   children: [
     SettingsButton({
@@ -36,12 +39,11 @@ const SettingsPage = content => Widget.Scrollable({
   className: "settingsPage",
   vexpand: true,
   hscroll: "never",
-  child: content
+  child: content,
 })
 
 const SettingsContent = () => Widget.Stack({
   transition: "slide_left_right",
-  visibleChildName: SettingsState.bind(),
   items: [
     ["bluetooth", SettingsPage(
       Menu({
@@ -72,6 +74,14 @@ const SettingsContent = () => Widget.Stack({
 const Settings = () => {
   const stack = SettingsContent()
   const header = SettingsHeader()
+  SettingsState.items = stack.items.map(i => i[0])
+  return Widget.Box({
+    vertical: true,
+    children: [
+      header,
+      stack
+    ]
+  })
 }
 
 export default Settings

@@ -41,9 +41,8 @@ const Right = () => Widget.Box({
     className: 'barBlock',
     child: Widget.Box({
       children: [
-        // RoundedAngleEnd("topleft", { className: "angle", hexpand: true }),
-        // Tray(),
         Widget.EventBox({
+          onPrimaryClickRelease: () => App.openWindow("controlCenter"),
           child: Widget.Box({
             children: [
               Indicators(),

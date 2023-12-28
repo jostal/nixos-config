@@ -97,9 +97,40 @@
   margin: 0.5em;
   border-radius: 1em;
   background-color: #1d2021;
-  color: #ddc7a1;
-  margin-left: 0.5em;
-  margin-right: 0.5em; }
+  color: #ddc7a1; }
+
+.barControlCenter * {
+  margin-left: 0.5em; }
+  .barControlCenter *:first-child {
+    margin: 0; }
 
 .bluetoothDevice image:last-child {
   margin-right: 0; }
+
+.controlCenter {
+  background-color: rgba(29, 32, 33, 0.6);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  min-width: 27rem;
+  min-height: 27rem; }
+  .controlCenter scrollbar, .controlCenter scrollbar * {
+    all: unset; }
+  .controlCenter .settingsPage {
+    min-height: 10rem; }
+  .controlCenter .settingsMenu {
+    margin-bottom: 8px; }
+    .controlCenter .settingsMenu .settingsTitle {
+      font-weight: bold; }
+  .controlCenter .settingsHeader {
+    margin: 8px 0;
+    background-color: rgba(29, 32, 33, 0.6);
+    border-radius: 1rem; }
+    .controlCenter .settingsHeader .settingsButton {
+      padding: 5px;
+      font-size: 1.2rem;
+      border-radius: 1rem;
+      min-width: 2rem;
+      background-color: transparent; }
+      .controlCenter .settingsHeader .settingsButton.active {
+        background-color: #7d7461; }
