@@ -22,7 +22,7 @@
 
       layerrule = [
         "ignorealpha[0.97],controlCenter"
-        "ignorealpha[0.97]popupNotifications"
+        "ignorealpha[0.97],popupNotifications"
       ];
 		};
 	};
