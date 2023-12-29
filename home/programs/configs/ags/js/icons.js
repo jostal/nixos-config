@@ -49,6 +49,10 @@ export default {
       up: 'pan-up-symbolic'
     },
   },
+  apps: {
+    apps: 'view-app-grid-symbolic',
+    search: 'folder-saved-search-symbolic'
+  },
   trash: {
     full: "user-trash-full-symbolic",
     empty: "user-trash-symbolic"

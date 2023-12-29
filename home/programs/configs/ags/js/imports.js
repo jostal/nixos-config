@@ -8,7 +8,7 @@ export const Service = await require('service')
 export const Variable = await require('variable')
 export const Utils = await import(resource('utils'))
 
-// export const Applications = await service('applications');
+export const Applications = await service('applications');
 export const Audio = await service('audio');
 export const Bluetooth = await service('bluetooth');
 export const Hyprland = await service('hyprland');

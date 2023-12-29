@@ -1,3 +1,4 @@
+import { Utils } from './imports.js'
 import Gdk from 'gi://Gdk'
 import icons from './icons.js'
 
@@ -56,4 +57,9 @@ export const streamIconSub = stream => {
     "Firefox": "firefox",
   }
   return subs[stream.name] || stream.icon_name
+}
+
+export const launchApp = (app) => {
+  Utils.execAsync(['hyprctl', 'dispatch', 'exec', 'sh -c ${app.executable}'])
+  app.frequency += 1
 }

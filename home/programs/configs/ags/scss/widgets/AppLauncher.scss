@@ -1,0 +1,55 @@
+.appLauncher {
+  background-color: $bgTrans;
+  border-radius: 1rem;
+  padding: 1rem;
+  min-width: 25rem;
+
+  .searchEntry {
+    border-radius: 1rem;
+    padding: 0.5rem;
+    
+    image {
+      margin-right: 0.5rem;
+    }
+  }
+
+  separator {
+    min-height: 2px;
+    background-color: mix($bg, $text, 80);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .searchScroll {
+    min-height: 30rem;
+
+    .searchResults {
+      // color for letter highlighting
+      color: #CBA6F7;
+
+      .appButton {
+        color: $text;
+        padding: 5px;
+        border-radius: 1rem;
+
+        .appIcon {
+          font-size: 3rem;
+          margin-right: 0.5rem;
+        }
+
+        .appName {
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+
+        .appDescription {
+          font-size: 0.8rem;
+        }
+
+        &.focused {
+          background-color: $bgGray;
+        }
+      }
+    }
+  }
+}

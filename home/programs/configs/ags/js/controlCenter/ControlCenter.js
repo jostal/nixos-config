@@ -4,7 +4,6 @@ import Header from "./modules/Header.js"
 import Settings from "./modules/Settings.js"
 
 const ControlCenter = () => Widget.Box({
-  // vexpand: true,
   hexpand: true,
   children: [
     Widget.EventBox({

@@ -43,6 +43,7 @@ const Right = () => Widget.Box({
       children: [
         Widget.EventBox({
           onPrimaryClickRelease: () => App.openWindow("controlCenter"),
+          onSecondaryClickRelease: () => App.openWindow("appLauncher"),
           child: Widget.Box({
             children: [
               Indicators(),

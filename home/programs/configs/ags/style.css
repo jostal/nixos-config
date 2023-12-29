@@ -232,3 +232,37 @@ switch {
     background-color: rgba(125, 116, 97, 0.72);
     border-radius: 1rem;
     margin: 5px 0; }
+
+.appLauncher {
+  background-color: rgba(29, 32, 33, 0.6);
+  border-radius: 1rem;
+  padding: 1rem;
+  min-width: 25rem; }
+  .appLauncher .searchEntry {
+    border-radius: 1rem;
+    padding: 0.5rem; }
+    .appLauncher .searchEntry image {
+      margin-right: 0.5rem; }
+  .appLauncher separator {
+    min-height: 2px;
+    background-color: #43413b;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
+  .appLauncher .searchScroll {
+    min-height: 30rem; }
+    .appLauncher .searchScroll .searchResults {
+      color: #CBA6F7; }
+      .appLauncher .searchScroll .searchResults .appButton {
+        color: #ddc7a1;
+        padding: 5px;
+        border-radius: 1rem; }
+        .appLauncher .searchScroll .searchResults .appButton .appIcon {
+          font-size: 3rem;
+          margin-right: 0.5rem; }
+        .appLauncher .searchScroll .searchResults .appButton .appName {
+          font-weight: bold;
+          font-size: 1.2rem; }
+        .appLauncher .searchScroll .searchResults .appButton .appDescription {
+          font-size: 0.8rem; }
+        .appLauncher .searchScroll .searchResults .appButton.focused {
+          background-color: #3c3836; }
