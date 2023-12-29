@@ -48,5 +48,9 @@ export default {
       down: 'pan-down-symbolic',
       up: 'pan-up-symbolic'
     },
+  },
+  trash: {
+    full: "user-trash-full-symbolic",
+    empty: "user-trash-symbolic"
   }
 }

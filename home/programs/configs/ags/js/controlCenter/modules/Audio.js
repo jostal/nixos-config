@@ -119,8 +119,10 @@ const SinkItem = (type) => stream => HoverableButton({
 })
 
 const SettingsButton = (tab = 0) => HoverableButton({
+  className: "audioSettingsButton",
+  tooltipText: "Pavucontrol",
   onClicked: () => Hyprland.sendMessage("dispatch exec pavucontrol -t " + tab),
-  child: Widget.Icon(icons.settings)
+  child: Widget.Icon(icons.ui.settings)
 })
 
 export const AppMixer = () => Menu({
@@ -158,7 +160,12 @@ export const SinkSelector = (type = "sink") => Menu({
         }, "stream-removed")
     ]
   }),
-  headerChild: SettingsButton(type === "sink" ? 3 : 4)
+  headerChild: Widget.Box({
+    hpack: "end",
+    children: [
+      SettingsButton(type === "sink" ? 3 : 4)
+    ]
+  })
 })
 
 const AudioContent = () => Widget.Box({

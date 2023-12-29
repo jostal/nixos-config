@@ -22,6 +22,27 @@
       .settingsTitle {
         font-weight: bold;
         padding-bottom: 0.8rem;
+        min-height: calc(1rem + 1.3rem);
+        
+        button {
+          padding: 0.5rem;
+          background-color: $text;
+          border-radius: 1rem;
+
+          &.audioSettingsButton {
+            padding: 4px;
+
+            * {
+              color: $bg;
+              font-size: 1.6rem;
+            }
+          }
+
+          label {
+            color: $bg;
+            font-size: 1rem;
+          }
+        }
       }
 
       separator {
@@ -39,7 +60,7 @@
     }
 
     .settingsHeader {
-      margin: 8px 0;
+      margin: 8px 0 1rem 0;
       background-color: $bgTrans;
       border-radius: 1rem;
 

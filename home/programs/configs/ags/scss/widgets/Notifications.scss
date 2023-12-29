@@ -23,6 +23,15 @@
 
   .notificationTitle {
     font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .notificationTime {
+    font-size: 0.9rem;
+  }
+
+  .notificationBody {
+    font-size: 1rem;
   }
 
   .notificationClose {
@@ -30,7 +39,7 @@
   }
 
   .notificationActionButton {
-    background-color: mix($bgTrans, $text);
+    background-color: mix($bgTrans, $text, 70);
     border-radius: 1rem;
     margin: 5px 0;
   }

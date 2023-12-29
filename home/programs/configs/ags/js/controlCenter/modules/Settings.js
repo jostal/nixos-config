@@ -1,4 +1,4 @@
-import { Bluetooth, Widget } from "../../imports.js"
+import { Notifications, Widget } from "../../imports.js"
 import AudioContent from "./Audio.js"
 import StackState from "../../misc/StackState.js"
 import icons from "../../icons.js"
@@ -9,7 +9,7 @@ import NotificationList from "./Notifications.js"
 export const SettingsState = new StackState("audio")
 
 const SettingsButton = ({ icon, title, ...props }) => Widget.Button({
-  child: Widget.Icon(icon),
+  child: icon,
   className: "settingsButton",
   ...props,
   onClicked: () => {
@@ -24,18 +24,23 @@ const SettingsHeader = () => Widget.Box({
   className: "settingsHeader",
   children: [
     SettingsButton({
-      icon: icons.notifications.new,
+      icon: Widget.Icon()
+        .hook(Notifications, self => {
+          self.icon = Notifications.notifications.length > 0
+            ? icons.notifications.new
+            : icons.notifications.notification
+        }),
       title: "notifications",
       cursor: "pointer",
     }),
     SettingsButton({
-      icon: icons.bluetooth.enabled,
+      icon: Widget.Icon(icons.bluetooth.enabled),
       title: "bluetooth",
       cursor: "pointer",
       // tooltipText: "Bluetooth"
     }),
     SettingsButton({
-      icon: icons.audio.volume.high,
+      icon: Widget.Icon(icons.audio.volume.high),
       cursor: "pointer",
       title: "audio",
       // tooltipText: "Audio"
@@ -56,11 +61,31 @@ const SettingsContent = () => Widget.Stack({
     ["notifications", SettingsPage(
       Menu({
         title: "Notifications",
-        icon: icons.notifications.notification,
+        iconWidget: Widget.Icon({
+          setup: self => self
+            .hook(Notifications, self => {
+              self.icon = Notifications.notifications.length > 0
+                ? icons.notifications.new
+                : icons.notifications.notification
+            })
+        }),
         content: NotificationList(),
+        headerChild: Widget.Box({
+          hpack: "end",
+          children: [
+            Widget.Button({
+              cursor: "pointer",
+              onClicked: () => Notifications.clear(),
+              child: Widget.Label("Clear all"),
+              setup: self => self
+                .hook(Notifications, self => {
+                  self.visible = Notifications.notifications.length > 0
+                })
+            })
+          ]
+        })
       })
     )
-
     ],
     ["bluetooth", SettingsPage(
       Menu({

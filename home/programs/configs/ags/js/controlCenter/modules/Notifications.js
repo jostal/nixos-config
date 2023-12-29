@@ -4,6 +4,7 @@ import { NotificationReveal } from "../../misc/Notification.js"
 const NotificationList = () => Widget.Box({
   vertical: true,
   hpack: "end",
+  spacing: 5,
   setup: box => {
     Utils.timeout(1000, () => {
       Notifications.notifications.forEach(notif => {

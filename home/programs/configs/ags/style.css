@@ -76,7 +76,8 @@ switch {
     .wsContainer .wsButton .wsLabel {
       font-size: 0.8rem;
       min-width: 1.5rem;
-      min-height: 1.5rem; }
+      min-height: 1.5rem;
+      color: #1d2021; }
     .wsContainer .wsButton.active .wsLabel {
       min-width: calc(1.5rem + 4px);
       min-height: calc(1.5rem + 4px); }
@@ -118,10 +119,8 @@ switch {
   background-color: #1d2021;
   color: #ddc7a1; }
 
-.barControlCenter * {
-  margin-left: 0.5em; }
-  .barControlCenter *:first-child {
-    margin: 0; }
+.networkIndicator {
+  margin-right: 8px; }
 
 .bluetoothDevice image:last-child {
   margin-right: 0; }
@@ -142,7 +141,20 @@ switch {
       margin-bottom: 0.8rem; }
       .controlCenterContainer .controlCenter .settingsMenu .settingsTitle {
         font-weight: bold;
-        padding-bottom: 0.8rem; }
+        padding-bottom: 0.8rem;
+        min-height: calc(1rem + 1.3rem); }
+        .controlCenterContainer .controlCenter .settingsMenu .settingsTitle button {
+          padding: 0.5rem;
+          background-color: #ddc7a1;
+          border-radius: 1rem; }
+          .controlCenterContainer .controlCenter .settingsMenu .settingsTitle button.audioSettingsButton {
+            padding: 4px; }
+            .controlCenterContainer .controlCenter .settingsMenu .settingsTitle button.audioSettingsButton * {
+              color: #1d2021;
+              font-size: 1.6rem; }
+          .controlCenterContainer .controlCenter .settingsMenu .settingsTitle button label {
+            color: #1d2021;
+            font-size: 1rem; }
       .controlCenterContainer .controlCenter .settingsMenu separator {
         background-color: #43413b;
         min-height: 2px; }
@@ -151,7 +163,7 @@ switch {
         .controlCenterContainer .controlCenter .settingsMenu .settingsContent label {
           margin-left: 0.5rem; }
     .controlCenterContainer .controlCenter .settingsHeader {
-      margin: 8px 0;
+      margin: 8px 0 1rem 0;
       background-color: rgba(29, 32, 33, 0.6);
       border-radius: 1rem; }
       .controlCenterContainer .controlCenter .settingsHeader .settingsButton {
@@ -208,10 +220,15 @@ switch {
     background-size: cover;
     background-position: center; }
   .notification .notificationTitle {
-    font-weight: bold; }
+    font-weight: bold;
+    font-size: 1.1rem; }
+  .notification .notificationTime {
+    font-size: 0.9rem; }
+  .notification .notificationBody {
+    font-size: 1rem; }
   .notification .notificationClose {
     min-width: 1.5rem; }
   .notification .notificationActionButton {
-    background-color: rgba(163, 149, 123, 0.8);
+    background-color: rgba(125, 116, 97, 0.72);
     border-radius: 1rem;
     margin: 5px 0; }

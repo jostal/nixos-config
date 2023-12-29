@@ -3,11 +3,11 @@
 }
 
 .barControlCenter * {
-  margin-left: 0.5em;
+  // margin-left: 0.5em;
+}
 
-  &:first-child {
-    margin: 0;
-  }
+.networkIndicator {
+  margin-right: 8px;
 }
 
 .bluetoothDevice {

@@ -101,6 +101,7 @@ const Notification = notification => Widget.Box({
     }),
     Widget.Box({
       children: notification.actions.map(action => Widget.Button({
+        cursor: "pointer",
         child: Widget.Label(action.label),
         onClicked: () => notification.invoke(action.id),
         className: "notificationActionButton",

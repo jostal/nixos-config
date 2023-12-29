@@ -1,22 +1,23 @@
 import { Widget } from "../../imports.js";
 
-export default ({ title, icon, content, headerChild = Widget.Box(), ...props }) => Widget.Box({
+export default ({ title, icon, iconWidget, content, headerChild = Widget.Box({ hexpand: true }), ...props }) => Widget.Box({
   ...props,
   children: [
     Widget.Box({
       className: "settingsMenu",
       vertical: true,
       children: [
-        Widget.Box({
+        Widget.CenterBox({
           className: "settingsTitle",
-          hpack: "center",
-          spacing: 5,
-          children: [
-            Widget.Icon(icon),
-            Widget.Label(title),
-            Widget.Box({ hexpand: true }),
-            headerChild
-          ]
+          startWidget: Widget.Box({ hexpand: true }),
+          centerWidget: Widget.Box({
+            spacing: 5,
+            children: [
+              iconWidget || Widget.Icon(icon),
+              Widget.Label(title),
+            ]
+          }),
+          endWidget: headerChild,
         }),
         Widget.Separator(),
         Widget.Box({
