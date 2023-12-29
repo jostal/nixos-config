@@ -4,11 +4,13 @@ let
 	# Commands
 	moveFocus = binding mainMod "movefocus";
 	resizeActive = binding "${mainMod} CTRL" "resizeactive";
+  e = "exec, ags -b hypr";
 in [
 	# Programs
 	"${mainMod}, T, exec, alacritty -e tmux new-session -As0"
 	"${mainMod}, E, exec, nautilus"
-	"${mainMod}, SPACE, exec, tofi-drun --drun-launch=true"
+  "${mainMod} ALT, R, ${e} quit; ags -b hypr"
+	"${mainMod}, SPACE, ${e} -t appLauncher"
 	
 	# Switch workspaces
 	"${mainMod}, 1, workspace, 1"

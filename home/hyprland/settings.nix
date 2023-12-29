@@ -40,6 +40,7 @@
         "popupNotifications0"
         "popupNotifications1"
         "popupNotifications2"
+        "appLauncher"
       ];
 
 			drop_shadow = "yes";
