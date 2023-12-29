@@ -251,7 +251,7 @@ switch {
   .appLauncher .searchScroll {
     min-height: 30rem; }
     .appLauncher .searchScroll .searchResults {
-      color: #CBA6F7; }
+      color: #e78a4e; }
       .appLauncher .searchScroll .searchResults .appButton {
         color: #ddc7a1;
         padding: 5px;
