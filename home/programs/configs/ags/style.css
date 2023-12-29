@@ -255,7 +255,7 @@ switch {
       .appLauncher .searchScroll .searchResults .appButton {
         color: #ddc7a1;
         padding: 5px;
-        border-radius: 1rem; }
+        border-radius: 0.7rem; }
         .appLauncher .searchScroll .searchResults .appButton .appIcon {
           font-size: 3rem;
           margin-right: 0.5rem; }
@@ -265,4 +265,4 @@ switch {
         .appLauncher .searchScroll .searchResults .appButton .appDescription {
           font-size: 0.8rem; }
         .appLauncher .searchScroll .searchResults .appButton.focused {
-          background-color: #3c3836; }
+          background-color: #343637; }

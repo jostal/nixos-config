@@ -62,18 +62,20 @@ const AppButton = app => HoverableButton({
 
 const fzf = new Fzf(Applications.list.map(AppButton), {
   selector: item => item.attribute.app.name,
-  tiebreakers: [(a, b) => b.item.attribute.app._frequency - a.item.attribute.app._frequency]
+  tiebreakers: [(a, b) => b.item.attribute.app.frequency - a.item.attribute.app.frequency],
 })
 
 function searchApps(text, results) {
   results.children.forEach(c => results.remove(c))
   const fzfResults = fzf.find(text)
+  fzfResults.sort((b, a) => a.item.attribute.app.frequency - b.item.attribute.app.frequency)
   const context = results.get_style_context()
   const color = context.get_color(Gtk.StateFlags.NORMAL)
   const hexcolor = "#" + (color.red * 0xff).toString(16).padStart(2, "0")
     + (color.green * 0xff).toString(16).padStart(2, "0")
     + (color.blue * 0xff).toString(16).padStart(2, "0")
   fzfResults.forEach(entry => {
+    console.log(entry.item.attribute.app.name + ": " + entry.item.attribute.app.frequency)
     const nameChars = entry.item.attribute.app.name.normalize().split("")
     entry.item.child.children[1].children[0].label = nameChars.map((char, i) => {
       if (entry.positions.has(i)) {

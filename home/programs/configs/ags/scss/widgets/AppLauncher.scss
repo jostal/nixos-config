@@ -30,7 +30,7 @@
       .appButton {
         color: $text;
         padding: 5px;
-        border-radius: 1rem;
+        border-radius: 0.7rem;
 
         .appIcon {
           font-size: 3rem;
@@ -47,7 +47,7 @@
         }
 
         &.focused {
-          background-color: $bgGray;
+          background-color: mix($bg, #fff, 90);
         }
       }
     }
