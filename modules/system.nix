@@ -151,6 +151,7 @@
 	services = {
 		# Network
 		vnstat.enable = true;
+    gvfs.enable = true;
 
     blueman.enable = true;
 

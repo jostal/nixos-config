@@ -266,3 +266,11 @@ switch {
           font-size: 0.8rem; }
         .appLauncher .searchScroll .searchResults .appButton.focused {
           background-color: #343637; }
+
+.barMusicContainer {
+  transition: background-color 0.2s ease-in-out;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 1em;
+  background-color: #1d2021;
+  color: #ddc7a1; }

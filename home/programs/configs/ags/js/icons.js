@@ -36,6 +36,23 @@ export default {
     settings: "settings-symbolic",
     power: "system-shutdown-symbolic"
   },
+  mpris: {
+    fallback: "audio-x-generic-symbolic",
+    shuffle: {
+      enabled: "media-playlist-shuffle-symbolic",
+      disabled: "media-playlist-no-shuffle-symbolic",
+    },
+    loop: {
+      none: "media-playlist-no-repeat-symbolic",
+      track: "media-playlist-repeat-song-symbolic",
+      playlist: "media-playlist-repeat-symbolic"
+    },
+    playing: "media-playback-pause-symbolic",
+    paused: "media-playback-start-symbolic",
+    stopped: "media-playback-stop-sybolic",
+    prev: "media-skip-backward-symbolic",
+    next: "media-skip-forward-symbolic"
+  },
   ui: {
     close: 'window-close-symbolic',
     info: 'info-symbolic',
