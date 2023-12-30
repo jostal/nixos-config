@@ -5,6 +5,7 @@ import Clock from "../clock/Clock.js";
 import Workspaces from "../workspaces/Workspaces.js";
 import FocusedTitle from "../title/FocusedTitle.js";
 import Indicators from "../indicators/Indicators.js"
+import { MusicBarContainerRevealer } from '../mpris/Mpris.js';
 
 const Left = () => Widget.EventBox({
   className: 'leftBar',
@@ -14,7 +15,6 @@ const Left = () => Widget.EventBox({
     children: [
       Workspaces(),
       FocusedTitle(),
-      // RoundedAngleEnd("topright", { className: "angle" }),
     ]
   })
 })
@@ -23,10 +23,8 @@ const Center = () => Widget.Box({
   className: 'centerBar',
   orientation: 'horizontal',
   children: [
-    // RoundedAngleEnd("topleft", { className: "angle", hexpand: true }),
     Clock(),
-    // notifs
-    // RoundedAngleEnd("topright", { className: "angle", hexpand: true }),
+    MusicBarContainerRevealer()
   ]
 })
 
