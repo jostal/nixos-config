@@ -18,6 +18,9 @@
 
 		# ags
 		sassc
+
+    # Media
+    (mpv.override { scripts = [mpvScripts.mpris]; })
 	];
   
 	programs = {

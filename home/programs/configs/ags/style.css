@@ -118,12 +118,12 @@ switch {
   border-radius: 1em;
   background-color: #1d2021;
   color: #ddc7a1; }
-
-.networkIndicator {
-  margin-right: 8px; }
-
-.bluetoothDevice image:last-child {
-  margin-right: 0; }
+  .barIndicatorsContainer .barControlCenter .indicator {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem; }
+  .barIndicatorsContainer .barControlCenter .hover {
+    background-color: #3c3836;
+    border-radius: 0.8rem; }
 
 .controlCenterContainer {
   border-radius: 1rem; }

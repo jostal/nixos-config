@@ -6,8 +6,10 @@ import Seperator from "../seperator/Seperator.js"
 import { SettingsState } from "../controlCenter/modules/Settings.js"
 
 const NetworkIndicator = () => Widget.EventBox({
+  onHover: (box) => box.toggleClassName("hover", true),
+  onHoverLost: (box) => box.toggleClassName("hover", false),
   child: Widget.Icon({
-    className: 'networkIndicator',
+    className: 'networkIndicator indicator',
     setup: self => self
       .hook(Network, self => {
         const icon = Network[Network.primary || 'wifi']?.iconName
@@ -18,11 +20,14 @@ const NetworkIndicator = () => Widget.EventBox({
 })
 
 const NotificationIndicator = () => Widget.EventBox({
-  onPrimaryClick: () => {
+  onPrimaryClick: (box) => {
     SettingsState.value = "notifications"
+    box.toggleClassName("hover", false)
   },
+  onHover: (box) => box.toggleClassName("hover", true),
+  onHoverLost: (box) => box.toggleClassName("hover", false),
   child: Widget.Icon({
-    className: 'notificationIndicator',
+    className: 'notificationIndicator indicator',
     icon: icons.notifications.new,
     setup: self => self
       .hook(Notifications, self => {
@@ -32,27 +37,33 @@ const NotificationIndicator = () => Widget.EventBox({
   })
 })
 
-const BluetoothDevicesIndicator = () => Widget.Box({
-  className: 'bluetoothDevices',
-  setup: self => self
-    .hook(Bluetooth, box => {
-      box.children = Bluetooth.connectedDevices
-        .map(({ iconName, name }) => HoverRevealer({
-          className: 'bluetoothDevice',
-          indicator: Widget.Icon(iconName + '-symbolic'),
-          child: Widget.Label(name)
-        }))
-
-      box.visible = Bluetooth.connectedDevices.length > 0
-    }, 'notify::connected-devices')
+const BluetoothIndicator = () => Widget.EventBox({
+  onPrimaryClick: (box) => {
+    SettingsState.value = "bluetooth"
+    box.toggleClassName("hover", false)
+  },
+  onHover: (box) => box.toggleClassName("hover", true),
+  onHoverLost: (box) => box.toggleClassName("hover", false),
+  child: Widget.Icon({
+    className: "bluetoothIndicator indicator",
+    icon: icons.bluetooth.enabled,
+    setup: self => self
+      .hook(Bluetooth, self => {
+        self.visible = Bluetooth.connectedDevices.length > 0
+        self.tooltipText = `${Bluetooth.connectedDevices.length}`
+      })
+  })
 })
 
 const AudioIndicator = () => Widget.EventBox({
-  onPrimaryClick: () => {
+  onPrimaryClick: (box) => {
     SettingsState.value = "audio"
+    box.toggleClassName("hover", false)
   },
+  onHover: (box) => box.toggleClassName("hover", true),
+  onHoverLost: (box) => box.toggleClassName("hover", false),
   child: Widget.Icon({
-    className: "audioIndicator",
+    className: "audioIndicator indicator",
     tooltipText: "Audio",
     setup: self => self
       .hook(Audio, icon => {
@@ -75,14 +86,13 @@ const Indicators = () => HoverableButton({
   className: 'barIndicatorsContainer',
   onClicked: () => { App.toggleWindow('controlCenter') },
   child: Widget.Box({
-    spacing: 8,
+    // spacing: 8,
     className: 'barControlCenter',
   })
     .hook(Bluetooth, box => {
       box.children = [
         NotificationIndicator(),
-        BluetoothDevicesIndicator(),
-        Bluetooth.connectedDevices.length > 0 && Seperator('•', '0.5em', '0'),
+        BluetoothIndicator(),
         AudioIndicator(),
         NetworkIndicator()
       ]

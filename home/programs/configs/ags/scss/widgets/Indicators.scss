@@ -1,17 +1,15 @@
 .barIndicatorsContainer {
   @include barBlock;
-}
 
-.barControlCenter * {
-  // margin-left: 0.5em;
-}
+  .barControlCenter {
+    .indicator {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
 
-.networkIndicator {
-  margin-right: 8px;
-}
-
-.bluetoothDevice {
-  image:last-child {
-    margin-right: 0;
+    .hover {
+      background-color: $bgGray;
+      border-radius: 0.8rem;
+    }
   }
 }

@@ -3,6 +3,7 @@ import icons from "../icons.js";
 import PopupWindow from "../misc/PopupWindow.js";
 import { Fzf } from "../../node_modules/fzf/dist/fzf.es.js"
 import Gtk from "gi://Gtk"
+import Gdk from "gi://Gdk?version=3.0"
 import HoverableButton from "../misc/HoverableButton.js";
 
 const WINDOW_NAME = "appLauncher"
@@ -75,7 +76,6 @@ function searchApps(text, results) {
     + (color.green * 0xff).toString(16).padStart(2, "0")
     + (color.blue * 0xff).toString(16).padStart(2, "0")
   fzfResults.forEach(entry => {
-    console.log(entry.item.attribute.app.name + ": " + entry.item.attribute.app.frequency)
     const nameChars = entry.item.attribute.app.name.normalize().split("")
     entry.item.child.children[1].children[0].label = nameChars.map((char, i) => {
       if (entry.positions.has(i)) {
@@ -105,6 +105,9 @@ const SearchBox = () => {
       entry.text = ""
       entry.grab_focus()
     }, "window-toggled")
+    .on("key-release-event", (_, event) => {
+      results.children[0]?.grab_focus()
+    })
 
   return Widget.Box({
     vertical: true,
@@ -124,4 +127,17 @@ export default () => PopupWindow({
   focusable: true,
   name: WINDOW_NAME,
   child: SearchBox()
+    .on("key-press-event", (self, event) => {
+      const keyval = event.get_keyval()[1]
+      const actionKeys = [
+        Gdk.KEY_Down,
+        Gdk.KEY_Up,
+        Gdk.KEY_Escape,
+        Gdk.KEY_Return
+      ]
+      if (!actionKeys.includes(keyval)) {
+        self.children[0].grab_focus_without_selecting()
+        self.children[0].emit("key-press-event", event)
+      }
+    })
 })
