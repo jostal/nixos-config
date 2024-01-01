@@ -8,6 +8,11 @@ vim.api.nvim_set_keymap('n', '<A-t>', "<cmd>TermSelect<cr>", { desc = "Focus sel
 -- mini.files
 vim.api.nvim_set_keymap('n', 'n', '<cmd>lua MiniFiles.open()<cr>', { desc = "Open mini.files" })
 
+-- nvim tree
+km('n', 'n', "<cmd>lua require('nvim-tree.api').tree.focus()<cr>", { desc = "Focus nvim tree" })
+km('n', '<A-n>', "<cmd>lua require('nvim-tree.api').tree.toggle()<cr>", { desc = "Toggle nvim tree" })
+km('n', '<C-v>', "<cmd>lua require('nvim-tree.api').node.open.vertical()<cr>", { desc = "Vertical split nvim tree file" })
+
 -- Telescope
 vim.api.nvim_set_keymap('n', 'ff', "<cmd>lua require('telescope.builtin').find_files()<cr>",
   { desc = "Search for files" })
