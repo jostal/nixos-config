@@ -22,6 +22,7 @@
       nvim-cmp
       nvim-colorizer-lua
       nvim-lspconfig
+      nvim-tree-lua
       nvim-treesitter-context
       nvim-treesitter-textobjects
       nvim-treesitter-refactor

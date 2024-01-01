@@ -240,3 +240,11 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
+
+local signature_config = {
+  hint_enable = false,
+  handler_opts = { border = "single" },
+  max_width = 80,
+}
+
+require("lsp_signature").setup(signature_config)
