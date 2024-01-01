@@ -31,6 +31,7 @@
       nvim-navic
       mini-nvim
       lsp-format-nvim
+      lsp_signature-nvim
       lualine-nvim
       luasnip
       plenary-nvim
