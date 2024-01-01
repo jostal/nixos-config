@@ -1,6 +1,6 @@
 local M = {}
 
-M.lsp_signs = { Error = "✖ ", Warn = "! ", Hint = " ", Info = " " }
+M.lsp_signs = { Error = "✖ ", Warn = "! ", Hint = "⚑ ", Info = " " }
 
 M.cmp_kinds = {
   Text = "  ",
@@ -28,7 +28,6 @@ M.cmp_kinds = {
   Event = "  ",
   Operator = "  ",
   TypeParameter = "  ",
-  Copilot = "  ",
 }
 
 M.lsp_servers = {

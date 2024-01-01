@@ -9,6 +9,8 @@ const dateVar = Variable('', {
 })
 
 const Clock = () => Widget.EventBox({
+  cursor: "pointer",
+  onPrimaryClick: () => App.toggleWindow("calendar"),
   child: Widget.Box({
     className: 'clockContainer',
     children: [

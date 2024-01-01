@@ -13,6 +13,11 @@ const MusicContainer = () => Widget.EventBox({
     if (!player) return
     player.next()
   },
+  onMiddleClick: () => {
+    const player = Mpris.getPlayer("spotify") || Mpris.getPlayer()
+    if (!player) return
+    player.previous()
+  },
   child: Widget.Box({
     className: "barMusicContainer",
     children: [
@@ -42,13 +47,15 @@ const MusicContainer = () => Widget.EventBox({
           prog.value = player.position / player.length
         }),
       Widget.Label({
-        maxWidthChars: 35,
+        className: "musicLabel",
+        maxWidthChars: 30,
         truncate: "end"
       })
         .hook(Mpris, label => {
           const player = Mpris.getPlayer("spotify") || Mpris.getPlayer()
           if (!player) return
-          label.label = player?.trackTitle + ' - ' + player?.trackArtists
+          label.label = player?.trackTitle + (player?.trackArtists ? ' - ' + player?.trackArtists : '')
+          label.tooltipText = player?.trackTitle + '-' + player?.trackArtists
         })
     ]
   })

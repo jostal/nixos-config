@@ -1,17 +1,17 @@
 vim.api.nvim_create_autocmd("BufReadPost", {
-    callback = function()
-        local mark = vim.api.nvim_buf_get_mark(0, '"')
-        local lcount = vim.api.nvim_buf_line_count(0)
-        if mark[1] > 0 and mark[1] <= lcount then
-            pcall(vim.api.nvim_win_set_cursor, 0, mark)
-        end
-    end,
+  callback = function()
+    local mark = vim.api.nvim_buf_get_mark(0, '"')
+    local lcount = vim.api.nvim_buf_line_count(0)
+    if mark[1] > 0 and mark[1] <= lcount then
+      pcall(vim.api.nvim_win_set_cursor, 0, mark)
+    end
+  end,
 })
 
 -- stop commenting on a new line
 vim.api.nvim_create_autocmd("BufEnter", {
   callback = function()
-    vim.opt.formatoptions = vim.opt.formatoptions - { "c", "r", "o"}
+    vim.opt.formatoptions = vim.opt.formatoptions - { "c", "r", "o" }
   end,
 })
 
@@ -24,13 +24,13 @@ local map_split = function(buf_id, lhs, direction)
       vim.cmd(direction .. ' split')
       new_target_window = vim.api.nvim_get_current_win()
     end)
-    
+
     MiniFiles.set_target_window(new_target_window)
   end
 
   -- Adding desc will result into show_help entries
   local desc = 'Split ' .. direction
-  vim.keymap.set('n', lhs, rhs, { buffer = buf_id, desc = desc})
+  vim.keymap.set('n', lhs, rhs, { buffer = buf_id, desc = desc })
 end
 
 vim.api.nvim_create_autocmd('User', {
@@ -39,5 +39,18 @@ vim.api.nvim_create_autocmd('User', {
     local buf_id = args.data.buf_id
     map_split(buf_id, '<C-h>', 'belowright horizontal')
     map_split(buf_id, '<C-v>', 'belowright vertical')
+  end
+})
+
+-- stop jump with tab
+vim.api.nvim_create_autocmd('ModeChanged', {
+  pattern = '',
+  callback = function()
+    if ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
+        and require('luasnip').session.current_nodes[vim.api.nvim_get_current_buf()]
+        and not require('luasnip').session.jump_active
+    then
+      require('luasnip').unlink_current()
+    end
   end
 })

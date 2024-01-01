@@ -1,3 +1,23 @@
 .barMusicContainer {
   @include barBlock
+
+  .musicProgress {
+    font-size: 0.9rem;
+    background-color: mix($text, $bg, 60);
+    min-width: 1.8rem;
+    min-height: 1.8rem;
+    
+    image {
+      font-size: 1.1rem;
+      color: $bg;
+    }
+  }
+
+  .musicLabel {
+    margin-left: 0.5rem; 
+  }
+}
+
+.musicContainer {
+  background-color: $bg;
 }

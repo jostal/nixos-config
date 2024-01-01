@@ -1,0 +1,20 @@
+.calendar {
+  background-color: $bgTrans;
+  border-radius: 1rem;
+  padding: 1rem;
+
+  * {
+    // padding: 0.8rem;
+  }
+
+  calendar {
+    &:selected {
+      // min-width: 60px;
+      // min-height: 60px;
+      background-color: $bg;
+      border-radius: 100px;
+    }
+    font-size: 1.1em;
+    // padding: 0.2em;
+  }
+}

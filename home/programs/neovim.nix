@@ -16,6 +16,7 @@
       cmp-cmdline
       comment-nvim
       formatter-nvim
+      friendly-snippets
       gruvbox-nvim
       indent-blankline-nvim
       nvim-cmp

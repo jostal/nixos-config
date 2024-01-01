@@ -11,11 +11,15 @@ export default ({
   visible = false,
   layer = 'overlay',
   close_on_unfocus = 'released',
+  hexpand = true,
+  vexpand = true,
   ...props
 }) => {
   const window = Widget.Window({
     name,
     layer,
+    hexpand,
+    vexpand,
     visible: false,
     focusable: true,
     popup: true,

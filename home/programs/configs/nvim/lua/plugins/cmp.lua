@@ -1,4 +1,4 @@
-opts = function()
+local opts = function()
   local cmp = require("cmp")
   local cmp_kinds = require("utils").cmp_kinds
 
@@ -159,4 +159,84 @@ config = function(_, opts)
     }),
   })
 end
-config()
+-- config()
+
+local cmp = require('cmp')
+local luasnip = require('luasnip')
+local cmp_kinds = require("utils").cmp_kinds
+
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end
+  },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered()
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-S-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_locally_jumpable then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" })
+  }),
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" },
+    { name = "nvim_lsp_signature_help" },
+    { name = "luasnip" },
+  }, {
+    { name = 'buffer' },
+    { name = 'path' }
+  }),
+  formatting = {
+    format = function(entry, vim_item)
+      if vim.tbl_contains({ "path" }, entry.source.name) then
+        local icon, hl_group = require("nvim-web-devicons").get_icon(entry:get_completion_item().label)
+        if icon then
+          vim_item.kind = icon
+          vim_item.kind_hl_group = hl_group
+          return vim_item
+        end
+      end
+      vim_item.kind = (cmp_kinds[vim_item.kind] or "") .. vim_item.kind
+
+      return vim_item
+    end,
+  },
+})
+
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})

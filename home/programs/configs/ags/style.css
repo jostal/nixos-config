@@ -218,7 +218,8 @@ switch {
     min-height: 5rem;
     border-radius: 1rem;
     background-size: cover;
-    background-position: center; }
+    background-position: center;
+    margin-right: 0.5rem; }
   .notification .notificationTitle {
     font-weight: bold;
     font-size: 1.1rem; }
@@ -274,3 +275,26 @@ switch {
   border-radius: 1em;
   background-color: #1d2021;
   color: #ddc7a1; }
+  .barMusicContainer .musicProgress {
+    font-size: 0.9rem;
+    background-color: #90846e;
+    min-width: 1.8rem;
+    min-height: 1.8rem; }
+    .barMusicContainer .musicProgress image {
+      font-size: 1.1rem;
+      color: #1d2021; }
+  .barMusicContainer .musicLabel {
+    margin-left: 0.5rem; }
+
+.musicContainer {
+  background-color: #1d2021; }
+
+.calendar {
+  background-color: rgba(29, 32, 33, 0.6);
+  border-radius: 1rem;
+  padding: 1rem; }
+  .calendar calendar {
+    font-size: 1.1em; }
+    .calendar calendar:selected {
+      background-color: #1d2021;
+      border-radius: 100px; }
