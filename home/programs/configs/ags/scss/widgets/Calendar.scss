@@ -1,20 +1,55 @@
-.calendar {
+.calendarContainer {
   background-color: $bgTrans;
+  padding: 1rem; 
   border-radius: 1rem;
-  padding: 1rem;
 
-  * {
-    // padding: 0.8rem;
+  .navContainer {
+    padding: 0.5rem;
+
+    .nav {
+      label {
+        font-size: 1.2rem;
+      }
+      .arrow {
+        image {
+          font-size: 1.5rem;
+        }
+      }
+    }
   }
 
-  calendar {
-    &:selected {
-      // min-width: 60px;
-      // min-height: 60px;
-      background-color: $bg;
-      border-radius: 100px;
+  .weekdays {
+    label {
+      padding: 0.5rem;
+      font-weight: bold;
     }
-    font-size: 1.1em;
-    // padding: 0.2em;
+  }
+
+  .weeks {
+    .weekRow {
+      .day {
+        min-width: 3.4rem;
+        min-height: 3.4rem;
+
+        label {
+          font-size: 1.2rem;
+        }
+
+        &.otherMonth {
+          label {
+            color: mix($text, $bg, 50);
+          }
+        }
+
+        &.today {
+          font-weight: bold;
+          background-color: $primary;
+          border-radius: 50%;
+          label {
+            color: $primaryText;
+          }
+        }
+      }
+    }
   }
 }

@@ -23,6 +23,7 @@
       layerrule = [
         "ignorealpha[0.97],controlCenter"
         "ignorealpha[0.97],appLauncher"
+        "ignorealpha[0.97],calendar"
         "ignorealpha[0.97],popupNotifications0"
         "ignorealpha[0.97],popupNotifications1"
         "ignorealpha[0.97],popupNotifications2"

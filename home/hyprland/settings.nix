@@ -37,6 +37,7 @@
         "bar1"
         "bar2"
         "controlCenter"
+        "calendar"
         "popupNotifications0"
         "popupNotifications1"
         "popupNotifications2"

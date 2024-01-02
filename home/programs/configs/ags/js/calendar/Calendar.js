@@ -1,7 +1,5 @@
 import { Widget } from "../imports.js"
 import PopupWindow from "../misc/PopupWindow.js"
-import Gtk from 'gi://Gtk'
-const { DateTime } = imports.gi.GLib
 import Calendar from "./custom/Calendar.js"
 
 

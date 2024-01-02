@@ -15,19 +15,18 @@ import { getDaysByWeek, getDaysInMonth, getMonthString, weekdays } from "./Calen
 export const CalState = new CalendarState(new Date())
 
 const Header = () => {
-  console.log(CalState.value)
-  console.log(CalState.currentDate)
-  console.log(CalState.navDate)
-
   const prevNav = () => Widget.Button({
+    className: "arrow",
     child: Widget.Icon(icons.ui.arrow.left)
   })
 
   const nextNav = () => Widget.Button({
+    className: "arrow",
     child: Widget.Icon(icons.ui.arrow.right)
   })
 
   const monthNav = Widget.CenterBox({
+    className: "nav",
     startWidget: prevNav(),
     centerWidget: Widget.Label({
       label: getMonthString(CalState.navDate.month)
@@ -36,6 +35,7 @@ const Header = () => {
   })
 
   const yearNav = Widget.CenterBox({
+    className: "nav",
     startWidget: prevNav(),
     centerWidget: Widget.Label({
       label: CalState.navDate.year.toString()
@@ -44,12 +44,15 @@ const Header = () => {
   })
 
   const jumpCurDate = Widget.Button({
+    className: "jumpToday",
+    hpack: "end",
     child: Widget.Label({
       label: "Today"
     })
   })
 
   return Widget.CenterBox({
+    className: "navContainer",
     startWidget: monthNav,
     centerWidget: yearNav,
     endWidget: jumpCurDate
@@ -57,6 +60,8 @@ const Header = () => {
 }
 
 const Weekdays = () => Widget.Box({
+  homogeneous: true,
+  className: "weekdays",
   children: weekdays.map(day => Widget.Button({
     child: Widget.Label({
       label: day.substring(0, 3)
@@ -64,27 +69,30 @@ const Weekdays = () => Widget.Box({
   }))
 })
 
-// const Days = () => {
-//   const daysInMonth = getDaysInMonth(CalState.navDate.month, CalState.navDate.year)
-//
-//   return Widget.Box({
-//     children: [...Array(daysInMonth)].map((_, i) => Widget.Button({
-//       child: Widget.Label({
-//         label: (i + 1).toString()
-//       })
-//     }))
-//   })
-// }
+const Week = (week) => Widget.Box({
+  className: "weekRow",
+  homogeneous: true,
+  children: week.days.map(day => Widget.Button({
+    className: `day ${day.isCurrentMonth ? 'currentMonth' : 'otherMonth'} ${day.isToday ? 'today' : ''}`,
+    child: Widget.Label({
+      label: day.day.toString()
+    })
+  }))
+})
 
 const Days = () => {
   const daysOfMonth = getDaysByWeek(CalState.navDate)
   console.log(daysOfMonth)
 
   return Widget.Box({
+    className: "weeks",
+    vertical: true,
+    children: daysOfMonth.map((week) => Week(week))
   })
 }
 
 export default () => Widget.Box({
+  className: "calendarContainer",
   vertical: true,
   children: [
     Header(),

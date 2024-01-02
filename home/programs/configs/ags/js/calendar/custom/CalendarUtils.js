@@ -1,3 +1,4 @@
+import { CalState } from "./Calendar.js"
 
 const months = [
   "January",
@@ -29,17 +30,21 @@ function getDaysInMonth(month, year) {
 }
 
 function getWeek(date) {
-  let monthStart = new Date(date)
-  monthStart.setDate(0)
-  let offset = (monthStart.getDay() + 1) % 7 - 1
-  return Math.ceil((date.getDate() + offset) / 7)
+  let dt = new Date(date)
+  let thisDay = dt.getDate()
+  let newDate = dt
+  newDate.setDate(1)
+  let digit = newDate.getDay()
+  let Q = (thisDay + digit) / 7
+  let R = (thisDay + digit) % 7
+  if (R !== 0) return Math.ceil(Q)
+  else return Q
 }
 
 function getDaysByWeek(date) {
   const numDays = getDaysInMonth(date.month, date.year)
 
   let monthWeeks = []
-  let monthDays = []
 
   Array(numDays).fill(null).forEach((_, i) => {
     const weekdayNum = new Date(date.year, date.month - 1, i + 1).getDay()
@@ -48,20 +53,38 @@ function getDaysByWeek(date) {
     if (!monthWeeks[weekInd]) {
       monthWeeks[weekInd] = {
         weekIndex: weekInd,
-        days: []
+        days: [],
+      }
+    }
+
+    if (i === 0 && weekdayNum > 0) {
+      const lastMonthDay = new Date(date.year, date.month - 1, 0).getDate()
+      for (let j = 0; j < weekdayNum; j++) {
+        monthWeeks[weekInd].days.push({
+          weekdayIndex: weekdayNum - (j + 1),
+          day: lastMonthDay - weekdayNum + (j + 1),
+          isCurrentMonth: false
+        })
       }
     }
 
     monthWeeks[weekInd].days.push({
       weekdayIndex: weekdayNum,
-      day: i + 1
+      day: i + 1,
+      isCurrentMonth: true,
+      isToday: (i + 1) === CalState.currentDate.day
     })
 
-    monthDays.push({
-      weekdayIndex: weekdayNum,
-      day: i + 1,
-      weekIndex: weekInd
-    })
+    if (i === numDays - 1 && weekdayNum < 6) {
+      const monthFinalDay = new Date(date.year, date.month - 1, numDays).getDay()
+      for (let j = 0; j < 6 - monthFinalDay; j++) {
+        monthWeeks[weekInd].days.push({
+          weekdayIndex: weekdayNum + (j + 1),
+          day: j + 1,
+          isCurrentMonth: false
+        })
+      }
+    }
   })
 
   return monthWeeks
