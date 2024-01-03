@@ -72,7 +72,7 @@ function getDaysByWeek(date) {
       weekdayIndex: weekdayNum,
       day: i + 1,
       isCurrentMonth: true,
-      isToday: (i + 1) === CalState.currentDate.day
+      isToday: (i + 1) === CalState.currentDate.day && CalState.currentDate.month === CalState.navDate.month && CalState.currentDate.year === CalState.navDate.year
     })
 
     if (i === numDays - 1 && weekdayNum < 6) {
@@ -103,10 +103,62 @@ function getMonthString(monthNum) {
   return months[monthNum - 1]
 }
 
+function navPrevMonth() {
+  let prevMonth = CalState.navDate.month - 1
+  let year = CalState.navDate.year
+
+  if (prevMonth < 1) {
+    prevMonth = 12
+    year -= 1
+  }
+
+  CalState.navDate.month = prevMonth
+  CalState.navDate.year = year
+  CalState.emit('changed')
+}
+
+function navPrevYear() {
+  let prevYear = CalState.navDate.year - 1
+  CalState.navDate.year = prevYear
+  CalState.emit('changed')
+}
+
+function navNextMonth() {
+  let nextMonth = CalState.navDate.month + 1
+  let year = CalState.navDate.year
+
+  if (nextMonth > 12) {
+    nextMonth = 1
+    year += 1
+  }
+
+  CalState.navDate.month = nextMonth
+  CalState.navDate.year = year
+  CalState.emit('changed')
+}
+
+function navNextYear() {
+  let nextYear = CalState.navDate.year + 1
+  CalState.navDate.year = nextYear
+  CalState.emit('changed')
+}
+
+function navToday() {
+  CalState.navDate.year = CalState.currentDate.year
+  CalState.navDate.month = CalState.currentDate.month
+  CalState.navDate.day = CalState.currentDate.day
+  CalState.emit('changed')
+}
+
 export {
   getDaysInMonth,
   getDaysByWeek,
   getDate,
   getMonthString,
+  navPrevMonth,
+  navNextMonth,
+  navPrevYear,
+  navNextYear,
+  navToday,
   weekdays
 }

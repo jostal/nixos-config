@@ -299,19 +299,36 @@ switch {
       font-size: 1.2rem; }
     .calendarContainer .navContainer .nav .arrow image {
       font-size: 1.5rem; }
-  .calendarContainer .weekdays label {
-    padding: 0.5rem;
-    font-weight: bold; }
-  .calendarContainer .weeks .weekRow .day {
-    min-width: 3.4rem;
-    min-height: 3.4rem; }
-    .calendarContainer .weeks .weekRow .day label {
-      font-size: 1.2rem; }
-    .calendarContainer .weeks .weekRow .day.otherMonth label {
-      color: #7d7461; }
-    .calendarContainer .weeks .weekRow .day.today {
-      font-weight: bold;
-      background-color: #e78a4e;
-      border-radius: 50%; }
-      .calendarContainer .weeks .weekRow .day.today label {
-        color: #1d2021; }
+    .calendarContainer .navContainer .nav.month {
+      min-width: 8rem; }
+    .calendarContainer .navContainer .nav.year label {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem; }
+    .calendarContainer .navContainer .jumpToday {
+      background-color: rgba(29, 32, 33, 0.6);
+      padding: 5px;
+      border-radius: 0.5rem; }
+      .calendarContainer .navContainer .jumpToday:hover {
+        background-color: rgba(50, 50, 47, 0.62); }
+  .calendarContainer .weekdays {
+    background-color: rgba(29, 32, 33, 0.6);
+    border-radius: 0.5rem;
+    margin-top: 0.5rem; }
+    .calendarContainer .weekdays label {
+      padding: 0.5rem;
+      font-weight: bold; }
+  .calendarContainer .weeks .weekRow .dayContainer {
+    padding: 0.8rem; }
+    .calendarContainer .weeks .weekRow .dayContainer .day {
+      min-width: 2.2rem;
+      min-height: 2.2rem; }
+      .calendarContainer .weeks .weekRow .dayContainer .day label {
+        font-size: 1.2rem; }
+      .calendarContainer .weeks .weekRow .dayContainer .day.otherMonth label {
+        color: #7d7461; }
+      .calendarContainer .weeks .weekRow .dayContainer .day.today {
+        font-weight: bold;
+        background-color: #e78a4e;
+        border-radius: 50%; }
+        .calendarContainer .weeks .weekRow .dayContainer .day.today label {
+          color: #1d2021; }

@@ -15,10 +15,35 @@
           font-size: 1.5rem;
         }
       }
+
+      &.month {
+        min-width: 8rem;
+      }
+
+      &.year {
+        label {
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+        }
+      }
+    }
+
+    .jumpToday {
+      background-color: $bgTrans;
+      padding: 5px;
+      border-radius: 0.5rem;
+
+      &:hover {
+        background-color: mix($bgTrans, $text, 95);
+      }
     }
   }
 
   .weekdays {
+    background-color: $bgTrans;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+
     label {
       padding: 0.5rem;
       font-weight: bold;
@@ -27,26 +52,30 @@
 
   .weeks {
     .weekRow {
-      .day {
-        min-width: 3.4rem;
-        min-height: 3.4rem;
+      .dayContainer {
+        padding: 0.8rem;
 
-        label {
-          font-size: 1.2rem;
-        }
+        .day {
+          min-width: 2.2rem;
+          min-height: 2.2rem;
 
-        &.otherMonth {
           label {
-            color: mix($text, $bg, 50);
+            font-size: 1.2rem;
           }
-        }
 
-        &.today {
-          font-weight: bold;
-          background-color: $primary;
-          border-radius: 50%;
-          label {
-            color: $primaryText;
+          &.otherMonth {
+            label {
+              color: mix($text, $bg, 50);
+            }
+          }
+
+          &.today {
+            font-weight: bold;
+            background-color: $primary;
+            border-radius: 50%;
+            label {
+              color: $primaryText;
+            }
           }
         }
       }
