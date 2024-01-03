@@ -9,8 +9,7 @@
 		input = {
 			kb_layout = "us";
 			numlock_by_default = true;
-			follow_mouse = 1;
-      mouse_refocus = false;
+			follow_mouse = 2;
 			scroll_method = "on_button_down";
 		};
 

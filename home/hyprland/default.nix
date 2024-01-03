@@ -20,6 +20,11 @@
 				"SUPER, mouse:272, movewindow"
 			];
 
+      windowrulev2 = [
+        "stayfocused,title:^()$,class:^(steam)$"
+        "minsize 11, title:^()$,class:^(steam)$"
+      ];
+
       layerrule = [
         "ignorealpha[0.97],controlCenter"
         "ignorealpha[0.97],appLauncher"
