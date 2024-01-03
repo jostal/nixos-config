@@ -1,7 +1,7 @@
 .volumeBox {
   .audioVolumeLabel {
     min-width: 3rem;
-    margin-left: 1rem;
+    padding-left: 0.5rem;
   }
 
   .volumeSlider {
@@ -18,10 +18,15 @@
   }
 
   slider {
-    border-radius: 1rem;
+    // border-radius: 1rem;
+    // background-color: $text;
+    // min-width: 4px;
+    // min-height: 10px;
     background-color: $text;
-    min-width: 4px;
+    border-radius: 50%;
+    min-width: 10px;
     min-height: 10px;
+    box-shadow: 0 0 2px 1px black;
   }
 }
 

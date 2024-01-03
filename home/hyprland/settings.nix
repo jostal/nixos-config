@@ -33,7 +33,7 @@
 			};
 
       blurls = [
-        "bar0"
+        # "bar0"
         "bar1"
         "bar2"
         "controlCenter"

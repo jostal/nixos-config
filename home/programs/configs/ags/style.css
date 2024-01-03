@@ -35,9 +35,9 @@ switch {
 
 .clockContainer {
   transition: background-color 0.2s ease-in-out;
-  padding: 0.5em;
-  margin: 0.5em;
-  border-radius: 1em;
+  padding: 0.5rem;
+  margin: 5px;
+  border-radius: 0.8rem;
   background-color: #1d2021;
   color: #ddc7a1; }
   .clockContainer .clockDate {
@@ -48,9 +48,9 @@ switch {
 
 .wsContainer {
   transition: background-color 0.2s ease-in-out;
-  padding: 0.5em;
-  margin: 0.5em;
-  border-radius: 1em;
+  padding: 0.5rem;
+  margin: 5px;
+  border-radius: 0.8rem;
   background-color: #1d2021;
   color: #ddc7a1;
   font-family: monospace; }
@@ -99,9 +99,9 @@ switch {
 
 .titleContainer .titleBox {
   transition: background-color 0.2s ease-in-out;
-  padding: 0.5em;
-  margin: 0.5em;
-  border-radius: 1em;
+  padding: 0.5rem;
+  margin: 5px;
+  border-radius: 0.8rem;
   background-color: #1d2021;
   color: #ddc7a1; }
   .titleContainer .titleBox .titleClass {
@@ -113,9 +113,9 @@ switch {
 
 .barIndicatorsContainer {
   transition: background-color 0.2s ease-in-out;
-  padding: 0.5em;
-  margin: 0.5em;
-  border-radius: 1em;
+  padding: 0.5rem;
+  margin: 5px;
+  border-radius: 0.8rem;
   background-color: #1d2021;
   color: #ddc7a1; }
   .barIndicatorsContainer .barControlCenter .indicator {
@@ -177,7 +177,7 @@ switch {
 
 .volumeBox .audioVolumeLabel {
   min-width: 3rem;
-  margin-left: 1rem; }
+  padding-left: 0.5rem; }
 
 .volumeBox .volumeSlider {
   margin-left: 1rem; }
@@ -190,10 +190,11 @@ switch {
     background-color: #e78a4e; }
 
 .volumeBox slider {
-  border-radius: 1rem;
   background-color: #ddc7a1;
-  min-width: 4px;
-  min-height: 10px; }
+  border-radius: 50%;
+  min-width: 10px;
+  min-height: 10px;
+  box-shadow: 0 0 2px 1px black; }
 
 .appMixerContainer {
   margin-top: 1rem; }
@@ -270,9 +271,9 @@ switch {
 
 .barMusicContainer {
   transition: background-color 0.2s ease-in-out;
-  padding: 0.5em;
-  margin: 0.5em;
-  border-radius: 1em;
+  padding: 0.5rem;
+  margin: 5px;
+  border-radius: 0.8rem;
   background-color: #1d2021;
   color: #ddc7a1; }
   .barMusicContainer .musicProgress {
