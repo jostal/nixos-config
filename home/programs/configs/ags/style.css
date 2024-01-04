@@ -128,7 +128,7 @@ switch {
   border-radius: 1rem; }
   .controlCenterContainer .controlCenter {
     background-color: rgba(29, 32, 33, 0.6);
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 1rem;
     min-width: 27rem;
     min-height: 27rem; }
@@ -293,7 +293,7 @@ switch {
 .calendarContainer {
   background-color: rgba(29, 32, 33, 0.6);
   padding: 1rem;
-  border-radius: 1rem; }
+  border-radius: 0.5rem; }
   .calendarContainer .navContainer {
     padding: 0.5rem; }
     .calendarContainer .navContainer .nav label {

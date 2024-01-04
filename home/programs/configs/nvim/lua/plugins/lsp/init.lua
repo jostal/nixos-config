@@ -78,4 +78,5 @@ config = function()
     capabilities = lsp_utils.capabilities
   }
 end
+
 config()
