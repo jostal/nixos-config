@@ -186,6 +186,16 @@ cmp.setup({
   completion = {
     completeopt = "menu,menuone,noinsert,noselect"
   },
+  sorting = {
+    comparators = {
+      cmp.config.compare.offset,
+      cmp.config.compare.exact,
+      cmp.config.compare.score,
+      cmp.config.compare.recently_used,
+      require("cmp-under-comparator").under,
+      cmp.config.compare.kind
+    },
+  },
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),

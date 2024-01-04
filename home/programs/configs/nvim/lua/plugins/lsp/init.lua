@@ -9,14 +9,14 @@ config = function()
     on_attach = lsp_utils.on_attach,
     capabilities = lsp_utils.capabilities
   }
-  lspconfig.nil_ls.setup{
+  lspconfig.nil_ls.setup {
     on_attach = lsp_utils.on_attach,
     capabilities = lsp_utils.capabilities
   }
   lspconfig.lua_ls.setup {
     on_init = function(client)
       local path = client.workspace_folders[1].name
-      if not vim.loop.fs_stat(path..'/.luarc.json') and not vim.loop.fs_stat(path..'/.luarc.jsonc') then
+      if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
         client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
           Lua = {
             runtime = {
@@ -45,7 +45,7 @@ config = function()
     on_attach = lsp_utils.on_attach,
     capabilities = lsp_utils.capabilities
   }
-  lspconfig.rust_analyzer.setup{
+  lspconfig.rust_analyzer.setup {
     on_attach = lsp_utils.on_attach,
     capabilities = lsp_utils.capabilities,
     settings = {
@@ -55,6 +55,23 @@ config = function()
         }
       }
     }
+  }
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities.textDocument.completion.completionItem.snippetSupport = true
+  lspconfig.cssls.setup {
+    capabilities = capabilities
+  }
+  lspconfig.eslint.setup({
+    on_attach = function(client, bufnr)
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        buffer = bufnr,
+        command = "EslintFixAll",
+      })
+    end
+  })
+  lspconfig.svelte.setup {
+    on_attach = lsp_utils.on_attach,
+    capabilities = lsp_utils.capabilities
   }
 end
 config()
