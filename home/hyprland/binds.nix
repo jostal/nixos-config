@@ -11,6 +11,7 @@ in [
 	"${mainMod}, E, exec, nautilus"
   "${mainMod} ALT, R, ${e} quit; ags -b hypr"
 	"${mainMod}, SPACE, ${e} -t appLauncher"
+  "CONTROL ALT, DELETE, ${e} -t power"
 	
 	# Switch workspaces
 	"${mainMod}, 1, workspace, 1"

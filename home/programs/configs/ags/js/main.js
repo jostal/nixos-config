@@ -6,7 +6,7 @@ import { exec } from 'resource:///com/github/Aylur/ags/utils.js';
 import { NotificationPopup } from './misc/Notification.js';
 import AppLauncher from './appLauncher/AppLauncher.js';
 import Calendar from './calendar/Calendar.js';
-import Power from './power/power.js'
+import Power from './power/Power.js'
 
 
 init();
