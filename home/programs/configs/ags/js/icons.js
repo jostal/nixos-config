@@ -66,6 +66,9 @@ export default {
       up: 'pan-up-symbolic'
     },
   },
+  system: {
+    shutdown: 'system-shutdown-symbolic'
+  },
   apps: {
     apps: 'view-app-grid-symbolic',
     search: 'folder-saved-search-symbolic'

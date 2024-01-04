@@ -7,9 +7,8 @@
     margin-left: 2px;
     margin-right: 2px;
     min-width: 1.5rem;
-    min-height: 5rem;
-    // border-radius: 50%;
-    border-radius: calc(.8rem - 0.25rem);
+    min-height: 1rem;
+    border-radius: calc(.5rem - 0.25rem);
     background-color: $bg;
 
     &:first-child {
@@ -22,6 +21,7 @@
 
     &.active {
       padding: 0px;
+      min-width: calc(1.5rem + 4px);
     }
 
     &.occupied {
@@ -30,67 +30,45 @@
 
     .buttonOverlay {
       .wsButton {
+        background-color: $bgGray;
+        border-radius: calc(0.5rem - 0.25rem);
+
+        &.wsLeft {
+          background-color: $greenFade;
+        }
+
+        &.wsCenter {
+          background-color: $redFade;
+        }
+
+        &.wsRight {
+          background-color: $blueFade;
+        }
+
+        &.openLeft {
+          background-color: $green;
+          font-weight: bold;
+        }
+
+        &.openCenter {
+          background-color: $red;
+          font-weight: bold;
+        }
+
+        &.openRight {
+          background-color: $blue;
+          font-weight: bold;
+        }
       }
 
       .wsLabel {
-        // min-width: 50px;
+        font-size: 0.7rem;
+        color: $bg;
+
+        &.active {
+          font-weight: bold;
+        }
       }
     }
-
-
   }
-  
-//   .wsButton {
-//     background-color: $bgGray;
-//     // border-radius: 50%;
-//     border-radius: calc(.8rem - 0.25rem - 1px);
-//     color: $bg;
-//     transition: background-color 0.2s ease-in-out;
-//
-//     .wsLabel {
-//       font-size: 0.6rem;
-//       // min-width: 1.4rem;
-//       // min-height: 1.4rem;
-//       min-width: 21px;
-//       min-height: 21px;
-//       color: $bg;
-//     }
-//
-//     &.active {
-//       .wsLabel {
-//         min-width: calc(21px + 4px);
-//         min-height: calc(21px + 4px);
-//         label {
-//           font-weight: bold;
-//         }
-//       }
-//     }
-//
-//     &.wsLeft {
-//       background-color: $greenFade;
-//     }
-//
-//     &.wsCenter {
-//       background-color: $redFade;
-//     }
-//
-//     &.wsRight {
-//       background-color: $blueFade;
-//     }
-//
-//     &.openLeft {
-//       background-color: $green;
-//       font-weight: bold;
-//     }
-//
-//     &.openCenter {
-//       background-color: $red;
-//       font-weight: bold;
-//     }
-//
-//     &.openRight {
-//       background-color: $blue;
-//       font-weight: bold;
-//     }
-//   }
-// }
+}

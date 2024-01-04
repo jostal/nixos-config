@@ -43,7 +43,7 @@ const isOpenWorkspace = (wsId) => {
 
 const label = (i) => Widget.Label({
   label: `${i}`,
-  // hpack: "center",
+  hpack: "center",
   hexpand: true,
   // vexpand: false,
   className: 'wsLabel',
@@ -52,6 +52,9 @@ const label = (i) => Widget.Label({
       const ws = Hyprland.getWorkspace(i)
       label.label = ws?.windows > 0 ? `${i}` : " "
     }, 'notify::workspaces')
+    .hook(Hyprland.active.workspace, label => {
+      label.toggleClassName('active', Hyprland.active.workspace.id === i)
+    })
 })
 
 const WorkspaceButton = (i) => Widget.Overlay({

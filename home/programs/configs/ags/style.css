@@ -34,7 +34,7 @@ switch {
   transition: background-color 0.2s ease-in-out;
   padding: 0.5rem;
   margin: 5px;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
   background-color: #1d2021;
   color: #ddc7a1;
   box-shadow: 1px 1px 3px 2px #1d2021; }
@@ -48,7 +48,7 @@ switch {
   transition: background-color 0.2s ease-in-out;
   padding: 0.5rem;
   margin: 5px;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
   background-color: #1d2021;
   color: #ddc7a1;
   box-shadow: 1px 1px 3px 2px #1d2021;
@@ -57,56 +57,48 @@ switch {
     padding: 2px;
     margin-left: 2px;
     margin-right: 2px;
-    min-width: 1.2rem;
+    min-width: 1.5rem;
     min-height: 1rem;
-    border-radius: calc(.8rem - 0.25rem);
+    border-radius: calc(.5rem - 0.25rem);
     background-color: #1d2021; }
     .wsContainer .wsButtonContainer:first-child {
       margin-left: 0; }
     .wsContainer .wsButtonContainer:last-child {
       margin-right: 0; }
     .wsContainer .wsButtonContainer.active {
-      padding: 0px; }
+      padding: 0px;
+      min-width: calc(1.5rem + 4px); }
     .wsContainer .wsButtonContainer.occupied {
       background-color: #3c3836; }
-    .wsContainer .wsButtonContainer .buttonOverlay .wsLabel {
-      min-width: 50px; }
-  .wsContainer .wsButton {
-    background-color: #3c3836;
-    border-radius: calc(.8rem - 0.25rem - 1px);
-    color: #1d2021;
-    transition: background-color 0.2s ease-in-out; }
-    .wsContainer .wsButton .wsLabel {
-      font-size: 0.6rem;
-      min-width: 21px;
-      min-height: 21px;
-      color: #1d2021; }
-    .wsContainer .wsButton.active .wsLabel {
-      min-width: calc(21px + 4px);
-      min-height: calc(21px + 4px); }
-      .wsContainer .wsButton.active .wsLabel label {
+    .wsContainer .wsButtonContainer .buttonOverlay .wsButton {
+      background-color: #3c3836;
+      border-radius: calc(0.5rem - 0.25rem); }
+      .wsContainer .wsButtonContainer .buttonOverlay .wsButton.wsLeft {
+        background-color: #656d3d; }
+      .wsContainer .wsButtonContainer .buttonOverlay .wsButton.wsCenter {
+        background-color: #8c3f3b; }
+      .wsContainer .wsButtonContainer .buttonOverlay .wsButton.wsRight {
+        background-color: #4b6862; }
+      .wsContainer .wsButtonContainer .buttonOverlay .wsButton.openLeft {
+        background-color: #a9b665;
         font-weight: bold; }
-    .wsContainer .wsButton.wsLeft {
-      background-color: #656d3d; }
-    .wsContainer .wsButton.wsCenter {
-      background-color: #8c3f3b; }
-    .wsContainer .wsButton.wsRight {
-      background-color: #4b6862; }
-    .wsContainer .wsButton.openLeft {
-      background-color: #a9b665;
-      font-weight: bold; }
-    .wsContainer .wsButton.openCenter {
-      background-color: #ea6962;
-      font-weight: bold; }
-    .wsContainer .wsButton.openRight {
-      background-color: #7daea3;
-      font-weight: bold; }
+      .wsContainer .wsButtonContainer .buttonOverlay .wsButton.openCenter {
+        background-color: #ea6962;
+        font-weight: bold; }
+      .wsContainer .wsButtonContainer .buttonOverlay .wsButton.openRight {
+        background-color: #7daea3;
+        font-weight: bold; }
+    .wsContainer .wsButtonContainer .buttonOverlay .wsLabel {
+      font-size: 0.7rem;
+      color: #1d2021; }
+      .wsContainer .wsButtonContainer .buttonOverlay .wsLabel.active {
+        font-weight: bold; }
 
 .titleContainer .titleBox {
   transition: background-color 0.2s ease-in-out;
   padding: 0.5rem;
   margin: 5px;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
   background-color: #1d2021;
   color: #ddc7a1;
   box-shadow: 1px 1px 3px 2px #1d2021; }
@@ -121,7 +113,7 @@ switch {
   transition: background-color 0.2s ease-in-out;
   padding: 0.5rem;
   margin: 5px;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
   background-color: #1d2021;
   color: #ddc7a1;
   box-shadow: 1px 1px 3px 2px #1d2021; }
@@ -130,7 +122,7 @@ switch {
     padding-right: 0.5rem; }
   .barIndicatorsContainer .barControlCenter .hover {
     background-color: #3c3836;
-    border-radius: 0.8rem; }
+    border-radius: 0.5rem; }
 
 .controlCenterContainer {
   border-radius: 1rem; }
@@ -280,7 +272,7 @@ switch {
   transition: background-color 0.2s ease-in-out;
   padding: 0.5rem;
   margin: 5px;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
   background-color: #1d2021;
   color: #ddc7a1;
   box-shadow: 1px 1px 3px 2px #1d2021; }
