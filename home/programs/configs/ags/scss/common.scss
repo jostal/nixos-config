@@ -48,6 +48,7 @@ switch {
   border-radius: 0.8rem;
   background-color: $bg;
   color: $text;
+  box-shadow: 1px 1px 3px 2px $bg;
 }
 
 // buttons

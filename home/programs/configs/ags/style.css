@@ -30,16 +30,14 @@ switch {
 .angle {
   background-color: rgba(29, 32, 33, 0.6); }
 
-.barWindow {
-  background-color: rgba(29, 32, 33, 0.6); }
-
 .clockContainer {
   transition: background-color 0.2s ease-in-out;
   padding: 0.5rem;
   margin: 5px;
   border-radius: 0.8rem;
   background-color: #1d2021;
-  color: #ddc7a1; }
+  color: #ddc7a1;
+  box-shadow: 1px 1px 3px 2px #1d2021; }
   .clockContainer .clockDate {
     font-size: 0.9em;
     color: #e78a4e; }
@@ -53,12 +51,15 @@ switch {
   border-radius: 0.8rem;
   background-color: #1d2021;
   color: #ddc7a1;
+  box-shadow: 1px 1px 3px 2px #1d2021;
   font-family: monospace; }
   .wsContainer .wsButtonContainer {
     padding: 2px;
     margin-left: 2px;
     margin-right: 2px;
-    border-radius: 50%;
+    min-width: 1.2rem;
+    min-height: 1rem;
+    border-radius: calc(.8rem - 0.25rem);
     background-color: #1d2021; }
     .wsContainer .wsButtonContainer:first-child {
       margin-left: 0; }
@@ -68,19 +69,23 @@ switch {
       padding: 0px; }
     .wsContainer .wsButtonContainer.occupied {
       background-color: #3c3836; }
+    .wsContainer .wsButtonContainer .buttonOverlay .wsLabel {
+      min-width: 50px; }
   .wsContainer .wsButton {
     background-color: #3c3836;
-    border-radius: 50%;
+    border-radius: calc(.8rem - 0.25rem - 1px);
     color: #1d2021;
     transition: background-color 0.2s ease-in-out; }
     .wsContainer .wsButton .wsLabel {
-      font-size: 0.8rem;
-      min-width: 1.5rem;
-      min-height: 1.5rem;
+      font-size: 0.6rem;
+      min-width: 21px;
+      min-height: 21px;
       color: #1d2021; }
     .wsContainer .wsButton.active .wsLabel {
-      min-width: calc(1.5rem + 4px);
-      min-height: calc(1.5rem + 4px); }
+      min-width: calc(21px + 4px);
+      min-height: calc(21px + 4px); }
+      .wsContainer .wsButton.active .wsLabel label {
+        font-weight: bold; }
     .wsContainer .wsButton.wsLeft {
       background-color: #656d3d; }
     .wsContainer .wsButton.wsCenter {
@@ -103,7 +108,8 @@ switch {
   margin: 5px;
   border-radius: 0.8rem;
   background-color: #1d2021;
-  color: #ddc7a1; }
+  color: #ddc7a1;
+  box-shadow: 1px 1px 3px 2px #1d2021; }
   .titleContainer .titleBox .titleClass {
     font-size: 0.9rem;
     font-weight: bold;
@@ -117,7 +123,8 @@ switch {
   margin: 5px;
   border-radius: 0.8rem;
   background-color: #1d2021;
-  color: #ddc7a1; }
+  color: #ddc7a1;
+  box-shadow: 1px 1px 3px 2px #1d2021; }
   .barIndicatorsContainer .barControlCenter .indicator {
     padding-left: 0.5rem;
     padding-right: 0.5rem; }
@@ -275,7 +282,8 @@ switch {
   margin: 5px;
   border-radius: 0.8rem;
   background-color: #1d2021;
-  color: #ddc7a1; }
+  color: #ddc7a1;
+  box-shadow: 1px 1px 3px 2px #1d2021; }
   .barMusicContainer .musicProgress {
     font-size: 0.9rem;
     background-color: #90846e;

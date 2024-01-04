@@ -43,9 +43,9 @@ const isOpenWorkspace = (wsId) => {
 
 const label = (i) => Widget.Label({
   label: `${i}`,
-  hpack: "center",
+  // hpack: "center",
   hexpand: true,
-  vexpand: false,
+  // vexpand: false,
   className: 'wsLabel',
   setup: self => self
     .hook(Hyprland, label => {
@@ -54,27 +54,31 @@ const label = (i) => Widget.Label({
     }, 'notify::workspaces')
 })
 
-const WorkspaceButton = (i) => Widget.EventBox({
-  className: 'wsButton',
-  hpack: "center",
-  hexpand: true,
-  vexpand: false,
-  onPrimaryClickRelease: () => Hyprland.sendMessage(`dispatch workspace ${i}`),
-  child: label(i),
-  setup: self => self
-    .hook(Hyprland.active.workspace, (button) => {
-      button.toggleClassName('active', Hyprland.active.workspace.id === i)
-      button.toggleClassName('wsLeft', getWorkspaceMonitor(i) === 'L')
-      button.toggleClassName('wsCenter', getWorkspaceMonitor(i) === 'C')
-      button.toggleClassName('wsRight', getWorkspaceMonitor(i) === 'R')
-    })
-    .hook(Hyprland, (button) => {
-      button.toggleClassName('openLeft', isOpenWorkspace(i) === 'left')
-      button.toggleClassName('openCenter', isOpenWorkspace(i) === 'center')
-      button.toggleClassName('openRight', isOpenWorkspace(i) === 'right')
-    }, 'notify::monitors')
+const WorkspaceButton = (i) => Widget.Overlay({
+  className: "buttonOverlay",
+  child: Widget.EventBox({
+    className: 'wsButton',
+    // hpack: "fill",
+    hexpand: true,
+    // vexpand: false,
+    onPrimaryClickRelease: () => Hyprland.sendMessage(`dispatch workspace ${i}`),
+    setup: self => self
+      .hook(Hyprland.active.workspace, (button) => {
+        button.toggleClassName('active', Hyprland.active.workspace.id === i)
+        button.toggleClassName('wsLeft', getWorkspaceMonitor(i) === 'L')
+        button.toggleClassName('wsCenter', getWorkspaceMonitor(i) === 'C')
+        button.toggleClassName('wsRight', getWorkspaceMonitor(i) === 'R')
+      })
+      .hook(Hyprland, (button) => {
+        button.toggleClassName('openLeft', isOpenWorkspace(i) === 'left')
+        button.toggleClassName('openCenter', isOpenWorkspace(i) === 'center')
+        button.toggleClassName('openRight', isOpenWorkspace(i) === 'right')
+      }, 'notify::monitors')
+  }),
+  overlays: [
+    label(i)
+  ],
 })
-
 const Workspaces = (monitor) => Widget.Box({
   child: Widget.Box({
     className: 'wsContainer',
