@@ -333,3 +333,24 @@ switch {
         border-radius: 50%; }
         .calendarContainer .weeks .weekRow .dayContainer .day.today label {
           color: #1d2021; }
+
+.powerContainer {
+  background-color: rgba(0, 0, 0, 0.2); }
+  .powerContainer .powerControls {
+    padding: 1rem;
+    background-color: #1d2021;
+    border-radius: 0.5rem; }
+    .powerContainer .powerControls .controlButton {
+      padding: 0.5rem;
+      border-radius: 0.5rem; }
+      .powerContainer .powerControls .controlButton image {
+        font-size: 3rem; }
+      .powerContainer .powerControls .controlButton.power {
+        background-color: #8c3f3b; }
+        .powerContainer .powerControls .controlButton.power:hover {
+          background-color: #a84c47; }
+      .powerContainer .powerControls .controlButton.restart {
+        background-color: #656d3d;
+        margin-left: 0.5rem; }
+        .powerContainer .powerControls .controlButton.restart:hover {
+          background-color: #798349; }

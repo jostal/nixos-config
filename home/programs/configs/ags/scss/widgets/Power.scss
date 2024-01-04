@@ -1,0 +1,35 @@
+.powerContainer {
+  background-color: rgba(0, 0, 0, 0.2);
+
+  .powerControls {
+    padding: 1rem;
+    background-color: $bg;
+    border-radius: 0.5rem;
+
+    .controlButton {
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+
+      image {
+        font-size: 3rem;
+      }
+
+      &.power {
+        background-color: $redFade;
+
+        &:hover {
+          background-color: mix($redFade, $red, 70);
+        }
+      }
+
+      &.restart {
+        background-color: $greenFade;
+        margin-left: 0.5rem;
+
+        &:hover {
+          background-color: mix($greenFade, $green, 70);
+        }
+      }
+    }
+  }
+}

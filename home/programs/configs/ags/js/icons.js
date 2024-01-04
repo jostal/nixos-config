@@ -67,7 +67,8 @@ export default {
     },
   },
   system: {
-    shutdown: 'system-shutdown-symbolic'
+    shutdown: 'system-shutdown-symbolic',
+    restart: 'system-restart-symbolic',
   },
   apps: {
     apps: 'view-app-grid-symbolic',
