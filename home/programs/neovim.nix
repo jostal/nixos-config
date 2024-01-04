@@ -51,6 +51,7 @@
       nil
       nodePackages.typescript-language-server
       nodePackages.svelte-language-server
+      nodePackages.vim-language-server
       nodejs
       vscode-langservers-extracted
       rust-analyzer

@@ -73,5 +73,9 @@ config = function()
     on_attach = lsp_utils.on_attach,
     capabilities = lsp_utils.capabilities
   }
+  lspconfig.vimls.setup {
+    on_attach = lsp_utils.on_attach,
+    capabilities = lsp_utils.capabilities
+  }
 end
 config()
