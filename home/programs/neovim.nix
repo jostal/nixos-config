@@ -14,6 +14,7 @@
       cmp-nvim-lua
       cmp_luasnip
       cmp-cmdline
+      cmp-under-comparator
       comment-nvim
       formatter-nvim
       friendly-snippets
