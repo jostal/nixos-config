@@ -34,8 +34,8 @@
 
       blurls = [
         # "bar0"
-        "bar1"
-        "bar2"
+        # "bar1"
+        # "bar2"
         "controlCenter"
         "calendar"
         "popupNotifications0"
