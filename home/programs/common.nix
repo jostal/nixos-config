@@ -22,6 +22,9 @@
     # Media
     (mpv.override { scripts = [mpvScripts.mpris]; })
     spotify
+
+    # Notes
+    logseq
 	];
   
 	programs = {
