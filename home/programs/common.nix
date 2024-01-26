@@ -25,6 +25,9 @@
 
     # Notes
     logseq
+
+    # Cloud
+    dropbox
 	];
   
 	programs = {
