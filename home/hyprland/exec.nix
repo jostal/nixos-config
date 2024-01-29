@@ -4,4 +4,5 @@
 	"swww init"
 	"swww img ~/media/Pictures/Wallpapers/current.jpg"
   "ags -b hypr"
+  "dropbox"
 ]
