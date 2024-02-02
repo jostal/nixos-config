@@ -31,6 +31,9 @@
 
     # Emulation
     renode
+
+    # firmware dev
+    pulseview
 	];
   
 	programs = {
