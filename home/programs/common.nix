@@ -28,6 +28,9 @@
 
     # Cloud
     dropbox
+
+    # Emulation
+    renode
 	];
   
 	programs = {
