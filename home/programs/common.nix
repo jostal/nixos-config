@@ -34,6 +34,9 @@
 
     # firmware dev
     pulseview
+    sigrok-cli
+    sigrok-firmware-fx2lafw
+    libsigrok
 	];
   
 	programs = {
