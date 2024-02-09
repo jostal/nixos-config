@@ -22,6 +22,7 @@
     # Media
     (mpv.override { scripts = [mpvScripts.mpris]; })
     spotify
+    grimblast
 
     # Notes
     logseq
