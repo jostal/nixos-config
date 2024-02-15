@@ -23,6 +23,7 @@
     (mpv.override { scripts = [mpvScripts.mpris]; })
     spotify
     grimblast
+    gimp-with-plugins
 
     # Notes
     logseq
