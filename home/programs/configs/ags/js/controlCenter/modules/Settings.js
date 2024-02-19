@@ -57,8 +57,8 @@ const SettingsPage = content => Widget.Scrollable({
 
 const SettingsContent = () => Widget.Stack({
   transition: "slide_left_right",
-  items: [
-    ["notifications", SettingsPage(
+  children: {
+    "notifications": SettingsPage(
       Menu({
         title: "Notifications",
         iconWidget: Widget.Icon({
@@ -85,23 +85,22 @@ const SettingsContent = () => Widget.Stack({
           ]
         })
       })
-    )
-    ],
-    ["bluetooth", SettingsPage(
+    ),
+    "bluetooth": SettingsPage(
       Menu({
         title: "Bluetooth",
         icon: icons.bluetooth.enabled,
         content: BluetoothList(),
       })
-    )],
-    ["audio", SettingsPage(
+    ),
+    "audio": SettingsPage(
       Menu({
         title: "Audio",
         icon: icons.audio.volume.high,
         content: AudioContent()
       })
-    )]
-  ],
+    )
+  },
   setup: self => self
     .hook(SettingsState, () => {
       self.shown = SettingsState.value

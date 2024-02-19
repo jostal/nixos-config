@@ -4,19 +4,26 @@ import Header from "./modules/Header.js"
 import Settings from "./modules/Settings.js"
 
 const ControlCenter = () => Widget.Box({
-  hexpand: true,
+  className: "controlCenterBox",
   children: [
-    Widget.EventBox({
-      onPrimaryClick: () => App.closeWindow("controlCenter"),
-      onSecondaryClick: () => App.closeWindow("controlCenter"),
-      onMiddleClick: () => App.closeWindow("controlCenter")
+    Widget.Box({
+      className: "controlEventBox",
+      children: [
+        Widget.EventBox({
+          expand: true,
+          hpack: "fill",
+          onPrimaryClick: () => App.closeWindow("controlCenter"),
+          onSecondaryClick: () => App.closeWindow("controlCenter"),
+          onMiddleClick: () => App.closeWindow("controlCenter")
+        }),
+      ]
     }),
     Widget.Box({
-      vertical: true,
-      vexpand: true,
+      expand: false,
+      hpack: "end",
+      vpack: "start",
       className: "controlCenter",
       children: [
-        // Header(),
         Settings()
       ]
     })

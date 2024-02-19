@@ -124,7 +124,7 @@ const SearchBox = () => {
 }
 
 export default () => PopupWindow({
-  focusable: true,
+  keymode: "exclusive",
   name: WINDOW_NAME,
   child: SearchBox()
     .on("key-press-event", (self, event) => {

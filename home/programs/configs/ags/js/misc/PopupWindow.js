@@ -21,7 +21,7 @@ export default ({
     hexpand,
     vexpand,
     visible: false,
-    focusable: true,
+    keymode: "on-demand",
     popup: true,
     ...props,
     attribute: {

@@ -17,18 +17,14 @@ const Clock = () => Widget.EventBox({
       Widget.Label({
         className: 'clockTime',
         hpack: "end",
-        binds: [
-          ["label", timeVar]
-        ]
+        label: timeVar.bind(),
       }),
       // Seperator("•", "0.4em", "0"),
       Seperator(" ", "0.2em", "0"),
       Widget.Label({
         className: 'clockDate',
         hpack: 'end',
-        binds: [
-          ["label", dateVar]
-        ]
+        label: dateVar.bind()
       }),
     ]
   })

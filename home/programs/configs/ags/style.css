@@ -126,52 +126,55 @@ switch {
 
 .controlCenterContainer {
   border-radius: 1rem; }
-  .controlCenterContainer .controlCenter {
+  .controlCenterContainer .controlCenterBox .controlEventBox {
+    min-width: 114rem;
+    min-height: 77rem; }
+  .controlCenterContainer .controlCenterBox .controlCenter {
     background-color: rgba(29, 32, 33, 0.6);
     border-radius: 0.5rem;
     padding: 1rem;
     min-width: 27rem;
     min-height: 27rem; }
-    .controlCenterContainer .controlCenter scrollbar, .controlCenterContainer .controlCenter scrollbar * {
+    .controlCenterContainer .controlCenterBox .controlCenter scrollbar, .controlCenterContainer .controlCenterBox .controlCenter scrollbar * {
       all: unset; }
-    .controlCenterContainer .controlCenter .settingsPage {
+    .controlCenterContainer .controlCenterBox .controlCenter .settingsPage {
       min-height: 10rem; }
-    .controlCenterContainer .controlCenter .settingsMenu {
+    .controlCenterContainer .controlCenterBox .controlCenter .settingsMenu {
       margin-bottom: 0.8rem; }
-      .controlCenterContainer .controlCenter .settingsMenu .settingsTitle {
+      .controlCenterContainer .controlCenterBox .controlCenter .settingsMenu .settingsTitle {
         font-weight: bold;
         padding-bottom: 0.8rem;
         min-height: calc(1rem + 1.3rem); }
-        .controlCenterContainer .controlCenter .settingsMenu .settingsTitle button {
+        .controlCenterContainer .controlCenterBox .controlCenter .settingsMenu .settingsTitle button {
           padding: 0.5rem;
           background-color: #ddc7a1;
           border-radius: 1rem; }
-          .controlCenterContainer .controlCenter .settingsMenu .settingsTitle button.audioSettingsButton {
+          .controlCenterContainer .controlCenterBox .controlCenter .settingsMenu .settingsTitle button.audioSettingsButton {
             padding: 4px; }
-            .controlCenterContainer .controlCenter .settingsMenu .settingsTitle button.audioSettingsButton * {
+            .controlCenterContainer .controlCenterBox .controlCenter .settingsMenu .settingsTitle button.audioSettingsButton * {
               color: #1d2021;
               font-size: 1.6rem; }
-          .controlCenterContainer .controlCenter .settingsMenu .settingsTitle button label {
+          .controlCenterContainer .controlCenterBox .controlCenter .settingsMenu .settingsTitle button label {
             color: #1d2021;
             font-size: 1rem; }
-      .controlCenterContainer .controlCenter .settingsMenu separator {
+      .controlCenterContainer .controlCenterBox .controlCenter .settingsMenu separator {
         background-color: #43413b;
         min-height: 2px; }
-      .controlCenterContainer .controlCenter .settingsMenu .settingsContent {
+      .controlCenterContainer .controlCenterBox .controlCenter .settingsMenu .settingsContent {
         margin-top: 0.8rem; }
-        .controlCenterContainer .controlCenter .settingsMenu .settingsContent label {
+        .controlCenterContainer .controlCenterBox .controlCenter .settingsMenu .settingsContent label {
           margin-left: 0.5rem; }
-    .controlCenterContainer .controlCenter .settingsHeader {
+    .controlCenterContainer .controlCenterBox .controlCenter .settingsHeader {
       margin: 8px 0 1rem 0;
       background-color: rgba(29, 32, 33, 0.6);
       border-radius: 1rem; }
-      .controlCenterContainer .controlCenter .settingsHeader .settingsButton {
+      .controlCenterContainer .controlCenterBox .controlCenter .settingsHeader .settingsButton {
         padding: 5px;
         font-size: 1.2rem;
         border-radius: 1rem;
         min-width: 2rem;
         background-color: transparent; }
-        .controlCenterContainer .controlCenter .settingsHeader .settingsButton.active {
+        .controlCenterContainer .controlCenterBox .controlCenter .settingsHeader .settingsButton.active {
           background-color: #7d7461; }
 
 .volumeBox .audioVolumeLabel {

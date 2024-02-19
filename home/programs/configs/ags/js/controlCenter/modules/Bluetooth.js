@@ -12,8 +12,8 @@ export const BluetoothList = () => Widget.Box({
         Widget.Label(device.name),
         Widget.Label({
           label: `${device.battery_percentage}%`,
-          binds: [['visible', device, 'battery-percentage', p => p > 0]],
-        }),
+        })
+          .bind('visible', device, 'battery_percentage', p => p > 0),
         Widget.Box({ hexpand: true }),
         device.connecting ? Widget.Spinner({
           active: true
