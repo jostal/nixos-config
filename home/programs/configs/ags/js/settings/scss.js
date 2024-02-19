@@ -16,7 +16,6 @@ export function scssWatcher() {
       App.resetCss()
       App.applyCss(css)
     },
-    'directory'
   )
 
   Utils.monitorFile(
@@ -32,6 +31,5 @@ export function scssWatcher() {
       App.resetCss()
       App.applyCss(css)
     },
-    'directory'
   )
 }
