@@ -39,6 +39,7 @@
     sigrok-cli
     sigrok-firmware-fx2lafw
     libsigrok
+    arduino
 	];
   
 	programs = {
