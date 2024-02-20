@@ -112,7 +112,9 @@ const SinkItem = (type) => stream => HoverableButton({
         hexpand: true,
         hpack: "end"
       }).hook(Audio, icon => {
-        icon.visible = Audio[sorm(type)] === stream
+        console.log(Audio[sorm(type)])
+        console.log(stream)
+        icon.visible = Audio[sorm(type)].id === stream.id
       })
     ]
   })
