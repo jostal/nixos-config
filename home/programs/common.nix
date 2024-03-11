@@ -8,6 +8,7 @@
 		nodePackages.npm
 		gthumb
 		tofi
+    python3
 
 		# File browser
 		gnome.nautilus
