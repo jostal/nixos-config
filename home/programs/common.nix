@@ -40,6 +40,7 @@
     sigrok-firmware-fx2lafw
     libsigrok
     arduino
+    ghdl
 	];
   
 	programs = {
