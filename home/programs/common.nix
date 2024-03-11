@@ -39,6 +39,7 @@
     pulseview
     sigrok-cli
     sigrok-firmware-fx2lafw
+    gtkwave
     libsigrok
     arduino
     ghdl
