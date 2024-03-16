@@ -155,6 +155,7 @@
     gvfs.enable = true;
 
     blueman.enable = true;
+    flatpak.enable = true;
 
     openssh = {
       enable = true;
