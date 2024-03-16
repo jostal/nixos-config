@@ -43,7 +43,6 @@
     libsigrok
     arduino
     ghdl
-    kicad
 	];
   
 	programs = {
