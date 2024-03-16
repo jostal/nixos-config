@@ -28,7 +28,7 @@
 			accents = [ "maroon" ];
 			size = "compact";
 			tweaks = [ "rimless" "black" ];
-			variant = "machiato";
+			variant = "macchiato";
 		})
 
 		# Notifications
