@@ -43,6 +43,7 @@
     libsigrok
     arduino
     ghdl
+    freecad
 	];
   
 	programs = {
