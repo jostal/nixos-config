@@ -16,16 +16,23 @@
 		unzip
 		ripgrep
 		usbutils
-    tree
+    	tree
 		bind
 		glib
 		catppuccin-sddm-corners
-    gnumake
-    cmake
-    keychain
+    	gnumake
+    	cmake
+    	keychain
+
+		(catppucin-gtk.override {
+			accens = [ "maroon" ];
+			size = "compact";
+			tweaks = [ "rimless", "black" ];
+			variant = "machiato";
+		})
 
 		# Notifications
-    libnotify
+    	libnotify
 		# swaynotificationcenter
 		polkit-kde-agent
 
@@ -36,13 +43,13 @@
 
 		# Sound
 		pavucontrol
-    pulseaudio
+    	pulseaudio
 
 		# Development
 		libgcc
 
-    # Games
-    gamescope
+    	# Games
+    	gamescope
 	];
 
 	environment.variables.EDITOR = "nvim";
