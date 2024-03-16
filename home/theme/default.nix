@@ -62,7 +62,7 @@ in {
 				size = "compact";
 				tweaks = [ "rimless" "black" ];
 				variant = "macchiato";
-			}
+			};
 			# package = pkgs.gruvbox-gtk-theme;
 		};
 
