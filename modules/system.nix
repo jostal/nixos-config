@@ -24,7 +24,7 @@
     	cmake
     	keychain
 
-		(catppucin-gtk.override {
+		(catppuccin-gtk.override {
 			accens = [ "maroon" ];
 			size = "compact";
 			tweaks = [ "rimless" "black" ];
