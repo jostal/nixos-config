@@ -27,7 +27,7 @@
 		(catppucin-gtk.override {
 			accens = [ "maroon" ];
 			size = "compact";
-			tweaks = [ "rimless", "black" ];
+			tweaks = [ "rimless" "black" ];
 			variant = "machiato";
 		})
 
