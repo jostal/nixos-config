@@ -25,7 +25,7 @@
     	keychain
 
 		(catppuccin-gtk.override {
-			accens = [ "maroon" ];
+			accents = [ "maroon" ];
 			size = "compact";
 			tweaks = [ "rimless" "black" ];
 			variant = "machiato";
