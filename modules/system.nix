@@ -50,6 +50,7 @@
 
     	# Games
     	gamescope
+		libsForQt5.dolphin
 	];
 
 	environment.variables.EDITOR = "nvim";
