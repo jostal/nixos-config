@@ -8,7 +8,7 @@ let
 in [
 	# Programs
 	"${mainMod}, T, exec, alacritty -e tmux new-session -As0"
-	"${mainMod}, E, exec, dolphin"
+	"${mainMod}, E, exec, pcmanfm"
   "${mainMod} ALT, R, ${e} quit; ags -b hypr"
 	"${mainMod}, SPACE, ${e} -t appLauncher"
   "CONTROL ALT, DELETE, ${e} -t power"
