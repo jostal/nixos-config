@@ -13,6 +13,8 @@ km('n', 'n', "<cmd>lua require('nvim-tree.api').tree.focus()<cr>", { desc = "Foc
 km('n', '<A-n>', "<cmd>lua require('nvim-tree.api').tree.close()<cr>", { desc = "Close nvim tree" })
 -- km('n', '<A-n>', "<cmd>lua require('nvim-tree.api').tree.toggle()<cr>", { desc = "Toggle nvim tree" })
 km('n', '<C-v>', "<cmd>lua require('nvim-tree.api').node.open.vertical()<cr>", { desc = "Vertical split nvim tree file" })
+km('n', '<C-h>', "<cmd>lua require('nvim-tree.api').node.open.horizontal()<cr>",
+  { desc = "Horizontal split from nvim tree" })
 
 -- Telescope
 vim.api.nvim_set_keymap('n', 'ff', "<cmd>lua require('telescope.builtin').find_files()<cr>",
