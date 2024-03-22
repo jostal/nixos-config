@@ -21,8 +21,9 @@
 			];
 
       windowrulev2 = [
-        # "stayfocused,title:^()$,class:^(steam)$"
-        # "minsize 11, title:^()$,class:^(steam)$"
+        "stayfocused,title:^()$,class:^(steam)$"
+        "minsize 1 1, title:^()$,class:^(steam)$"
+        "monitor 1, title:^()$,class:^(steam_app_\d+)$"
       ];
 
       layerrule = [

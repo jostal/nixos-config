@@ -18,13 +18,12 @@ wk.register({
     ["<A-n>"] = { "<cmd>NvimTreeClose<cr>", "Close tree" },
     ["<C-v>"] = { "<cmd>lua require('nvim-tree.api').node.open.vertical()<cr>", "Vertical split file" },
     ["<C-h>"] = { "<cmd>lua require('nvim-tree.api').node.open.horizontal()<cr>", "Horizontal split file" },
-
   }
 })
 
 -- Toggle Term
-vim.api.nvim_set_keymap('t', '<esc>', '<C-\\><C-n>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<A-t>', "<cmd>TermSelect<cr>", { desc = "Focus selected terminal" })
+-- vim.api.nvim_set_keymap('t', '<esc>', '<C-\\><C-n>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<A-t>', "<cmd>TermSelect<cr>", { desc = "Focus selected terminal" })
 
 -- nvim tree
 -- km('n', 'n', "<cmd>lua require('nvim-tree.api').tree.focus()<cr>", { desc = "Focus nvim tree" })
