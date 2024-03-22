@@ -14,7 +14,7 @@ wk.register({
   -- NVIM TREE
   ["<leader>n"] = {
     name = "+tree",
-    n = { "<cmd>NvimTreeFocus<cr>", "Focus tree" },
+    n = { "<cmd>lua require('nvim-tree.api').tree.focus()<cr>", "Focus tree" },
     ["<A-n>"] = { "<cmd>NvimTreeClose<cr>", "Close tree" },
     ["<C-v>"] = { "<cmd>lua require('nvim-tree.api').node.open.vertical()<cr>", "Vertical split file" },
     ["<C-h>"] = { "<cmd>lua require('nvim-tree.api').node.open.horizontal()<cr>", "Horizontal split file" },
