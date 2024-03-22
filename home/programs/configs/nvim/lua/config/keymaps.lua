@@ -6,11 +6,11 @@ vim.api.nvim_set_keymap('t', '<esc>', '<C-\\><C-n>', { noremap = true, silent = 
 vim.api.nvim_set_keymap('n', '<A-t>', "<cmd>TermSelect<cr>", { desc = "Focus selected terminal" })
 
 -- mini.files
-vim.api.nvim_set_keymap('n', 'n', '<cmd>lua MiniFiles.open()<cr>', { desc = "Open mini.files" })
+-- vim.api.nvim_set_keymap('n', 'n', '<cmd>lua MiniFiles.open()<cr>', { desc = "Open mini.files" })
 
 -- nvim tree
--- km('n', 'n', "<cmd>lua require('nvim-tree.api').tree.focus()<cr>", { desc = "Focus nvim tree" })
-km('n', 'n', "<cmd>lua require('nvim-tree.api').tree.toggle()<cr>", { desc = "Toggle nvim tree" })
+km('n', 'n', "<cmd>lua require('nvim-tree.api').tree.focus()<cr>", { desc = "Focus nvim tree" })
+km('n', '<A-n>', "<cmd>lua require('nvim-tree.api').tree.close()<cr>", { desc = "Close nvim tree" })
 -- km('n', '<A-n>', "<cmd>lua require('nvim-tree.api').tree.toggle()<cr>", { desc = "Toggle nvim tree" })
 km('n', '<C-v>', "<cmd>lua require('nvim-tree.api').node.open.vertical()<cr>", { desc = "Vertical split nvim tree file" })
 
