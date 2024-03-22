@@ -6,12 +6,17 @@ config = function()
   local conf = {
     plugins = {
       presets = {
+        operators = true,
         motions = true
+      },
+      key_labels = {
+        ["<M>"] = "A"
       }
     },
   }
 
   local mappings = {
+
   }
 
   local opts = {

@@ -3,7 +3,7 @@ local km = vim.api.nvim_set_keymap
 local wk = require("which-key")
 
 wk.register({
-  ["f"] = {
+  ["<leader>f"] = {
     name = "+file",
     f = { "<cmd>Telescope find_files<cr>", "Find files by name" },
     g = { "<cmd>Telescope live_grep<cr>", "Search within files" },
