@@ -7,7 +7,8 @@ wk.register({
     name = "+file",
     f = { "<cmd>Telescope find_files<cr>", "Find files by name" },
     g = { "<cmd>Telescope live_grep<cr>", "Search within files" },
-    b = { "<cmd>Telescope buffers<cr>", "Search buffers" }
+    b = { "<cmd>Telescope buffers<cr>", "Search buffers" },
+    r = { "<cmd>Telescope oldfiles<cr>", "Recent files" }
   }
 })
 
