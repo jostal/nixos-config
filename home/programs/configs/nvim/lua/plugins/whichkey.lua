@@ -12,7 +12,6 @@ config = function()
   }
 
   local mappings = {
-    ["f"] = { name = "+find" },
   }
 
   local opts = {
@@ -21,7 +20,7 @@ config = function()
 
   local wk = require("which-key")
   wk.setup(conf)
-  wk.register(mappings, opts)
+  -- wk.register(mappings, opts)
 end
 
 config()

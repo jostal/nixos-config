@@ -15,5 +15,8 @@ local function on_attach(bufnr)
 end
 
 require("nvim-tree").setup {
-  on_attach = on_attach
+  on_attach = on_attach,
+  update_focused_file = {
+    enable = true
+  }
 }
