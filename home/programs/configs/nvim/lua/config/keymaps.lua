@@ -3,12 +3,22 @@ local km = vim.api.nvim_set_keymap
 local wk = require("which-key")
 
 wk.register({
+  -- TELESCOPE
   ["<leader>f"] = {
     name = "+file",
     f = { "<cmd>Telescope find_files<cr>", "Find files by name" },
     g = { "<cmd>Telescope live_grep<cr>", "Search within files" },
     b = { "<cmd>Telescope buffers<cr>", "Search buffers" },
     r = { "<cmd>Telescope oldfiles<cr>", "Recent files" }
+  },
+  -- NVIM TREE
+  ["<leader>n"] = {
+    name = "+tree",
+    n = { "<cmd>NvimTreeFocus<cr>", "Focus tree" },
+    ["<A-n>"] = { "<cmd>NvimTreeClose<cr>", "Close tree" },
+    ["<C-v>"] = { "<cmd>lua require('nvim-tree.api').node.open.vertical()<cr>", "Vertical split file" },
+    ["<C-h>"] = { "<cmd>lua require('nvim-tree.api').node.open.horizontal()<cr>", "Horizontal split file" },
+
   }
 })
 
@@ -17,12 +27,12 @@ vim.api.nvim_set_keymap('t', '<esc>', '<C-\\><C-n>', { noremap = true, silent = 
 vim.api.nvim_set_keymap('n', '<A-t>', "<cmd>TermSelect<cr>", { desc = "Focus selected terminal" })
 
 -- nvim tree
-km('n', 'n', "<cmd>lua require('nvim-tree.api').tree.focus()<cr>", { desc = "Focus nvim tree" })
-km('n', '<A-n>', "<cmd>lua require('nvim-tree.api').tree.close()<cr>", { desc = "Close nvim tree" })
+-- km('n', 'n', "<cmd>lua require('nvim-tree.api').tree.focus()<cr>", { desc = "Focus nvim tree" })
+-- km('n', '<A-n>', "<cmd>lua require('nvim-tree.api').tree.close()<cr>", { desc = "Close nvim tree" })
 -- km('n', '<A-n>', "<cmd>lua require('nvim-tree.api').tree.toggle()<cr>", { desc = "Toggle nvim tree" })
-km('n', '<C-v>', "<cmd>lua require('nvim-tree.api').node.open.vertical()<cr>", { desc = "Vertical split nvim tree file" })
-km('n', '<C-h>', "<cmd>lua require('nvim-tree.api').node.open.horizontal()<cr>",
-  { desc = "Horizontal split from nvim tree" })
+-- km('n', '<C-v>', "<cmd>lua require('nvim-tree.api').node.open.vertical()<cr>", { desc = "Vertical split nvim tree file" })
+-- km('n', '<C-h>', "<cmd>lua require('nvim-tree.api').node.open.horizontal()<cr>",
+-- { desc = "Horizontal split from nvim tree" })
 
 -- Telescope
 -- vim.api.nvim_set_keymap('n', 'ff', "<cmd>lua require('telescope.builtin').find_files()<cr>",
