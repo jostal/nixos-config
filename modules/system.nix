@@ -23,6 +23,7 @@
     	gnumake
     	cmake
     	keychain
+      socat
 
 		(catppuccin-gtk.override {
 			accents = [ "maroon" ];
