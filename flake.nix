@@ -6,11 +6,14 @@
 		substituters = [
 			"https://aseipp-nix-cache.global.ssl.fastly.net"
 			"https://cache.nixos.org"
+      "https://hyprland.cachix.org"
 		];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
 	};
 
 	# Inputs
 	inputs = {
+    hyprland.url = "github:hyprwm/Hyprland";
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 		home-manager = {
 			url = "github:nix-community/home-manager/release-23.11";
@@ -37,7 +40,7 @@
 			nixos = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 
-				specialArgs = inputs;
+				specialArgs = { inherit inputs; };
 				modules = [
 					./hosts/nixos
 
