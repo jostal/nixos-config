@@ -1,4 +1,7 @@
 { config, pkgs, inputs, ... }: {
+  imports = [
+    inputs.hyprland.nixosModules.default
+  ];
 
 	xdg = {
 		autostart.enable = true;
