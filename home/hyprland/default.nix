@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, inputs, ... }: {
 	imports = [
 		./settings.nix
 	];
@@ -6,6 +6,7 @@
 	wayland.windowManager.hyprland = {
 		enable = true;
 		systemd.enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
 		xwayland.enable = true;
 
 		settings = {
