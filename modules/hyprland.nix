@@ -1,6 +1,6 @@
 { config, pkgs, inputs, ... }: {
   imports = [
-    inputs.hyprland.nixosModules.default
+    # inputs.hyprland.nixosModules.default
   ];
 
 	xdg = {
