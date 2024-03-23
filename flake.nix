@@ -4,11 +4,11 @@
 	nixConfig = {
 		experimental-features = [ "nix-command" "flakes" ];
 		trusted-substituters = [
-			"https://aseipp-nix-cache.global.ssl.fastly.net"
-			"https://cache.nixos.org"
+      "https://cache.nixos.org?priority=10"
+      "https://anyrun.cachix.org"
       "https://hyprland.cachix.org"
-			"https://aseipp-nix-cache.global.ssl.fastly.net"
-			"https://cache.nixos.org"
+      "https://nix-community.cachix.org"
+      "https://nix-gaming.cachix.org"
 		];
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
