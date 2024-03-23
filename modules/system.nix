@@ -25,12 +25,12 @@
     	keychain
       socat
 
-		(catppuccin-gtk.override {
-			accents = [ "maroon" ];
-			size = "compact";
-			tweaks = [ "rimless" "black" ];
-			variant = "macchiato";
-		})
+		# (catppuccin-gtk.override {
+		# 	accents = [ "maroon" ];
+		# 	size = "compact";
+		# 	tweaks = [ "rimless" "black" ];
+		# 	variant = "macchiato";
+		# })
 
 		# Notifications
     	libnotify

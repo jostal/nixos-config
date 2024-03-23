@@ -37,12 +37,12 @@ in {
 	};
 
 	dconf.settings = {
-		# "org/gnome/desktop/interface" = {
-		# 	gtk-theme = "Gruvbox-Dark-BL";
-		# };
 		"org/gnome/desktop/interface" = {
-			gtk-theme = "Catppuccin-Macchiato-Compact-Maroon-Dark";
+			gtk-theme = "Gruvbox-Dark-BL";
 		};
+		# "org/gnome/desktop/interface" = {
+		# 	gtk-theme = "Catppuccin-Macchiato-Compact-Maroon-Dark";
+		# };
 	};
 
 	gtk = {
@@ -55,14 +55,14 @@ in {
 		};
 
 		theme = {
-			# name = "Gruvbox-Dark-BL";
-			name = "Catppuccin-Macchiato-Compact-Maroon-Dark";
-			package = pkgs.catppuccin-gtk.override {
-				accents = [ "maroon" ];
-				size = "compact";
-				tweaks = [ "rimless" "black" ];
-				variant = "macchiato";
-			};
+			name = "Gruvbox-Dark-BL";
+			# name = "Catppuccin-Macchiato-Compact-Maroon-Dark";
+			# package = pkgs.catppuccin-gtk.override {
+			# 	accents = [ "maroon" ];
+			# 	size = "compact";
+			# 	tweaks = [ "rimless" "black" ];
+			# 	variant = "macchiato";
+			# };
 			# package = pkgs.gruvbox-gtk-theme;
 		};
 
@@ -72,8 +72,8 @@ in {
 		};
 
 		gtk4.extraConfig = {
-			# gtk-theme-name = "Gruvbox-Dark-BL";
-			gtk-theme-name = "Catppuccin-Macchiato-Compact-Maroon-Dark";
+			gtk-theme-name = "Gruvbox-Dark-BL";
+			# gtk-theme-name = "Catppuccin-Macchiato-Compact-Maroon-Dark";
 		};
 	};
 
