@@ -1,6 +1,6 @@
 { config, pkgs, inputs, ... }: {
   imports = [
-    # inputs.hyprland.nixosModules.default
+    inputs.hyprland.nixosModules.default
   ];
 
 	xdg = {
@@ -17,7 +17,7 @@
 
 	programs.hyprland = {
 		enable = true;
-    # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
 		xwayland.enable = true;
 	};
 }
