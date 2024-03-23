@@ -24,6 +24,7 @@
     	cmake
     	keychain
       socat
+      cachix
 
 		# (catppuccin-gtk.override {
 		# 	accents = [ "maroon" ];
