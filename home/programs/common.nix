@@ -10,6 +10,7 @@
 		tofi
     python3
     xournalpp
+    onlyoffice-bin
 
 		# File browser
 		gnome.nautilus
