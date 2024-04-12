@@ -9,6 +9,7 @@
 		gthumb
 		tofi
     python3
+    xournalpp
 
 		# File browser
 		gnome.nautilus
