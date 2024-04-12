@@ -11,6 +11,7 @@
     python3
     xournalpp
     onlyoffice-bin
+    libreoffice-qt
 
 		# File browser
 		gnome.nautilus
