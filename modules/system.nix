@@ -171,6 +171,9 @@
     blueman.enable = true;
     flatpak.enable = true;
 
+    upower.enable = true;
+
+
     openssh = {
       enable = true;
       settings = {
