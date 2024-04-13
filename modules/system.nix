@@ -25,6 +25,8 @@
     	keychain
       socat
       cachix
+      openrazer-daemon
+      polychromatic
 
 		# (catppuccin-gtk.override {
 		# 	accents = [ "maroon" ];

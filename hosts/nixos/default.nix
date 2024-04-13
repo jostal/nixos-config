@@ -13,6 +13,8 @@
       powerOnBoot = true;
     };
 
+    openrazer.enable = true;
+
     xpadneo.enable = true;
     xone.enable = true;
   };
