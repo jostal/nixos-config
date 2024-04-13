@@ -56,6 +56,7 @@
     	gamescope
 		libsForQt5.dolphin
 		pcmanfm
+    upower
 	];
 
 	environment.variables.EDITOR = "nvim";
