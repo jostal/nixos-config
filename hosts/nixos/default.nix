@@ -14,6 +14,7 @@
     };
 
     openrazer.enable = true;
+    openrazer.users = [ "jostal" ];
 
     xpadneo.enable = true;
     xone.enable = true;
