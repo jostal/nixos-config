@@ -7,9 +7,9 @@
 	];
 
   virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
   virtualisation.virtualbox.guest = {
     enable = true;
-    x11 = true;
   };
   users.extraGroups.vboxusers.members = [ "jostal" ];
 
