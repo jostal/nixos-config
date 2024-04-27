@@ -6,6 +6,13 @@
 		../../hardware-configuration.nix
 	];
 
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.guest = {
+    enable = true;
+    x11 = true;
+  };
+  users.extraGroups.vboxusers.members = [ "jostal" ];
+
   # Hardware
   hardware = {
     bluetooth = {
